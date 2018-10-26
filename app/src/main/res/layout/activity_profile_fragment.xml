@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSilver"
+    android:layout_gravity="fill_vertical"
+    tools:context=".FragmentProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:elevation="6dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:paddingBottom="30dp"
+            android:layout_gravity="center"
+            android:background="@color/deepcover"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_face_black"
+                android:scaleType="fitCenter"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="@string/name_header"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <!--info-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:gravity="left"
+            android:text="Info"
+            android:paddingStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_plan"
+                    android:layout_weight="3"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="10"
+                    android:textColor="@color/deepcover"
+                    android:gravity="left|center"
+                    android:paddingStart="30dp"/>
+
+        </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_accountboook"
+                android:layout_weight="3"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Akun Saya"
+                android:textColor="@color/deepcover"
+                android:gravity="left|center"
+                android:paddingStart="30dp"/>
+
+        </LinearLayout>
+        <!---->
+
+
+        <!-- connected-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:gravity="left"
+            android:text="Connected"
+            android:paddingStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/ic_facebook"
+                    android:scaleType="fitCenter"
+                    android:layout_weight="3"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="Ilham solehudin"
+                    android:textColor="@color/deepcover"
+                    android:gravity="left|center"
+                    android:paddingStart="30dp"/>
+
+        </LinearLayout>
+        <!---->
+
+        <!-- support-->
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:gravity="left"
+            android:text="Support"
+            android:paddingStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_copyrigth"
+                android:layout_weight="3"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="About"
+                android:textColor="@color/deepcover"
+                android:gravity="left|center"
+                android:paddingStart="30dp"/>
+
+        </LinearLayout>
+        <!---->
+
+        <Button style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/deepcover"
+            android:layout_marginTop="20dp"
+            android:text="Keluar Aplikasi"
+       />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
