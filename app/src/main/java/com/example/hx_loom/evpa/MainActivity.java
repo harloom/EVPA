@@ -33,23 +33,23 @@ public class MainActivity extends AppCompatActivity {
 
     /* deklarasi buatan */
     private int[] tabSelected = {
-            R.mipmap.ic_home  ,
-            R.mipmap.ic_rank,
-            R.mipmap.ic_profile
+            R.drawable.ic_home  ,
+            R.drawable.ic_rank,
+            R.drawable.ic_profile
     };
 
-    private int[] tabsUnselectedSelected = {
-            R.drawable.ic_home_s,
-            R.drawable.ic_rank_s,
-            R.drawable.ic_profile_s
-    };
+//    private int[] tabsUnselectedSelected = {
+//            R.drawable.ic_home_s,
+//            R.drawable.ic_rank_s,
+//            R.drawable.ic_profile_s
+//    };
     /* fungsi buatan */
     public void tabMenu(){
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[0]));
-        tabLayout.addTab(tabLayout.newTab().setIcon(tabsUnselectedSelected[1]));
-        tabLayout.addTab(tabLayout.newTab().setIcon(tabsUnselectedSelected[2]));
+        tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[1]));
+        tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[2]));
         tabLayout.setSelectedTabIndicatorHeight(0);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabTextColors(ColorStateList.valueOf(Color.parseColor("#620E84")));
@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
-                for(int i = 0; i < 3; i++) {
-                    if(i == position)
-                        tabLayout.getTabAt(i).setIcon(tabSelected[i]);
-                    else
-                        tabLayout.getTabAt(i).setIcon(tabsUnselectedSelected[i]);
-                }
+//                for(int i = 0; i < 3; i++) {
+//                    if(i == position)
+//                        tabLayout.getTabAt(i).setIcon(tabSelected[i]);
+//                    else
+//                        tabLayout.getTabAt(i).setIcon(tabsUnselectedSelected[i]);
+//                }
                 viewPager.setCurrentItem(tab.getPosition());
 
             }
