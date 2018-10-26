@@ -41,7 +41,12 @@
 
 
         <!--info-->
-        <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/red"
@@ -54,7 +59,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/LinearShapeBottom"
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_width="match_parent"
@@ -70,14 +77,16 @@
                     android:text="10"
                     android:textColor="@color/deepcover"
                     android:gravity="left|center"
-                    android:paddingStart="30dp"/>
+                    android:paddingStart="20dp"/>
 
-        </LinearLayout>
+            </LinearLayout>
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/LinearShapeBottom"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,23 +101,74 @@
                 android:text="Akun Saya"
                 android:textColor="@color/deepcover"
                 android:gravity="left|center"
-                android:paddingStart="30dp"/>
+                android:paddingStart="20dp"/>
 
+        </LinearLayout>
         </LinearLayout>
         <!---->
 
 
         <!-- connected-->
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/green"
-            android:gravity="left"
-            android:text="Connected"
-            android:paddingStart="10dp"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp" />
+            android:orientation="vertical"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:gravity="left"
+                android:text="Connected"
+                android:paddingStart="10dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/LinearShapeBottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="35dp"
+                        android:src="@mipmap/ic_facebook"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="3"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="Ilham solehudin"
+                        android:textColor="@color/deepcover"
+                        android:gravity="left|center"
+                        android:paddingStart="30dp"/>
+
+            </LinearLayout>
+            <!---->
+        </LinearLayout>
+
+        <!-- support-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/orange"
+                android:gravity="left"
+                android:text="Support"
+                android:paddingStart="10dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="30dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,9 +176,8 @@
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:src="@mipmap/ic_facebook"
-                    android:scaleType="fitCenter"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_copyrigth"
                     android:layout_weight="3"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -126,49 +185,14 @@
                     android:layout_weight="1"
                     android:textStyle="bold"
                     android:textSize="16sp"
-                    android:text="Ilham solehudin"
+                    android:text="About"
                     android:textColor="@color/deepcover"
                     android:gravity="left|center"
                     android:paddingStart="30dp"/>
 
+            </LinearLayout>
+            <!---->
         </LinearLayout>
-        <!---->
-
-        <!-- support-->
-        <TextView
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/orange"
-            android:gravity="left"
-            android:text="Support"
-            android:paddingStart="10dp"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:layout_marginTop="30dp" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_copyrigth"
-                android:layout_weight="3"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:text="About"
-                android:textColor="@color/deepcover"
-                android:gravity="left|center"
-                android:paddingStart="30dp"/>
-
-        </LinearLayout>
-        <!---->
 
         <Button style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
