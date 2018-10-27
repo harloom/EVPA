@@ -312,6 +312,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\color\\switch_thumb_material_light.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_home.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\drawable-xhdpi\\ic_home.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
@@ -476,6 +480,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\anim\\abc_popup_exit.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_home.xml.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\layout\\list_home.xml"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
@@ -506,6 +514,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_profile.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\drawable-xhdpi\\ic_profile.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -1108,12 +1120,12 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_track_material.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -1546,6 +1558,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_default.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_rank.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\drawable-xhdpi\\ic_rank.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
