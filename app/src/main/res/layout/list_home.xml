@@ -7,31 +7,78 @@
     card_view:cardElevation="1dp"
     card_view:cardUseCompatPadding="true">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:orientation="vertical"
-        android:padding="2dp">
 
-        <!-- TextView Nama Mahasiwa -->
-        <TextView
-            android:id="@+id/txt_nama_mahasiswa"
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="vertical"
+            android:padding="2dp">
+            <!-- TextView Judul -->
+            <TextView
+                android:id="@+id/txt_nama_mahasiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/linearshapebottom"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/linearshapebottom">
+                    <!-- ImageView Foto -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_home"
+                        android:layout_weight="3"/>
+                    <!--Penjelasan Singkat-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
 
-        <!-- TextView Npm Mahasiswa -->
-        <TextView
-            android:id="@+id/txt_npm_mahasiswa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                </LinearLayout>
 
-        <!-- TextView NoHp Mahasiswa -->
-        <TextView
-            android:id="@+id/txt_nohp_mahasiswa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-    </LinearLayout>
+                    <!-- TextView NoHp Mahasiswa -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/linearshapebottom">
+                            <!--tanggal-->
+                            <TextView
+                                android:id="@+id/txt_nohp_mahasiswa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <!--Tempat-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+
+                        </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="10dp">
+                                    <!--Like Star-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"/>
+                                    <!--Share-->
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"/>
+                                </LinearLayout>
+        </LinearLayout>
+
+
 
 </android.support.v7.widget.CardView>
