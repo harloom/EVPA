@@ -4033,15 +4033,14 @@ public final class R {
     public static final int ic_date=0x7f0b0003;
     public static final int ic_facebook=0x7f0b0004;
     public static final int ic_home=0x7f0b0005;
-    public static final int ic_home_foreground=0x7f0b0006;
-    public static final int ic_launcher=0x7f0b0007;
-    public static final int ic_launcher_foreground=0x7f0b0008;
-    public static final int ic_launcher_round=0x7f0b0009;
-    public static final int ic_plan=0x7f0b000a;
-    public static final int ic_profile=0x7f0b000b;
-    public static final int ic_rank=0x7f0b000c;
-    public static final int ic_tempat=0x7f0b000d;
-    public static final int ic_text=0x7f0b000e;
+    public static final int ic_launcher=0x7f0b0006;
+    public static final int ic_launcher_foreground=0x7f0b0007;
+    public static final int ic_launcher_round=0x7f0b0008;
+    public static final int ic_plan=0x7f0b0009;
+    public static final int ic_profile=0x7f0b000a;
+    public static final int ic_rank=0x7f0b000b;
+    public static final int ic_tempat=0x7f0b000c;
+    public static final int ic_text=0x7f0b000d;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0c0000;

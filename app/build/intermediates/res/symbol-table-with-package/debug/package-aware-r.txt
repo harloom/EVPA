@@ -1110,7 +1110,6 @@ mipmap ic_copyrigth
 mipmap ic_date
 mipmap ic_facebook
 mipmap ic_home
-mipmap ic_home_foreground
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
