@@ -1,6 +1,5 @@
 package com.example.hx_loom.evpa;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,30 +8,30 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
 
-import com.example.hx_loom.evpa.Adapater.MahasiswaAdapter;
-import com.example.hx_loom.evpa.Model.Mahasiswa;
+import com.example.hx_loom.evpa.Adapater.ListHomeAdapter;
+import com.example.hx_loom.evpa.Model.EventLampung;
 
 import java.util.ArrayList;
 
 public class FragmentHome extends Fragment {
     private RecyclerView recyclerView;
-    private MahasiswaAdapter mahasiswaAdapter;
-    private ArrayList<Mahasiswa> mahasiswaArrayList;
+    private ListHomeAdapter listHomeAdapter;
+    private ArrayList<EventLampung> eventLampungArrayList;
 
 
     @Override
     public View onCreateView(LayoutInflater  inflater , ViewGroup container, Bundle savedInstanceState) {
-//            return inflater.inflate(R.layout.activity_home_fragment, container, false);
+
         View roView = inflater.inflate(R.layout.activity_home_fragment, container,false);
 
         addData();
 
 
         recyclerView = (RecyclerView) roView.findViewById(R.id.recycler_view);
-        mahasiswaAdapter = new MahasiswaAdapter(mahasiswaArrayList);
+        listHomeAdapter = new ListHomeAdapter(eventLampungArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(mahasiswaAdapter);
+        recyclerView.setAdapter(listHomeAdapter);
 
 
         return  roView;
@@ -42,11 +41,11 @@ public class FragmentHome extends Fragment {
 
      void addData(){
 
-         mahasiswaArrayList = new ArrayList<>();
-         mahasiswaArrayList.add(new Mahasiswa("Dimas Maulana", "1414370309", "123456789"));
-         mahasiswaArrayList.add(new Mahasiswa("Fadly Yonk", "1214234560", "987654321"));
-         mahasiswaArrayList.add(new Mahasiswa("Ariyandi Nugraha", "1214230345", "987648765"));
-         mahasiswaArrayList.add(new Mahasiswa("Aham Siswana", "1214378098", "098758124"));
+         eventLampungArrayList = new ArrayList<>();
+         eventLampungArrayList.add(new EventLampung("E001", "UKMExpo", "2018/11/12","08.00" ,"Univ Teknokrat",
+                 "-5.382339, 105.257799", "Promosi Unit Kegiatan Mahasiswa" , 13));
+         eventLampungArrayList.add(new EventLampung("E002", "Lampung Fair", "2018/12/15","15.00" ,"PKOR WayHalim",
+                 "-5.378548, 105.279429", "Pameran Usaha Kecil dan Menengah" , 16));
 
      }
 

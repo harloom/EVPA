@@ -15,13 +15,28 @@
             android:layout_margin="2dp"
             android:orientation="vertical"
             android:padding="2dp">
-            <!-- TextView Judul -->
-            <TextView
-                android:id="@+id/txt_nama_mahasiswa"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:background="@drawable/linearshapebottom"/>
+                android:background="@drawable/linearshapebottom">
+                <!-- TextView Judul -->
+                <TextView
+                    android:id="@+id/txtJudulEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/blackflat"
+
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/txtJamEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+            </RelativeLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -35,47 +50,84 @@
                         android:layout_weight="3"/>
                     <!--Penjelasan Singkat-->
                     <TextView
+                        android:id="@+id/txtDetailEvent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:text="Pada Tanggal 13 App Event Lampung telah launcing pada protoype 1"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="15dp"/>
 
                 </LinearLayout>
 
 
-                    <!-- TextView NoHp Mahasiswa -->
+                    <!-- TextView NoHp  -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:background="@drawable/linearshapebottom">
-                            <!--tanggal-->
-                            <TextView
-                                android:id="@+id/txt_nohp_mahasiswa"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
-                            <!--Tempat-->
-                            <TextView
+                                android:orientation="horizontal"
+                                android:layout_weight="1">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="3"
+                                    android:src="@mipmap/ic_date"/>
+                                <!--tanggal-->
+                                <TextView
+                                    android:id="@+id/txtTanggalEvent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="19/10/2018"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="3"
+                                    android:src="@mipmap/ic_tempat"/>
+                                <!--Tempat-->
+                                <TextView
+                                    android:id="@+id/txtNamaLokasiEvent"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="Kedaton"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+
 
                         </LinearLayout>
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
-                                    android:paddingTop="10dp">
+                                    android:paddingTop="5dp"
+                                    >
                                     <!--Like Star-->
-                                    <TextView
+                                    <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"/>
+                                        android:layout_weight="1"
+                                        card_view:srcCompat="@drawable/ic_star_black_24dp"
+                                        />
                                     <!--Share-->
-                                    <TextView
+                                    <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"/>
+                                        android:layout_weight="1"
+                                        card_view:srcCompat="@drawable/ic_share_black_24dp"/>
                                 </LinearLayout>
         </LinearLayout>
 

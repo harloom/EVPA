@@ -2121,7 +2121,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>
@@ -3421,48 +3421,49 @@ public final class R {
     public static final int highlighted_text_material_dark=0x7f050044;
     public static final int highlighted_text_material_light=0x7f050045;
     public static final int ic_home_background=0x7f050046;
-    public static final int material_blue_grey_800=0x7f050047;
-    public static final int material_blue_grey_900=0x7f050048;
-    public static final int material_blue_grey_950=0x7f050049;
-    public static final int material_deep_teal_200=0x7f05004a;
-    public static final int material_deep_teal_500=0x7f05004b;
-    public static final int material_grey_100=0x7f05004c;
-    public static final int material_grey_300=0x7f05004d;
-    public static final int material_grey_50=0x7f05004e;
-    public static final int material_grey_600=0x7f05004f;
-    public static final int material_grey_800=0x7f050050;
-    public static final int material_grey_850=0x7f050051;
-    public static final int material_grey_900=0x7f050052;
-    public static final int notification_action_color_filter=0x7f050053;
-    public static final int notification_icon_bg_color=0x7f050054;
-    public static final int notification_material_background_media_default_color=0x7f050055;
-    public static final int orange=0x7f050056;
-    public static final int primary_dark_material_dark=0x7f050057;
-    public static final int primary_dark_material_light=0x7f050058;
-    public static final int primary_material_dark=0x7f050059;
-    public static final int primary_material_light=0x7f05005a;
-    public static final int primary_text_default_material_dark=0x7f05005b;
-    public static final int primary_text_default_material_light=0x7f05005c;
-    public static final int primary_text_disabled_material_dark=0x7f05005d;
-    public static final int primary_text_disabled_material_light=0x7f05005e;
-    public static final int purpleHeader=0x7f05005f;
-    public static final int red=0x7f050060;
-    public static final int ripple_material_dark=0x7f050061;
-    public static final int ripple_material_light=0x7f050062;
-    public static final int secondary_text_default_material_dark=0x7f050063;
-    public static final int secondary_text_default_material_light=0x7f050064;
-    public static final int secondary_text_disabled_material_dark=0x7f050065;
-    public static final int secondary_text_disabled_material_light=0x7f050066;
-    public static final int shapeLine=0x7f050067;
-    public static final int switch_thumb_disabled_material_dark=0x7f050068;
-    public static final int switch_thumb_disabled_material_light=0x7f050069;
-    public static final int switch_thumb_material_dark=0x7f05006a;
-    public static final int switch_thumb_material_light=0x7f05006b;
-    public static final int switch_thumb_normal_material_dark=0x7f05006c;
-    public static final int switch_thumb_normal_material_light=0x7f05006d;
-    public static final int tooltip_background_dark=0x7f05006e;
-    public static final int tooltip_background_light=0x7f05006f;
-    public static final int white=0x7f050070;
+    public static final int ic_launcher_background=0x7f050047;
+    public static final int material_blue_grey_800=0x7f050048;
+    public static final int material_blue_grey_900=0x7f050049;
+    public static final int material_blue_grey_950=0x7f05004a;
+    public static final int material_deep_teal_200=0x7f05004b;
+    public static final int material_deep_teal_500=0x7f05004c;
+    public static final int material_grey_100=0x7f05004d;
+    public static final int material_grey_300=0x7f05004e;
+    public static final int material_grey_50=0x7f05004f;
+    public static final int material_grey_600=0x7f050050;
+    public static final int material_grey_800=0x7f050051;
+    public static final int material_grey_850=0x7f050052;
+    public static final int material_grey_900=0x7f050053;
+    public static final int notification_action_color_filter=0x7f050054;
+    public static final int notification_icon_bg_color=0x7f050055;
+    public static final int notification_material_background_media_default_color=0x7f050056;
+    public static final int orange=0x7f050057;
+    public static final int primary_dark_material_dark=0x7f050058;
+    public static final int primary_dark_material_light=0x7f050059;
+    public static final int primary_material_dark=0x7f05005a;
+    public static final int primary_material_light=0x7f05005b;
+    public static final int primary_text_default_material_dark=0x7f05005c;
+    public static final int primary_text_default_material_light=0x7f05005d;
+    public static final int primary_text_disabled_material_dark=0x7f05005e;
+    public static final int primary_text_disabled_material_light=0x7f05005f;
+    public static final int purpleHeader=0x7f050060;
+    public static final int red=0x7f050061;
+    public static final int ripple_material_dark=0x7f050062;
+    public static final int ripple_material_light=0x7f050063;
+    public static final int secondary_text_default_material_dark=0x7f050064;
+    public static final int secondary_text_default_material_light=0x7f050065;
+    public static final int secondary_text_disabled_material_dark=0x7f050066;
+    public static final int secondary_text_disabled_material_light=0x7f050067;
+    public static final int shapeLine=0x7f050068;
+    public static final int switch_thumb_disabled_material_dark=0x7f050069;
+    public static final int switch_thumb_disabled_material_light=0x7f05006a;
+    public static final int switch_thumb_material_dark=0x7f05006b;
+    public static final int switch_thumb_material_light=0x7f05006c;
+    public static final int switch_thumb_normal_material_dark=0x7f05006d;
+    public static final int switch_thumb_normal_material_light=0x7f05006e;
+    public static final int tooltip_background_dark=0x7f05006f;
+    public static final int tooltip_background_light=0x7f050070;
+    public static final int white=0x7f050071;
   }
   public static final class dimen {
     public static final int abc_action_bar_content_inset_material=0x7f060000;
@@ -3725,22 +3726,24 @@ public final class R {
     public static final int ic_profile_s=0x7f070066;
     public static final int ic_rank=0x7f070067;
     public static final int ic_rank_s=0x7f070068;
-    public static final int linearshapebottom=0x7f070069;
-    public static final int navigation_empty_icon=0x7f07006a;
-    public static final int notification_action_background=0x7f07006b;
-    public static final int notification_bg=0x7f07006c;
-    public static final int notification_bg_low=0x7f07006d;
-    public static final int notification_bg_low_normal=0x7f07006e;
-    public static final int notification_bg_low_pressed=0x7f07006f;
-    public static final int notification_bg_normal=0x7f070070;
-    public static final int notification_bg_normal_pressed=0x7f070071;
-    public static final int notification_icon_background=0x7f070072;
-    public static final int notification_template_icon_bg=0x7f070073;
-    public static final int notification_template_icon_low_bg=0x7f070074;
-    public static final int notification_tile_bg=0x7f070075;
-    public static final int notify_panel_notification_icon_bg=0x7f070076;
-    public static final int tooltip_frame_dark=0x7f070077;
-    public static final int tooltip_frame_light=0x7f070078;
+    public static final int ic_share_black_24dp=0x7f070069;
+    public static final int ic_star_black_24dp=0x7f07006a;
+    public static final int linearshapebottom=0x7f07006b;
+    public static final int navigation_empty_icon=0x7f07006c;
+    public static final int notification_action_background=0x7f07006d;
+    public static final int notification_bg=0x7f07006e;
+    public static final int notification_bg_low=0x7f07006f;
+    public static final int notification_bg_low_normal=0x7f070070;
+    public static final int notification_bg_low_pressed=0x7f070071;
+    public static final int notification_bg_normal=0x7f070072;
+    public static final int notification_bg_normal_pressed=0x7f070073;
+    public static final int notification_icon_background=0x7f070074;
+    public static final int notification_template_icon_bg=0x7f070075;
+    public static final int notification_template_icon_low_bg=0x7f070076;
+    public static final int notification_tile_bg=0x7f070077;
+    public static final int notify_panel_notification_icon_bg=0x7f070078;
+    public static final int tooltip_frame_dark=0x7f070079;
+    public static final int tooltip_frame_light=0x7f07007a;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -3930,17 +3933,19 @@ public final class R {
     public static final int transition_position=0x7f0800b8;
     public static final int transition_scene_layoutid_cache=0x7f0800b9;
     public static final int transition_transform=0x7f0800ba;
-    public static final int txt_nama_mahasiswa=0x7f0800bb;
-    public static final int txt_nohp_mahasiswa=0x7f0800bc;
-    public static final int txt_npm_mahasiswa=0x7f0800bd;
-    public static final int uniform=0x7f0800be;
-    public static final int up=0x7f0800bf;
-    public static final int useLogo=0x7f0800c0;
-    public static final int view_offset_helper=0x7f0800c1;
-    public static final int visible=0x7f0800c2;
-    public static final int withText=0x7f0800c3;
-    public static final int wrap=0x7f0800c4;
-    public static final int wrap_content=0x7f0800c5;
+    public static final int txtDetailEvent=0x7f0800bb;
+    public static final int txtJamEvent=0x7f0800bc;
+    public static final int txtJudulEvent=0x7f0800bd;
+    public static final int txtNamaLokasiEvent=0x7f0800be;
+    public static final int txtTanggalEvent=0x7f0800bf;
+    public static final int uniform=0x7f0800c0;
+    public static final int up=0x7f0800c1;
+    public static final int useLogo=0x7f0800c2;
+    public static final int view_offset_helper=0x7f0800c3;
+    public static final int visible=0x7f0800c4;
+    public static final int withText=0x7f0800c5;
+    public static final int wrap=0x7f0800c6;
+    public static final int wrap_content=0x7f0800c7;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;
@@ -4025,15 +4030,18 @@ public final class R {
     public static final int ic_accountboook=0x7f0b0000;
     public static final int ic_appheader=0x7f0b0001;
     public static final int ic_copyrigth=0x7f0b0002;
-    public static final int ic_facebook=0x7f0b0003;
-    public static final int ic_home=0x7f0b0004;
-    public static final int ic_home_foreground=0x7f0b0005;
-    public static final int ic_launcher=0x7f0b0006;
-    public static final int ic_launcher_round=0x7f0b0007;
-    public static final int ic_plan=0x7f0b0008;
-    public static final int ic_profile=0x7f0b0009;
-    public static final int ic_rank=0x7f0b000a;
-    public static final int ic_text=0x7f0b000b;
+    public static final int ic_date=0x7f0b0003;
+    public static final int ic_facebook=0x7f0b0004;
+    public static final int ic_home=0x7f0b0005;
+    public static final int ic_home_foreground=0x7f0b0006;
+    public static final int ic_launcher=0x7f0b0007;
+    public static final int ic_launcher_foreground=0x7f0b0008;
+    public static final int ic_launcher_round=0x7f0b0009;
+    public static final int ic_plan=0x7f0b000a;
+    public static final int ic_profile=0x7f0b000b;
+    public static final int ic_rank=0x7f0b000c;
+    public static final int ic_tempat=0x7f0b000d;
+    public static final int ic_text=0x7f0b000e;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0c0000;
@@ -9383,7 +9391,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>

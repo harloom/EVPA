@@ -1,24 +1,14 @@
 package com.example.hx_loom.evpa;
 
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
-import com.example.hx_loom.evpa.Adapater.MahasiswaAdapter;
 import com.example.hx_loom.evpa.Adapater.PagerAdapter;
-import com.example.hx_loom.evpa.Model.Mahasiswa;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

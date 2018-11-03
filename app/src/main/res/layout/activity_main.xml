@@ -21,25 +21,15 @@
             android:elevation="6dp"
             app:layout_scrollFlags="scroll|enterAlways">
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="left|center"
                     android:src="@mipmap/ic_appheader"
                     android:scaleType="fitCenter"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:paddingTop="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/name_header"
-                    android:typeface="sans"
-                    android:textSize="20sp"
-                    android:gravity="center|bottom"
-                    android:textStyle="bold"
-                    android:textColor="@color/purpleHeader"
-                    android:paddingBottom="7dp"
-                    />
+                    android:layout_marginTop="1dp"
+                    android:paddingTop="1dp"/>
+
 
         </android.support.v7.widget.Toolbar>
         <android.support.design.widget.TabLayout
