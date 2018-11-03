@@ -240,6 +240,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_share_black_24dp.xml.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\drawable\\ic_share_black_24dp.xml"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\color\\abc_tint_edittext.xml"
     },
@@ -318,6 +322,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_tempat.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-hdpi\\ic_tempat.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_rank_s.png.flat",
@@ -652,6 +660,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_date.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_date.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_profile.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_profile.png"
     },
@@ -736,8 +748,16 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_tempat.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_tempat.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_menu_item_action_area.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\eaeb404c887aa66dc35369b56d43c177\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_date.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-mdpi\\ic_date.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
@@ -864,6 +884,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\52013a05c9c988d36090c1466f43454d\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_date.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_date.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
@@ -930,6 +954,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\52013a05c9c988d36090c1466f43454d\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_tempat.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_tempat.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -1232,6 +1260,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\anim\\abc_fade_in.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
@@ -1270,6 +1302,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-mdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_text.png.flat",
@@ -1324,6 +1360,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\52013a05c9c988d36090c1466f43454d\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
@@ -1374,6 +1414,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\52013a05c9c988d36090c1466f43454d\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_tempat.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-mdpi\\ic_tempat.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1538,6 +1582,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_date.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-hdpi\\ic_date.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_accountboook.png.flat",
@@ -1924,8 +1972,20 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\eaeb404c887aa66dc35369b56d43c177\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_date.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_date.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_bar.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_tempat.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_tempat.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_plan.png.flat",
@@ -2028,12 +2088,20 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_star_black_24dp.xml.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\drawable\\ic_star_black_24dp.xml"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
