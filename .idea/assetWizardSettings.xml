@@ -52,7 +52,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="202ba8" />
+                                                <entry key="color" value="f48024" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -63,7 +63,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_local_library_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_date_range_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -73,15 +73,19 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="iconShape" value="NONE" />
                                       <entry key="imageAsset" value="D:\0DayDigital\Icon Dan Corel\Assets\Icons\apk.png" />
-                                      <entry key="outputName" value="ic_appheader" />
+                                      <entry key="outputName" value="ic_date" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
                           </map>
                         </option>
                       </PersistentState>

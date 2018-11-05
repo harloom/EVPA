@@ -512,6 +512,7 @@ color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_home_background
 color ic_launcher_background
+color imuto
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -527,6 +528,7 @@ color material_grey_900
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color oneesan
 color orange
 color primary_dark_material_dark
 color primary_dark_material_light
@@ -540,11 +542,13 @@ color purpleHeader
 color red
 color ripple_material_dark
 color ripple_material_light
+color sadis
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color shapeLine
+color sundtere
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -867,6 +871,7 @@ id alertTitle
 id all
 id always
 id appbar
+id appbar_detail
 id async
 id auto
 id barrier
@@ -1133,7 +1138,6 @@ mipmap ic_plan
 mipmap ic_profile
 mipmap ic_rank
 mipmap ic_tempat
-mipmap ic_text
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1182,6 +1186,7 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppTheme_Transparent
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -1344,7 +1349,6 @@ style Base_Widget_Design_TabLayout
 style CardView
 style CardView_Dark
 style CardView_Light
-style CustomActionBar
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
@@ -1458,7 +1462,6 @@ style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
-style Theme_Custom
 style Theme_Design
 style Theme_Design_BottomSheetDialog
 style Theme_Design_Light

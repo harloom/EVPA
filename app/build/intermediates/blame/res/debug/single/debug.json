@@ -376,16 +376,8 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_text.png.flat",
-        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-mdpi\\ic_text.png"
-    },
-    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_colored_material.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
-        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_text.png.flat",
-        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-hdpi\\ic_text.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_home.png.flat",
@@ -512,12 +504,12 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\52013a05c9c988d36090c1466f43454d\\res\\drawable\\notification_bg.xml"
     },
     {
-        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -682,10 +674,6 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
-        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_text.png.flat",
-        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_text.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1300,10 +1288,6 @@
         "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_text.png.flat",
-        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_text.png"
-    },
-    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
@@ -1466,10 +1450,6 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
-    },
-    {
-        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_text.png.flat",
-        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_text.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",

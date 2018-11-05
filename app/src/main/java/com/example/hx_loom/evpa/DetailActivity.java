@@ -1,21 +1,38 @@
 package com.example.hx_loom.evpa;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.nfc.Tag;
+import android.os.Build;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
+import java.util.Random;
 
 public class DetailActivity extends AppCompatActivity {
-
+    private int[] colorRandom = {
+            R.color.purpleHeader,
+            R.color.imuto,
+            R.color.sadis,
+            R.color.sundtere
+    };
     private static final String Tag = "DetailActivity" ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        AppBarLayout detailBar = (AppBarLayout) findViewById(R.id.appbar_detail);
+
+        int dice = new Random().nextInt(4);
+        detailBar.setBackgroundColor(getResources().getColor(colorRandom[dice]));
+
         getIncomingIntent();
 
     }
