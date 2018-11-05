@@ -804,6 +804,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_arrow_back
 drawable ic_face_black
 drawable ic_home
 drawable ic_home_s
@@ -884,6 +885,7 @@ id custom
 id customPanel
 id decor_content_parent
 id default_activity_button
+id desc_detail
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -914,11 +916,14 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_event
 id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id judul_detail
 id largeLabel
+id layouttoolbar
 id left
 id line1
 id line3
@@ -942,6 +947,7 @@ id pager
 id parallax
 id parent
 id parentPanel
+id parent_home
 id parent_matrix
 id percent
 id pin
@@ -1066,6 +1072,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_detail
 layout activity_home_fragment
 layout activity_main
 layout activity_profile_fragment
@@ -1328,6 +1335,7 @@ style Base_Widget_Design_TabLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style CustomActionBar
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
@@ -1441,6 +1449,7 @@ style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
+style Theme_Custom
 style Theme_Design
 style Theme_Design_BottomSheetDialog
 style Theme_Design_Light

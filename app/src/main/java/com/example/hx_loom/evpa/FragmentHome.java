@@ -28,7 +28,7 @@ public class FragmentHome extends Fragment {
 
 
         recyclerView = (RecyclerView) roView.findViewById(R.id.recycler_view);
-        listHomeAdapter = new ListHomeAdapter(eventLampungArrayList);
+        listHomeAdapter = new ListHomeAdapter(this,eventLampungArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(listHomeAdapter);

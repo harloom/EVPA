@@ -27,6 +27,7 @@
         <activity android:name="com.example.hx_loom.evpa.FragmentHome" />
         <activity android:name="com.example.hx_loom.evpa.FragmentRank" />
         <activity android:name="com.example.hx_loom.evpa.FragmentProfile" />
+        <activity android:name="com.example.hx_loom.evpa.DetailActivity" />
     </application>
 
 </manifest>

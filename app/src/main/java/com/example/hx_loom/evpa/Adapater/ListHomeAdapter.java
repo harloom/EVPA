@@ -2,13 +2,19 @@ package com.example.hx_loom.evpa.Adapater;
 
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.hx_loom.evpa.DetailActivity;
+import com.example.hx_loom.evpa.FragmentHome;
 import com.example.hx_loom.evpa.Model.EventLampung;
 import com.example.hx_loom.evpa.R;
 
@@ -18,10 +24,10 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
 
 
         private ArrayList<EventLampung> dataList;
-
-        public ListHomeAdapter(ArrayList<EventLampung> dataList){
+        Context mcontext ;
+        public ListHomeAdapter(FragmentHome context, ArrayList<EventLampung> dataList){
             this.dataList = dataList;
-
+             mcontext = context.getActivity();
         }
 
 
@@ -35,12 +41,24 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EventLampungViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull EventLampungViewHolder holder, final int position) {
         holder.txt_NamaEvent.setText(dataList.get(position).getNamaEvent());
         holder.txt_DetailEvent.setText(dataList.get(position).getDetailEvent());
         holder.txt_TanggalEvent.setText(dataList.get(position).getTanggalEvent());
         holder.txt_NamaLokasiEvent.setText(dataList.get(position).getNamaLokasi());
         holder.txt_JamEvent.setText(dataList.get(position).getJamEvent());
+
+        holder.parent_home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent  intent = new Intent(mcontext , DetailActivity.class);
+                intent.putExtra("judul" ,dataList.get(position).getNamaEvent());
+                intent.putExtra("detail_event" , dataList.get(position).getDetailEvent());
+                mcontext.startActivity(intent);
+            }
+
+        });
+
     }
 
     @Override
@@ -55,6 +73,7 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                 txt_NamaLokasiEvent,
                 txt_DetailEvent,
                 txt_JamEvent;
+        private LinearLayout parent_home;
 
         public EventLampungViewHolder(View itemView) {
             super(itemView);
@@ -63,6 +82,7 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
             txt_TanggalEvent = (TextView) itemView.findViewById(R.id.txtTanggalEvent);
             txt_NamaLokasiEvent = (TextView) itemView.findViewById(R.id.txtNamaLokasiEvent);
             txt_JamEvent = (TextView) itemView.findViewById(R.id.txtJamEvent);
+            parent_home = (LinearLayout) itemView.findViewById(R.id.parent_home);
 
         }
     }

@@ -14,7 +14,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:orientation="vertical"
-            android:padding="2dp">
+            android:padding="2dp"
+            android:id="@+id/parent_home">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,6 +45,7 @@
                     android:background="@drawable/linearshapebottom">
                     <!-- ImageView Foto -->
                     <ImageView
+                        android:id="@+id/image_event"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_home"

@@ -1796,6 +1796,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_back.xml.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\drawable\\ic_arrow_back.xml"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_light.xml.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\425fb7fea89c69cbf0e9d35d6e26c30d\\res\\drawable\\tooltip_frame_light.xml"
     },
@@ -1982,6 +1986,10 @@
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_profile_s.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\drawable-xxhdpi\\ic_profile_s.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_detail.xml.flat",
+        "source": "D:\\0DayDigital\\Evpa\\project\\app\\src\\main\\res\\layout\\activity_detail.xml"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\project\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_dark.xml.flat",
