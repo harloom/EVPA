@@ -48,14 +48,18 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
         holder.txt_NamaLokasiEvent.setText(dataList.get(position).getNamaLokasi());
         holder.txt_JamEvent.setText(dataList.get(position).getJamEvent());
 
+
         holder.parent_home.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent  intent = new Intent(mcontext , DetailActivity.class);
                 intent.putExtra("judul" ,dataList.get(position).getNamaEvent());
                 intent.putExtra("detail_event" , dataList.get(position).getDetailEvent());
+                intent.putExtra("detail_waktu" , dataList.get(position).getJamEvent());
+                intent.putExtra("detail_tanggal" , dataList.get(position).getTanggalEvent());
+                intent.putExtra("detail_namaLokasi" , dataList.get(position).getNamaLokasi());
                 mcontext.startActivity(intent);
-            }
+        }
 
         });
 

@@ -44,8 +44,8 @@ public class FragmentHome extends Fragment {
          eventLampungArrayList = new ArrayList<>();
          eventLampungArrayList.add(new EventLampung("E001", "UKMExpo", "2018/11/12","08.00" ,"Univ Teknokrat",
                  "-5.382339, 105.257799", "Promosi Unit Kegiatan Mahasiswa" , 13));
-         eventLampungArrayList.add(new EventLampung("E002", "Lampung Fair", "2018/12/15","15.00" ,"PKOR WayHalim",
-                 "-5.378548, 105.279429", "Pameran Usaha Kecil dan Menengah" , 16));
+         eventLampungArrayList.add(new EventLampung("E002", "Lampung Fair ", "2018/12/15","15.00" ,"PKOR WayHalim",
+                 "-5.378548, 105.279429", "Pameran Usaha Kecil dan Menengah " , 16));
 
      }
 

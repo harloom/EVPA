@@ -107,7 +107,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_arrow_back_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_map_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -117,8 +117,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="6818a8" />
-                            <entry key="outputName" value="ic_arrow_back" />
+                            <entry key="color" value="24a800" />
+                            <entry key="outputName" value="ic_map" />
                             <entry key="sourceFile" value="C:\Users\Hx-loom" />
                           </map>
                         </option>
