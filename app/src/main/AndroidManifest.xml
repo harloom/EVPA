@@ -19,7 +19,8 @@
         <activity android:name=".FragmentHome" />
         <activity android:name=".FragmentRank" />
         <activity android:name=".FragmentProfile" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>

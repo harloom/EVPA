@@ -13,57 +13,17 @@
                       <PersistentState>
                         <option name="children">
                           <map>
-                            <entry key="launcher">
-                              <value>
-                                <PersistentState>
-                                  <option name="children">
-                                    <map>
-                                      <entry key="foregroundImage">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="scalingPercent" value="51" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
-                                    </map>
-                                  </option>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="ffffff" />
-                                      <entry key="foregroundImage" value="D:\0DayDigital\Icon Dan Corel\Assets\Icons\apk.png" />
-                                      <entry key="previewDensity" value="XXXHIGH" />
-                                    </map>
-                                  </option>
-                                </PersistentState>
-                              </value>
-                            </entry>
                             <entry key="launcherLegacy">
                               <value>
                                 <PersistentState>
                                   <option name="children">
                                     <map>
-                                      <entry key="clipArt">
+                                      <entry key="image">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="f48024" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
-                                      <entry key="clipartAsset">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_date_range_black_24dp.xml" />
+                                                <entry key="paddingPercent" value="15" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -73,9 +33,11 @@
                                   </option>
                                   <option name="values">
                                     <map>
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="cropped" value="true" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="D:\0DayDigital\Icon Dan Corel\Assets\Icons\apk.png" />
-                                      <entry key="outputName" value="ic_date" />
+                                      <entry key="imageAsset" value="D:\Logo_Team_backgound.png" />
+                                      <entry key="outputName" value="ic_logotim" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -86,44 +48,6 @@
                         <option name="values">
                           <map>
                             <entry key="outputIconType" value="LAUNCHER_LEGACY" />
-                          </map>
-                        </option>
-                      </PersistentState>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </PersistentState>
-          </value>
-        </entry>
-        <entry key="vectorWizard">
-          <value>
-            <PersistentState>
-              <option name="children">
-                <map>
-                  <entry key="vectorAssetStep">
-                    <value>
-                      <PersistentState>
-                        <option name="children">
-                          <map>
-                            <entry key="clipartAsset">
-                              <value>
-                                <PersistentState>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_map_black_24dp.xml" />
-                                    </map>
-                                  </option>
-                                </PersistentState>
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="color" value="24a800" />
-                            <entry key="outputName" value="ic_map" />
-                            <entry key="sourceFile" value="C:\Users\Hx-loom" />
                           </map>
                         </option>
                       </PersistentState>
