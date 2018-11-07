@@ -874,6 +874,7 @@ id appbar
 id appbar_detail
 id async
 id auto
+id backfromAbout
 id barrier
 id beginning
 id blocking
@@ -927,6 +928,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageLogo
 id image_event
 id info
 id invisible
@@ -1086,6 +1088,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_about
 layout activity_detail
 layout activity_home_fragment
 layout activity_main
@@ -1129,14 +1132,20 @@ mipmap ic_accountboook
 mipmap ic_appheader
 mipmap ic_copyrigth
 mipmap ic_date
+mipmap ic_doraemon
 mipmap ic_facebook
+mipmap ic_hatori
 mipmap ic_home
+mipmap ic_ichigo
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap ic_logotim
+mipmap ic_naruto
 mipmap ic_plan
 mipmap ic_profile
 mipmap ic_rank
+mipmap ic_shinchan
 mipmap ic_tempat
 string abc_action_bar_home_description
 string abc_action_bar_up_description

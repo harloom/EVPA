@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="paddingPercent" value="15" />
+                                                <entry key="paddingPercent" value="5" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -34,10 +34,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="cropped" value="true" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="D:\Logo_Team_backgound.png" />
-                                      <entry key="outputName" value="ic_logotim" />
+                                      <entry key="imageAsset" value="D:\ic_sinchan.jpg" />
+                                      <entry key="outputName" value="ic_shinchan" />
                                     </map>
                                   </option>
                                 </PersistentState>
