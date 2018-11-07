@@ -68,6 +68,8 @@ public class DetailActivity extends AppCompatActivity {
     public void onback(View view) {
         finish();
     }
+
+
 }
 
  class DetailData {
