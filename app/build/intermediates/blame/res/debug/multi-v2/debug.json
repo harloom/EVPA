@@ -622,38 +622,6 @@
             ]
         },
         {
-            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-be_values-be.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\bdfb2806b7bf2c2621afd1c28e20ece1\\res\\values-be\\values-be.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,328,444,530,638,756,835,913,996,1102,1208,1306,1414,1519,1624,1793,1893",
-                        "endColumns": "119,102,115,85,107,117,78,77,82,105,105,97,107,104,104,168,99,80",
-                        "endOffsets": "220,323,439,525,633,751,830,908,991,1097,1203,1301,1409,1514,1619,1788,1888,1969"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ece1a854075657c21f8184c509d42299\\res\\values-be\\values-be.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "108",
-                        "endOffsets": "159"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1974",
-                        "endColumns": "108",
-                        "endOffsets": "2078"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-th_values-th.arsc.flat",
             "map": [
                 {
@@ -681,6 +649,38 @@
                         "startOffsets": "1906",
                         "endColumns": "100",
                         "endOffsets": "2002"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-be_values-be.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\bdfb2806b7bf2c2621afd1c28e20ece1\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,328,444,530,638,756,835,913,996,1102,1208,1306,1414,1519,1624,1793,1893",
+                        "endColumns": "119,102,115,85,107,117,78,77,82,105,105,97,107,104,104,168,99,80",
+                        "endOffsets": "220,323,439,525,633,751,830,908,991,1097,1203,1301,1409,1514,1619,1788,1888,1969"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ece1a854075657c21f8184c509d42299\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "108",
+                        "endOffsets": "159"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1974",
+                        "endColumns": "108",
+                        "endOffsets": "2078"
                     }
                 }
             ]
@@ -926,38 +926,6 @@
             ]
         },
         {
-            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-bn_values-bn.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\bdfb2806b7bf2c2621afd1c28e20ece1\\res\\values-bn\\values-bn.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,214,326,432,526,631,760,838,916,1003,1113,1221,1320,1430,1536,1649,1814,1919",
-                        "endColumns": "108,111,105,93,104,128,77,77,86,109,107,98,109,105,112,164,104,81",
-                        "endOffsets": "209,321,427,521,626,755,833,911,998,1108,1216,1315,1425,1531,1644,1809,1914,1996"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ece1a854075657c21f8184c509d42299\\res\\values-bn\\values-bn.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2001",
-                        "endColumns": "100",
-                        "endOffsets": "2097"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-hi_values-hi.arsc.flat",
             "map": [
                 {
@@ -985,6 +953,38 @@
                         "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1613,1775,1876",
                         "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,114,161,100,79",
                         "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1608,1770,1871,1951"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-bn_values-bn.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\bdfb2806b7bf2c2621afd1c28e20ece1\\res\\values-bn\\values-bn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,214,326,432,526,631,760,838,916,1003,1113,1221,1320,1430,1536,1649,1814,1919",
+                        "endColumns": "108,111,105,93,104,128,77,77,86,109,107,98,109,105,112,164,104,81",
+                        "endOffsets": "209,321,427,521,626,755,833,911,998,1108,1216,1315,1425,1531,1644,1809,1914,1996"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ece1a854075657c21f8184c509d42299\\res\\values-bn\\values-bn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2001",
+                        "endColumns": "100",
+                        "endOffsets": "2097"
                     }
                 }
             ]

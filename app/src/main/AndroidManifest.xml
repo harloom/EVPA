@@ -20,7 +20,8 @@
         <activity android:name=".FragmentRank" />
         <activity android:name=".FragmentProfile" />
         <activity android:name=".DetailActivity" />
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".Authentication_login"></activity>
     </application>
 
 </manifest>

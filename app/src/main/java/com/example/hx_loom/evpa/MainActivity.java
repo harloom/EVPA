@@ -5,10 +5,13 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import android.support.design.widget.BottomSheetDialog;
+import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.hx_loom.evpa.Adapater.PagerAdapter;
 
@@ -23,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
         //
         tabMenu();
 
+
     }
-
-
 
 
 
@@ -107,5 +109,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void actionAdd(View view) {
 
+        View fragmentAuth = getLayoutInflater().inflate(R.layout.fragment_authentication_login, null);
+        BottomSheetDialog dialog = new BottomSheetDialog(this);
+        dialog.setContentView(fragmentAuth);
+        dialog.show();
+
+
+
+    }
 }

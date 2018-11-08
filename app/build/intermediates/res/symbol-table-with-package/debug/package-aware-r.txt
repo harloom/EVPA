@@ -801,7 +801,6 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
-drawable apk
 drawable avd_hide_password
 drawable avd_show_password
 drawable backgorund_card_line_blue
@@ -818,6 +817,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable hifumi
 drawable ic_access_time
+drawable ic_apk
 drawable ic_arrow_back
 drawable ic_date_draw
 drawable ic_face_black
@@ -854,6 +854,7 @@ id META
 id SHIFT
 id SYM
 id action0
+id action_add
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -926,8 +927,12 @@ id fill_horizontal
 id fill_vertical
 id fixed
 id forever
+id form_password
+id form_username
 id ghost_view
 id gone
+id group_password
+id group_username
 id groups
 id home
 id homeAsUp
@@ -948,6 +953,7 @@ id line1
 id line3
 id listMode
 id list_item
+id logo_loginApp
 id masked
 id media_actions
 id message
@@ -1115,6 +1121,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_authentication_login
 layout list_home
 layout notification_action
 layout notification_action_tombstone
@@ -1136,6 +1143,8 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_accountboook
+mipmap ic_add
+mipmap ic_apk
 mipmap ic_appheader
 mipmap ic_copyrigth
 mipmap ic_date

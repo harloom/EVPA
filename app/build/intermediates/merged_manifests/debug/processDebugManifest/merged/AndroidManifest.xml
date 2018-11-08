@@ -29,6 +29,7 @@
         <activity android:name="com.example.hx_loom.evpa.FragmentProfile" />
         <activity android:name="com.example.hx_loom.evpa.DetailActivity" />
         <activity android:name="com.example.hx_loom.evpa.AboutActivity" />
+        <activity android:name="com.example.hx_loom.evpa.Authentication_login" />
     </application>
 
 </manifest>
