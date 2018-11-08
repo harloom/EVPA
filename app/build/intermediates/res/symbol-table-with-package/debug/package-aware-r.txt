@@ -801,8 +801,14 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable apk
 drawable avd_hide_password
 drawable avd_show_password
+drawable backgorund_card_line_blue
+drawable backgorund_card_line_orange
+drawable backgorund_card_line_pink
+drawable backgorund_card_line_purpel
+drawable backgorund_card_line_yellow
 drawable background_header
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -810,6 +816,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable hifumi
 drawable ic_access_time
 drawable ic_arrow_back
 drawable ic_date_draw
@@ -1145,7 +1152,6 @@ mipmap ic_naruto
 mipmap ic_plan
 mipmap ic_profile
 mipmap ic_rank
-mipmap ic_shinchan
 mipmap ic_tempat
 string abc_action_bar_home_description
 string abc_action_bar_up_description
