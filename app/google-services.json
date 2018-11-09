@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1055318095524",
+    "firebase_url": "https://evpa-lampung.firebaseio.com",
+    "project_id": "evpa-lampung",
+    "storage_bucket": "evpa-lampung.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055318095524:android:5c27dd0a18096092",
+        "android_client_info": {
+          "package_name": "com.example.hx_loom.evpa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055318095524-tpivn4kgi488ibqr6frc3uq2jhmcda3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRzrHd7D8yPu34FbSFq-Eb0HLrikTB2x0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
