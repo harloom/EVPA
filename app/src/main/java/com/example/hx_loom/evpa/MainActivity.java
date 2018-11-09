@@ -3,6 +3,7 @@ package com.example.hx_loom.evpa;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 
 import android.support.design.widget.BottomSheetDialog;
@@ -18,7 +19,6 @@ import com.example.hx_loom.evpa.Adapater.PagerAdapter;
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,46 +30,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
     /* deklarasi buatan */
     private int[] tabSelected = {
-            R.drawable.ic_home  ,
+            R.drawable.ic_home,
             R.drawable.ic_rank,
             R.drawable.ic_profile
     };
 
-//    private int[] tabsUnselectedSelected = {
+    //    private int[] tabsUnselectedSelected = {
 //            R.drawable.ic_home_s,
 //            R.drawable.ic_rank_s,
 //            R.drawable.ic_profile_s
 //    };
     /* fungsi buatan */
-    public void tabMenu(){
+    public void tabMenu() {
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[0]));
@@ -92,7 +67,15 @@ public class MainActivity extends AppCompatActivity {
 //                    else
 //                        tabLayout.getTabAt(i).setIcon(tabsUnselectedSelected[i]);
 //                }
-                viewPager.setCurrentItem(tab.getPosition());
+
+                ImageView imageAction = (ImageView) findViewById(R.id.action_add);
+                if (tab.getPosition() == 1 || tab.getPosition() == 2){
+                    imageAction.setVisibility(View.INVISIBLE);
+                }else{
+                    imageAction.setVisibility(View.VISIBLE);
+                }
+
+                    viewPager.setCurrentItem(tab.getPosition());
 
             }
 
@@ -115,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         BottomSheetDialog dialog = new BottomSheetDialog(this);
         dialog.setContentView(fragmentAuth);
         dialog.show();
-
 
 
     }

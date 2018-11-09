@@ -888,6 +888,7 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id button_login
 id cancel_action
 id center
 id center_horizontal
