@@ -7,7 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class FragmentProfile extends Fragment {
 
@@ -22,6 +25,14 @@ public class FragmentProfile extends Fragment {
                 Intent gg = new Intent(v_goBack.getContext(), AboutActivity.class);
                 startActivity(gg);
 
+            }
+        });
+
+        final Button v_logout = (Button) profileF.findViewById(R.id.btn_logout);
+        v_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
             }
         });
 

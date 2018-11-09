@@ -1,5 +1,6 @@
 package com.example.hx_loom.evpa;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -14,6 +15,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    View fragmentAuth ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -94,13 +99,13 @@ public class MainActivity extends AppCompatActivity {
 //                }
 
                 ImageView imageAction = (ImageView) findViewById(R.id.action_add);
-                if (tab.getPosition() == 1 || tab.getPosition() == 2){
+                if (tab.getPosition() == 1 || tab.getPosition() == 2) {
                     imageAction.setVisibility(View.INVISIBLE);
-                }else{
+                } else {
                     imageAction.setVisibility(View.VISIBLE);
                 }
 
-                    viewPager.setCurrentItem(tab.getPosition());
+                viewPager.setCurrentItem(tab.getPosition());
 
             }
 
@@ -116,36 +121,35 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    BottomSheetDialog dialog;
     public void actionAdd(View view) {
-        if(mAuth.getCurrentUser().getUid().isEmpty()){
-            View fragmentAuth = getLayoutInflater().inflate(R.layout.fragment_authentication_login, null);
-            BottomSheetDialog dialog = new BottomSheetDialog(this);
+    dialog = new BottomSheetDialog(this);
+        if (mAuth.getCurrentUser() == null) {
+            fragmentAuth = getLayoutInflater().inflate(R.layout.fragment_authentication_login, null);
             dialog.setContentView(fragmentAuth);
             dialog.show();
         }
 
 
-
-
-
     }
 
     public void action_login(View view) {
-         EditText form_username = (EditText) view.findViewById(R.id.form_username);
-         EditText form_password =  (EditText) view.findViewById(R.id.form_password);
+
+
+
         String email = "ilhamwork19@gmail.com";
-        toastMessage("Email : " +email);
+        toastMessage("Email : " + email);
         String pass = "nokiax6";
-        toastMessage("pass : " +pass);
+        toastMessage("pass : " + pass);
         mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("tes", "createUserWithEmail:success");
+                    dialog.dismiss();
                     FirebaseUser user = mAuth.getCurrentUser();
-                    toastMessage("nama : " +user.getUid());
+                    toastMessage("nama : " + user.getUid());
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(String.valueOf(MainActivity.this), "createUserWithEmail:failure", task.getException());
@@ -159,10 +163,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void toastMessage(String s) {
-        Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 
-    private void listenLogin(){
+    private void listenLogin() {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {

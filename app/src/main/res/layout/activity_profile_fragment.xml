@@ -206,10 +206,11 @@
 
         <Button style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
+            android:id="@+id/btn_logout"
             android:layout_height="match_parent"
             android:background="@color/deepcover"
             android:layout_marginTop="20dp"
-            android:text="Keluar Aplikasi"
+            android:text="Logout"
        />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

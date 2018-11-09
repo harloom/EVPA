@@ -68,20 +68,27 @@
             android:backgroundTint="@color/colorSilver"
             android:inputType="textPassword"
             />
-
-        <Button
-            android:id="@+id/button_login"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/form_password"
-            android:background="@color/purpleHeader"
-            android:text="Login"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:onClick="action_login"/>
+            android:id="@+id/button_login"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/form_password">
+            <Button
+
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purpleHeader"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:onClick="action_login"
+                />
+        </LinearLayout>
+
 
     <LinearLayout
         android:padding="10dp"

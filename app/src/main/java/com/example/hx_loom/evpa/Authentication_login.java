@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Authentication_login extends BottomSheetDialogFragment {
 
 
+    EditText txt_username,txt_password;
     public Authentication_login() {
     }
 
@@ -33,13 +34,11 @@ public class Authentication_login extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-
-
         View authentiactionLogin = inflater.inflate(R.layout.fragment_authentication_login, container, false);
+        txt_username = authentiactionLogin.findViewById(R.id.form_username);
+        txt_password = authentiactionLogin.findViewById(R.id.form_password);
         return authentiactionLogin;
     }
-
 
 
 }

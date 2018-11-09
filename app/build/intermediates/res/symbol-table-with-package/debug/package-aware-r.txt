@@ -927,6 +927,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_logout
 id buttonPanel
 id button_login
 id cancel_action
