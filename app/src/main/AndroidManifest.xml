@@ -21,7 +21,7 @@
         <activity android:name=".FragmentProfile" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".Authentication_login"></activity>
+        <activity android:name=".Authentication_login" />
     </application>
 
 </manifest>

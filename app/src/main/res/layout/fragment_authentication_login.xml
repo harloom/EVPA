@@ -11,8 +11,7 @@
     android:layout_marginBottom="300dp"
     app:behavior_hideable="true"
     app:behavior_peekHeight="60dp"
-    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
-    tools:context=".MainActivity">
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
 
 
@@ -68,14 +67,10 @@
             android:backgroundTint="@color/colorSilver"
             android:inputType="textPassword"
             />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_login"
-            android:layout_marginTop="30dp"
-            android:layout_below="@id/form_password">
-            <Button
 
+
+            <Button
+                android:id="@+id/button_login"
 
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -85,9 +80,10 @@
                 android:text="Login"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:onClick="action_login"
+                android:layout_below="@id/form_password"
+
                 />
-        </LinearLayout>
+
 
 
     <LinearLayout

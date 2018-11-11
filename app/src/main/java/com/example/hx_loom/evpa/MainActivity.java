@@ -1,22 +1,17 @@
 package com.example.hx_loom.evpa;
 
-import android.app.Fragment;
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
-import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -31,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    View fragmentAuth ;
+    private Authentication_login login = new Authentication_login();
+    FragmentManager fragmentManagerLogin = getSupportFragmentManager();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +102,16 @@ public class MainActivity extends AppCompatActivity {
                     imageAction.setVisibility(View.VISIBLE);
                 }
 
-                viewPager.setCurrentItem(tab.getPosition());
+                    //validation login
+                if (mAuth.getCurrentUser() == null && tab.getPosition() == 2) {
+
+                    loginShow();
+                    tabLayout.getTabAt(0).select();
+
+                } else {
+                    viewPager.setCurrentItem(tab.getPosition());
+                }
+
 
             }
 
@@ -121,46 +127,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    BottomSheetDialog dialog;
     public void actionAdd(View view) {
-    dialog = new BottomSheetDialog(this);
+
         if (mAuth.getCurrentUser() == null) {
-            fragmentAuth = getLayoutInflater().inflate(R.layout.fragment_authentication_login, null);
-            dialog.setContentView(fragmentAuth);
-            dialog.show();
+           loginShow();
+
         }
 
 
     }
-
-    public void action_login(View view) {
-
-
-
-        String email = "ilhamwork19@gmail.com";
-        toastMessage("Email : " + email);
-        String pass = "nokiax6";
-        toastMessage("pass : " + pass);
-        mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d("tes", "createUserWithEmail:success");
-                    dialog.dismiss();
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    toastMessage("nama : " + user.getUid());
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(String.valueOf(MainActivity.this), "createUserWithEmail:failure", task.getException());
-                    Toast.makeText(MainActivity.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
-
+    private void loginShow(){
+        login.show(fragmentManagerLogin, "Login");
     }
+
 
     private void toastMessage(String s) {
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
@@ -179,6 +158,9 @@ public class MainActivity extends AppCompatActivity {
                     // User is signed out
                     Log.d("Error", "onAuthStateChanged:signed_out");
                     toastMessage("Successfully signed out.");
+                    if(login != null){
+                        getSupportFragmentManager().beginTransaction().remove(login).commit();
+                    }
                 }
                 // ...
             }

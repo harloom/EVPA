@@ -33,6 +33,8 @@ public class FragmentProfile extends Fragment {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
+
+
             }
         });
 
