@@ -1022,6 +1022,8 @@ id parent_home
 id parent_matrix
 id percent
 id pin
+id profile_image
+id profile_nama
 id progress_circular
 id progress_horizontal
 id radio
