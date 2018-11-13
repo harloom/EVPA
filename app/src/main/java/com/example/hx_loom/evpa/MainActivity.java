@@ -1,5 +1,6 @@
 package com.example.hx_loom.evpa;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -132,6 +133,10 @@ public class MainActivity extends AppCompatActivity {
         if (mAuth.getCurrentUser() == null) {
            loginShow();
 
+        }else{
+            Intent showFormPost = new Intent(view.getContext(),PostEventFormActivity.class);
+            startActivity(showFormPost);
+
         }
 
 
@@ -139,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
     private void loginShow(){
         login.show(fragmentManagerLogin, "Login");
     }
+
+
 
 
     private void toastMessage(String s) {

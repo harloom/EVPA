@@ -147,10 +147,6 @@ activity#com.example.hx_loom.evpa.AboutActivity
 ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:23:9-51
 	android:name
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:23:19-48
-activity#com.example.hx_loom.evpa.Authentication_login
-ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:24:9-58
-	android:name
-		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:24:19-55
 activity#com.example.hx_loom.evpa.PostEventFormActivity
 ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:25:9-68
 	android:name

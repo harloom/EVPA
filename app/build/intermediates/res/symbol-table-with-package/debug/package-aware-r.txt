@@ -826,6 +826,7 @@ drawable backgorund_card_line_pink
 drawable backgorund_card_line_purpel
 drawable backgorund_card_line_yellow
 drawable background_header
+drawable background_textinput_stroke
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -857,6 +858,7 @@ drawable hifumi
 drawable ic_access_time
 drawable ic_apk
 drawable ic_arrow_back
+drawable ic_camera
 drawable ic_date_draw
 drawable ic_face_black
 drawable ic_home
@@ -920,6 +922,7 @@ id all
 id always
 id appbar
 id appbar_detail
+id appbar_post
 id async
 id auto
 id backfromAbout
@@ -996,6 +999,8 @@ id left
 id light
 id line1
 id line3
+id line_spinner
+id linerformPost
 id listMode
 id list_item
 id logo_loginApp
@@ -1022,12 +1027,16 @@ id parent_home
 id parent_matrix
 id percent
 id pin
+id post_detail
+id post_judul
+id post_spinner
 id profile_image
 id profile_nama
 id progress_circular
 id progress_horizontal
 id radio
 id recycler_view
+id recycler_viewImage
 id right
 id right_icon
 id right_side
@@ -1087,6 +1096,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id tool_post
 id toolbar
 id toolbar_detail
 id top
@@ -1196,6 +1206,7 @@ mipmap ic_accountboook
 mipmap ic_add
 mipmap ic_apk
 mipmap ic_appheader
+mipmap ic_camera
 mipmap ic_copyrigth
 mipmap ic_date
 mipmap ic_doraemon

@@ -13,6 +13,11 @@ public class PostEventFormActivity extends AppCompatActivity {
     }
 
     public void backMenu(View view) {
-        isFinishing();
+        finish();
+    }
+
+    @Override
+    public boolean isDestroyed() {
+        return super.isDestroyed();
     }
 }
