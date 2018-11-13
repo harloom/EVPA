@@ -36,6 +36,7 @@
         <activity android:name="com.example.hx_loom.evpa.DetailActivity" />
         <activity android:name="com.example.hx_loom.evpa.AboutActivity" />
         <activity android:name="com.example.hx_loom.evpa.Authentication_login" />
+        <activity android:name="com.example.hx_loom.evpa.PostEventFormActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

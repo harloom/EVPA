@@ -44,10 +44,11 @@ public class Authentication_login extends BottomSheetDialogFragment {
             public void onClick(View v) {
                 String value_u = form_username.getText().toString();
                 String value_p = form_password.getText().toString();
-                if(!(value_u.equals("")) || !(value_p.equals(""))){
-                    action_login(value_u, value_p);
-                }else{
+                if(value_u.isEmpty() || (value_p.isEmpty())){
                     toastMessage("Username / Password is Empty");
+                }else{
+
+                    action_login(value_u, value_p);
                 }
 
 

@@ -15,35 +15,34 @@
         android:padding="5dp"
         android:elevation="6dp"
         >
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="0dp"
             android:layout_gravity="center"
             android:background="@color/deepcover"
-            android:orientation="vertical">
+           >
             <ImageView
-                android:layout_weight="1"
                 android:id="@+id/profile_image"
                 android:layout_width="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_centerInParent="true"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_face_black"
                 android:scaleType="center"/>
             <TextView
-                android:layout_weight="1"
+                android:layout_marginTop="50dp"
+                android:layout_centerHorizontal="true"
                 android:id="@+id/profile_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_below="@id/profile_image"
                 android:text="vpa"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:paddingBottom="10dp"/>
-        </LinearLayout>
+        </RelativeLayout>
 
 
         <!--info-->
@@ -153,7 +152,7 @@
                         android:layout_weight="1"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:text="Ilham solehudin"
+                        android:text="Comming Soon"
                         android:textColor="@color/deepcover"
                         android:gravity="left|center"
                         android:paddingStart="30dp"/>
