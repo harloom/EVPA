@@ -152,6 +152,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\4f264f0f34c395f851e9d87d8814fcbb\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\layout_image_view_list_post.xml.flat",
+        "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\layout\\image_view_list_post.xml"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_appheader.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\mipmap-hdpi\\ic_appheader.png"
     },
@@ -236,12 +240,12 @@
         "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_apk.png"
     },
     {
-        "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
-        "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6b7feed71f7b639f7c1ffda9b9fbaed5\\res\\animator-v21\\design_appbar_state_list_animator.xml"
-    },
-    {
         "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_camera.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_camera.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
+        "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6b7feed71f7b639f7c1ffda9b9fbaed5\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -1248,6 +1252,10 @@
         "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\xml_filepaths.xml.flat",
+        "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\EasyImage-2.1.0.aar\\d76755fff0f8fd14eb6918d683bf3759\\res\\xml\\filepaths.xml"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
@@ -1356,12 +1364,12 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\68776ac62f6292480796014370eeec07\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_profile_s.png.flat",
-        "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\drawable-mdpi\\ic_profile_s.png"
-    },
-    {
         "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_camera.png.flat",
         "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\mipmap-hdpi\\ic_camera.png"
+    },
+    {
+        "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_profile_s.png.flat",
+        "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\drawable-mdpi\\ic_profile_s.png"
     },
     {
         "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",

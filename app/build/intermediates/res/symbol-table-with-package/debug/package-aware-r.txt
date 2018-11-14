@@ -931,6 +931,7 @@ id beginning
 id blocking
 id bottom
 id btn_logout
+id btn_pitcurePost
 id buttonPanel
 id button_login
 id cancel_action
@@ -989,6 +990,7 @@ id ifRoom
 id image
 id imageLogo
 id image_event
+id image_viewPost
 id info
 id invisible
 id italic
@@ -1182,6 +1184,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_authentication_login
+layout image_view_list_post
 layout list_home
 layout notification_action
 layout notification_action_tombstone
@@ -1735,3 +1738,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml filepaths
