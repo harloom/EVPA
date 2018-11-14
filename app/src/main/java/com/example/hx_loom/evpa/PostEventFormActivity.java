@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -40,7 +41,6 @@ public class PostEventFormActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_viewImage);
         buttonPicture = findViewById(R.id.btn_pitcurePost);
-
         if (savedInstanceState != null) {
             photos = (ArrayList<File>) savedInstanceState.getSerializable(PHOTO_KEYS);
         }
@@ -61,7 +61,7 @@ public class PostEventFormActivity extends AppCompatActivity {
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EasyImage.openChooserWithGallery(PostEventFormActivity.this,  "Photo Or Gallery Senpai",  0);
+                EasyImage.openChooserWithGallery(PostEventFormActivity.this,  "Camera/Gallery Senpai",  0);
             }
         });
 
@@ -71,7 +71,12 @@ public class PostEventFormActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        Nammu.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        try {
+            Nammu.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        }catch (Exception e){
+
+        }
+
     }
 
     @Override
@@ -103,6 +108,7 @@ public class PostEventFormActivity extends AppCompatActivity {
     private void onPhotosRetruning(List<File> __photos){
         /* add photos Array */
         photos.addAll(__photos);
+        Log.d("Array","Array Photos : "+photos);
         imagePostAdapter.notifyDataSetChanged();
         recyclerView.scrollToPosition(photos.size() -1 );
     }
