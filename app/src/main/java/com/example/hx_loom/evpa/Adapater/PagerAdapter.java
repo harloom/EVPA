@@ -3,6 +3,7 @@ package com.example.hx_loom.evpa.Adapater;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.ViewGroup;
 
 import com.example.hx_loom.evpa.FragmentHome;
 import com.example.hx_loom.evpa.FragmentProfile;
@@ -42,4 +43,5 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
         return mNumOfTabs;
     }
+
 }
