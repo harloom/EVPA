@@ -935,6 +935,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_cal
 id btn_logout
 id btn_pitcurePost
 id buttonPanel
@@ -997,6 +998,7 @@ id image
 id imageLogo
 id image_event
 id image_viewPost
+id img_cal
 id info
 id invisible
 id italic
@@ -1097,6 +1099,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView
+id text_cal
 id text_input_password_toggle
 id textinput_counter
 id textinput_error

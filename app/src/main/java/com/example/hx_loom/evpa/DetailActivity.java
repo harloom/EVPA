@@ -85,9 +85,9 @@ public class DetailActivity extends AppCompatActivity {
         this.v_namaLokasi = v_namaLokasi;
     }
 
-    void DetailData() {
-
-    }
+//    void DetailData() {
+//
+//    }
 
 //    public String getV_judul() {
 //        return v_judul;

@@ -30,11 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private Authentication_login login = new Authentication_login();
     FragmentManager fragmentManagerLogin = getSupportFragmentManager();
 
-
+    static final String STATE_BERANDA = "Home";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        if(savedInstanceState != null){
+//
+//        }
         mAuth = FirebaseAuth.getInstance();
         listenLogin();
         //
