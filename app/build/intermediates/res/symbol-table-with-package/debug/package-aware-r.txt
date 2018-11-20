@@ -938,6 +938,7 @@ id bottom
 id btn_cal
 id btn_logout
 id btn_pitcurePost
+id btn_time
 id buttonPanel
 id button_login
 id cancel_action
@@ -1123,6 +1124,7 @@ id txtJamEvent
 id txtJudulEvent
 id txtNamaLokasiEvent
 id txtTanggalEvent
+id txt_time
 id uniform
 id up
 id useLogo

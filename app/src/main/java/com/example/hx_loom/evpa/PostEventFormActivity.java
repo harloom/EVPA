@@ -2,6 +2,8 @@ package com.example.hx_loom.evpa;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.PersistableBundle;
@@ -15,16 +17,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.hx_loom.evpa.Adapater.ImagePostAdapter;
 
 import java.io.File;
+import java.net.IDN;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import pl.aprilapps.easyphotopicker.DefaultCallback;
 import pl.aprilapps.easyphotopicker.EasyImage;
@@ -36,8 +42,10 @@ public class PostEventFormActivity extends AppCompatActivity {
     private static final String PHOTO_KEYS = "P_Evpa";
     protected RecyclerView recyclerView;
     protected View buttonPicture ,
-            buttonCalender;
+            buttonCalender,
+            buttonTime;
     private  DatePickerDialog.OnDateSetListener date;
+    private TimePickerDialog timePickerDialog;
     private TextView txt_cal ;
     private ImagePostAdapter imagePostAdapter;
     private ArrayList<File> photos = new ArrayList<>();
@@ -53,6 +61,7 @@ public class PostEventFormActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_viewImage);
         buttonPicture = findViewById(R.id.btn_pitcurePost);
         buttonCalender= findViewById(R.id.btn_cal);
+        buttonTime = findViewById(R.id.btn_time);
         txt_cal = findViewById(R.id.text_cal);
         if (savedInstanceState != null) {
             photos = (ArrayList<File>) savedInstanceState.getSerializable(PHOTO_KEYS);
@@ -84,6 +93,14 @@ public class PostEventFormActivity extends AppCompatActivity {
                 new  DatePickerDialog(PostEventFormActivity.this,date,myCalendar
                 .get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
+        });
+
+        buttonTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTime();
+            }
+
         });
 
 
@@ -128,6 +145,7 @@ public class PostEventFormActivity extends AppCompatActivity {
 
     private void onPhotosRetruning(List<File> __photos){
         /* add photos Array */
+        recyclerView.setVisibility(View.VISIBLE);
         photos.addAll(__photos);
         Log.d("Array","Array Photos : "+photos);
         imagePostAdapter.notifyDataSetChanged();
@@ -195,21 +213,39 @@ public class PostEventFormActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                   int dayOfMonth) {
-                // TODO Auto-generated method stub
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
+                updateLabelDate();
             }
 
         };
     }
 
-    private void updateLabel() {
+    private void getTime(){
+        timePickerDialog = new TimePickerDialog(PostEventFormActivity.this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                updateLabelTime(hourOfDay + "."+ minute);
+            }
+        },myCalendar.get(Calendar.HOUR_OF_DAY),myCalendar.get(Calendar.MINUTE),true);
+
+        timePickerDialog.show();
+
+    }
+
+    private void updateLabelDate() {
         String myFormat = "dd/MM/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ENGLISH);
         txt_cal.setText(sdf.format(myCalendar.getTime()));
     }
+
+    private  void updateLabelTime(String s){
+       TextView v_time =  findViewById(R.id.txt_time);
+       v_time.setText(s+ " " +TimeZone.getDefault().getDisplayName(false,TimeZone.SHORT));
+    }
+
+
 }
 
 
