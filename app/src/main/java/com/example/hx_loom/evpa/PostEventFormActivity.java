@@ -26,7 +26,14 @@ import android.widget.Toast;
 import com.example.hx_loom.evpa.Adapater.ImagePostAdapter;
 import com.example.hx_loom.evpa.Adapater.MapAdpater;
 import com.example.hx_loom.evpa.Model.MapModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.GeoPoint;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.File;
 import java.net.IDN;
@@ -44,16 +51,20 @@ import pl.tajchert.nammu.Nammu;
 import pl.tajchert.nammu.PermissionCallback;
 
 public class PostEventFormActivity extends AppCompatActivity {
+    //firebase
+    FirebaseFirestore dbMap = FirebaseFirestore.getInstance();
+
+    //deklrasi custom
     private Calendar myCalendar;
     private static final String PHOTO_KEYS = "P_Evpa";
     private RecyclerView recyclerView;
-    private View buttonPicture ,
+    private View buttonPicture,
             buttonCalender,
             buttonTime;
     private Spinner spinnerMap;
-    private  DatePickerDialog.OnDateSetListener date;
+    private DatePickerDialog.OnDateSetListener date;
     private TimePickerDialog timePickerDialog;
-    private TextView txt_cal ;
+    private TextView txt_cal;
     private ImagePostAdapter imagePostAdapter;
     private ArrayList<File> photos = new ArrayList<>();
     private ArrayList<MapModel> mapModels;
@@ -62,31 +73,23 @@ public class PostEventFormActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /*firebasefirestore setting*/
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setTimestampsInSnapshotsEnabled(true)
+                .build();
+        dbMap.setFirestoreSettings(settings);
+        /*     */
         setContentView(R.layout.activity_post_event_form);
         myCalendar = Calendar.getInstance();
         getCalender();
-        addMap();
         recyclerView = findViewById(R.id.recycler_viewImage);
         buttonPicture = findViewById(R.id.btn_pitcurePost);
-        buttonCalender= findViewById(R.id.btn_cal);
+        buttonCalender = findViewById(R.id.btn_cal);
         buttonTime = findViewById(R.id.btn_time);
         txt_cal = findViewById(R.id.text_cal);
-        spinnerMap = (Spinner)findViewById(R.id.post_spinner);
-
-        MapAdpater mapAdpater = new MapAdpater(getApplicationContext(),mapModels);
-        spinnerMap.setAdapter(mapAdpater);
-
-        spinnerMap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), Double.toString(mapModels.get(position).getGps().getLatitude()), Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        spinnerMap = (Spinner) findViewById(R.id.post_spinner);
+        addMap();
 
 
 
@@ -111,15 +114,15 @@ public class PostEventFormActivity extends AppCompatActivity {
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EasyImage.openChooserWithGallery(PostEventFormActivity.this,  "Camera/Gallery Senpai",  0);
+                EasyImage.openChooserWithGallery(PostEventFormActivity.this, "Camera/Gallery Senpai", 0);
             }
         });
 
         buttonCalender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new  DatePickerDialog(PostEventFormActivity.this,date,myCalendar
-                .get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                new DatePickerDialog(PostEventFormActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
 
@@ -134,10 +137,44 @@ public class PostEventFormActivity extends AppCompatActivity {
 
     }
 
-    void addMap(){
+    private void addMap() {
         mapModels = new ArrayList<>();
-        mapModels.add(new MapModel("Unv1","Universitas Teknokrat", new GeoPoint(-5.3823227,105.25785840000003)));
-        mapModels.add(new MapModel("Unv2","IBI Darmajaya", new GeoPoint(-5.377377,105.250413)));
+        dbMap.collection("Map").orderBy("namaLokasi",Query.Direction.ASCENDING)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                                Log.d("MAP DATABASE", document.getId() + " => " + document.getData());
+
+                                mapModels.add(new MapModel(document.getId(), document.getString("namaLokasi"),
+                                        document.getGeoPoint("Gps")));
+
+                            }
+                                MapAdpater mapAdpater = new MapAdpater(getApplicationContext(), mapModels);
+                                spinnerMap.setAdapter(mapAdpater);
+
+                                spinnerMap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        Log.d("MAP DATABASE", mapModels.get(position).getNameLokasi());
+                                        Toast.makeText(getApplicationContext(), mapModels.get(position).getGps().toString(), Toast.LENGTH_LONG).show();
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+
+                        } else {
+//                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+
     }
 
 
@@ -145,8 +182,8 @@ public class PostEventFormActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         try {
-            Nammu.onRequestPermissionsResult(requestCode,permissions,grantResults);
-        }catch (Exception e){
+            Nammu.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        } catch (Exception e) {
 
         }
 
@@ -178,13 +215,13 @@ public class PostEventFormActivity extends AppCompatActivity {
         });
     }
 
-    private void onPhotosRetruning(List<File> __photos){
+    private void onPhotosRetruning(List<File> __photos) {
         /* add photos Array */
         recyclerView.setVisibility(View.VISIBLE);
         photos.addAll(__photos);
-        Log.d("Array","Array Photos : "+photos);
+        Log.d("Array", "Array Photos : " + photos);
         imagePostAdapter.notifyDataSetChanged();
-        recyclerView.scrollToPosition(photos.size() -1 );
+        recyclerView.scrollToPosition(photos.size() - 1);
     }
 
     public void backMenu(View view) {
@@ -197,11 +234,10 @@ public class PostEventFormActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
-        outState.putSerializable(PHOTO_KEYS,photos);
+        outState.putSerializable(PHOTO_KEYS, photos);
     }
 
 
@@ -242,8 +278,8 @@ public class PostEventFormActivity extends AppCompatActivity {
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 
-    private void getCalender(){
-            date = new DatePickerDialog.OnDateSetListener() {
+    private void getCalender() {
+        date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -257,13 +293,13 @@ public class PostEventFormActivity extends AppCompatActivity {
         };
     }
 
-    private void getTime(){
+    private void getTime() {
         timePickerDialog = new TimePickerDialog(PostEventFormActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                updateLabelTime(hourOfDay + "."+ minute);
+                updateLabelTime(hourOfDay + "." + minute);
             }
-        },myCalendar.get(Calendar.HOUR_OF_DAY),myCalendar.get(Calendar.MINUTE),true);
+        }, myCalendar.get(Calendar.HOUR_OF_DAY), myCalendar.get(Calendar.MINUTE), true);
 
         timePickerDialog.show();
 
@@ -275,9 +311,9 @@ public class PostEventFormActivity extends AppCompatActivity {
         txt_cal.setText(sdf.format(myCalendar.getTime()));
     }
 
-    private  void updateLabelTime(String s){
-       TextView v_time =  findViewById(R.id.txt_time);
-       v_time.setText(s+ " " +TimeZone.getDefault().getDisplayName(false,TimeZone.SHORT));
+    private void updateLabelTime(String s) {
+        TextView v_time = findViewById(R.id.txt_time);
+        v_time.setText(s + " " + TimeZone.getDefault().getDisplayName(false, TimeZone.SHORT));
     }
 
 
