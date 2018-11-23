@@ -248,6 +248,10 @@
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6b7feed71f7b639f7c1ffda9b9fbaed5\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
+        "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_map.xml.flat",
+        "source": "D:\\0DayDigital\\Evpa\\Evpa\\app\\src\\main\\res\\layout\\list_map.xml"
+    },
+    {
         "merged": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\68776ac62f6292480796014370eeec07\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },

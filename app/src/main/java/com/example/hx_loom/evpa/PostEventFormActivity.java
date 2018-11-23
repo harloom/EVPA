@@ -14,13 +14,19 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.hx_loom.evpa.Adapater.ImagePostAdapter;
+import com.example.hx_loom.evpa.Adapater.MapAdpater;
+import com.example.hx_loom.evpa.Model.MapModel;
+import com.google.firebase.firestore.GeoPoint;
 
 import java.io.File;
 import java.net.IDN;
@@ -40,15 +46,17 @@ import pl.tajchert.nammu.PermissionCallback;
 public class PostEventFormActivity extends AppCompatActivity {
     private Calendar myCalendar;
     private static final String PHOTO_KEYS = "P_Evpa";
-    protected RecyclerView recyclerView;
-    protected View buttonPicture ,
+    private RecyclerView recyclerView;
+    private View buttonPicture ,
             buttonCalender,
             buttonTime;
+    private Spinner spinnerMap;
     private  DatePickerDialog.OnDateSetListener date;
     private TimePickerDialog timePickerDialog;
     private TextView txt_cal ;
     private ImagePostAdapter imagePostAdapter;
     private ArrayList<File> photos = new ArrayList<>();
+    private ArrayList<MapModel> mapModels;
 
 
     @Override
@@ -57,12 +65,32 @@ public class PostEventFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post_event_form);
         myCalendar = Calendar.getInstance();
         getCalender();
-
+        addMap();
         recyclerView = findViewById(R.id.recycler_viewImage);
         buttonPicture = findViewById(R.id.btn_pitcurePost);
         buttonCalender= findViewById(R.id.btn_cal);
         buttonTime = findViewById(R.id.btn_time);
         txt_cal = findViewById(R.id.text_cal);
+        spinnerMap = (Spinner)findViewById(R.id.post_spinner);
+
+        MapAdpater mapAdpater = new MapAdpater(getApplicationContext(),mapModels);
+        spinnerMap.setAdapter(mapAdpater);
+
+        spinnerMap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), Double.toString(mapModels.get(position).getGps().getLatitude()), Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+
         if (savedInstanceState != null) {
             photos = (ArrayList<File>) savedInstanceState.getSerializable(PHOTO_KEYS);
         }
@@ -105,6 +133,13 @@ public class PostEventFormActivity extends AppCompatActivity {
 
 
     }
+
+    void addMap(){
+        mapModels = new ArrayList<>();
+        mapModels.add(new MapModel("Unv1","Universitas Teknokrat", new GeoPoint(-5.3823227,105.25785840000003)));
+        mapModels.add(new MapModel("Unv2","IBI Darmajaya", new GeoPoint(-5.377377,105.250413)));
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
