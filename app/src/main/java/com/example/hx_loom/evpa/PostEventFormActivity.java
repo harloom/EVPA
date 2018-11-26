@@ -6,13 +6,17 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +33,8 @@ import com.example.hx_loom.evpa.Adapater.MapAdpater;
 import com.example.hx_loom.evpa.Model.AddEventModel;
 import com.example.hx_loom.evpa.Model.MapModel;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -72,15 +78,15 @@ public class PostEventFormActivity extends AppCompatActivity {
     private ImagePostAdapter imagePostAdapter;
     private ArrayList<File> photos = new ArrayList<>();
     private ArrayList<MapModel> mapModels;
-    private  ArrayList<String> namePhotos = new ArrayList<>();
-
+    private ArrayList<String> namePhotos = new ArrayList<>();
+    private TextInputEditText judul, des;
     /* variable id*/
     protected String uuid;
     protected String displayName;
     protected String namaLokasi;
     protected String date_;
     protected String time_;
-    protected GeoPoint gps_ ;
+    protected GeoPoint gps_;
 
 
     @Override
@@ -93,6 +99,7 @@ public class PostEventFormActivity extends AppCompatActivity {
                 .build();
         db.setFirestoreSettings(settings);
         /*     */
+
         setContentView(R.layout.activity_post_event_form);
         myCalendar = Calendar.getInstance();
         getCalender();
@@ -105,6 +112,56 @@ public class PostEventFormActivity extends AppCompatActivity {
         addMap();
 
 
+        /*function watch*/
+        judul = (TextInputEditText) findViewById(R.id.post_judul);
+        des = (TextInputEditText) findViewById(R.id.post_detail);
+        judul.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() > 0) {
+
+                    findViewById(R.id.post_submit).setVisibility(View.VISIBLE);
+                }
+                if (s.length() == 0) {
+
+                    findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        des.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() > 0) {
+
+                    findViewById(R.id.post_submit).setVisibility(View.VISIBLE);
+                }
+                if (s.length() == 0) {
+
+                    findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        /**/
 
 
         if (savedInstanceState != null) {
@@ -127,9 +184,9 @@ public class PostEventFormActivity extends AppCompatActivity {
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(photos.size() >5){
+                if (photos.size() > 5) {
                     toastMessage("Photo Maxsimal 5");
-                }else{
+                } else {
                     EasyImage.openChooserWithGallery(PostEventFormActivity.this, "Camera/Gallery Senpai", 0);
                 }
 
@@ -157,7 +214,7 @@ public class PostEventFormActivity extends AppCompatActivity {
 
     private void addMap() {
         mapModels = new ArrayList<>();
-        db.collection("Map").orderBy("namaLokasi",Query.Direction.ASCENDING)
+        db.collection("Map").orderBy("namaLokasi", Query.Direction.ASCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -170,23 +227,23 @@ public class PostEventFormActivity extends AppCompatActivity {
                                         document.getGeoPoint("Gps")));
 
                             }
-                                final MapAdpater mapAdpater = new MapAdpater(getApplicationContext(), mapModels);
-                                spinnerMap.setAdapter(mapAdpater);
+                            final MapAdpater mapAdpater = new MapAdpater(getApplicationContext(), mapModels);
+                            spinnerMap.setAdapter(mapAdpater);
 
-                                spinnerMap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                    @Override
-                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                        Log.d("MAP DATABASE", mapModels.get(position).getNameLokasi());
-                                        gps_  = mapModels.get(position).getGps();
-                                        namaLokasi = mapModels.get(position).getNameLokasi();
-                                        Toast.makeText(getApplicationContext(), mapModels.get(position).getGps().toString(), Toast.LENGTH_LONG).show();
-                                    }
+                            spinnerMap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                @Override
+                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                    Log.d("MAP DATABASE", mapModels.get(position).getNameLokasi());
+                                    gps_ = mapModels.get(position).getGps();
+                                    namaLokasi = mapModels.get(position).getNameLokasi();
+                                    Toast.makeText(getApplicationContext(), mapModels.get(position).getGps().toString(), Toast.LENGTH_LONG).show();
+                                }
 
-                                    @Override
-                                    public void onNothingSelected(AdapterView<?> parent) {
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent) {
 
-                                    }
-                                });
+                                }
+                            });
 
                         } else {
 //                            Log.w(TAG, "Error getting documents.", task.getException());
@@ -240,10 +297,9 @@ public class PostEventFormActivity extends AppCompatActivity {
         recyclerView.setVisibility(View.VISIBLE);
         photos.addAll(__photos);
         String path = String.valueOf(__photos);
-        String filename=path.substring(path.lastIndexOf("/")+1);
-        namePhotos.add(filename);
-
-//        Log.d("Array", "Array Photos : " + photos);
+        String filename = path.substring(path.lastIndexOf("/") + 1);
+        String fix = filename.substring(0, filename.lastIndexOf(']'));
+        namePhotos.add(fix);
         imagePostAdapter.notifyDataSetChanged();
         recyclerView.scrollToPosition(photos.size() - 1);
     }
@@ -342,31 +398,40 @@ public class PostEventFormActivity extends AppCompatActivity {
         v_time.setText(s + " " + TimeZone.getDefault().getDisplayName(false, TimeZone.SHORT));
     }
 
-    private void postEventFunction(){
+    private void postEventFunction() {
 
         getUserId();
-        EditText judul = (EditText) findViewById(R.id.post_judul);
-        EditText des = (EditText) findViewById(R.id.post_detail);
+
         String txt_judul = judul.getText().toString();
         String txt_des = des.getText().toString();
         int tahun = myCalendar.get(Calendar.YEAR);
         int bulan = myCalendar.get(Calendar.MONTH);
         int day = myCalendar.get(Calendar.DAY_OF_MONTH);
+        int hours = myCalendar.get(Calendar.HOUR_OF_DAY);
+        int minute = myCalendar.get(Calendar.MINUTE);
         int second = myCalendar.get(Calendar.SECOND);
-        String  idDoc = "BE"+tahun+bulan+day+second;
+        String idDoc = "E" + tahun + bulan + day +hours+ minute + second;
 
-//        ArrayList<String> nameImage = new ArrayList<String>();
-//        for (int i= 0 ; i<photos.size();i++){
-//            nameImage.add( photos.getName());
-//        }
 
         Log.d("Photos name", String.valueOf(namePhotos));
-        AddEventModel addEventModel = new AddEventModel(uuid,txt_judul,txt_des,namaLokasi,gps_,date_,time_,namePhotos);
-        db.collection("Events").document(idDoc).set(addEventModel);
+        AddEventModel addEventModel = new AddEventModel(uuid, txt_judul, txt_des, namaLokasi, gps_, date_, time_, namePhotos);
+        db.collection("Events").document(idDoc).set(addEventModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                toastMessage("Data Berhasil Di Inputkan");
+                finish();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                toastMessage("Data Gagal Dinputkan");
+            }
+        });
+
 
     }
 
-    private  void getUserId(){
+    private void getUserId() {
         Intent intent = getIntent();
         uuid = intent.getStringExtra("getID");
         displayName = intent.getStringExtra("getNameid");

@@ -865,6 +865,7 @@ drawable ic_apk
 drawable ic_arrow_back
 drawable ic_camera
 drawable ic_date_draw
+drawable ic_error
 drawable ic_face_black
 drawable ic_home
 drawable ic_home_s
@@ -1005,6 +1006,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id judul_detail
+id l_password
 id largeLabel
 id left
 id light
@@ -1041,6 +1043,7 @@ id pin
 id post_detail
 id post_judul
 id post_spinner
+id post_submit
 id profile_image
 id profile_nama
 id progress_circular

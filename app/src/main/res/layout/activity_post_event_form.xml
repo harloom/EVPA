@@ -36,14 +36,16 @@
                 android:textColor="@color/white"
                 android:textSize="20sp" />
             <TextView
+                android:id="@+id/post_submit"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_gravity="right"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:onClick="post_submit"
                 android:paddingRight="30dp"
                 android:paddingLeft="30dp"
                 android:text="Post"
+                android:visibility="invisible"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 />
@@ -69,19 +71,8 @@
                 android:background="@color/white"
                 android:orientation="vertical">
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/post_judul"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:hint="Judul Event ?"
-                    android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:textSize="15sp" />
 
-
-
-                    <android.support.v7.widget.RecyclerView
+                <android.support.v7.widget.RecyclerView
                         android:id="@+id/recycler_viewImage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -94,6 +85,21 @@
                         android:padding="10dp" />
 
 
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:hintEnabled="false">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/post_judul"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Judul Event ?"
+                        android:inputType="text"
+                        android:paddingLeft="15dp"
+                        android:textSize="15sp" />
+                </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/post_detail"

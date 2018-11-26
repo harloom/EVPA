@@ -166,11 +166,11 @@ public class MainActivity extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d("Succes", "onAuthStateChanged:signed_in:" + user.getUid());
-                    toastMessage("Successfully signed in with: " + user.getEmail());
+//                    toastMessage("Successfully signed in with: " + user.getEmail());
                 } else {
                     // User is signed out
                     Log.d("Error", "onAuthStateChanged:signed_out");
-                    toastMessage("Successfully signed out.");
+//                    toastMessage("Successfully signed out.");
                     if(login != null){
                         getSupportFragmentManager().beginTransaction().remove(login).commit();
                     }
