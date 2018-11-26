@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
+import android.net.Uri;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -43,6 +44,9 @@ import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.google.type.Date;
 
 import java.io.File;
@@ -63,7 +67,8 @@ import pl.tajchert.nammu.PermissionCallback;
 public class PostEventFormActivity extends AppCompatActivity {
     //firebase
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
     //deklrasi custom
     private Calendar myCalendar;
     private static final String PHOTO_KEYS = "P_Evpa";
@@ -411,6 +416,27 @@ public class PostEventFormActivity extends AppCompatActivity {
         int minute = myCalendar.get(Calendar.MINUTE);
         int second = myCalendar.get(Calendar.SECOND);
         String idDoc = "E" + tahun + bulan + day +hours+ minute + second;
+
+        StorageReference Events = storageRef.child("Events");
+        for(int i = 0 ; i < photos.size();i++){
+            Uri file = Uri.fromFile(photos.get(i));
+            StorageReference idEvents = Events.child(idDoc+"/"+file.getLastPathSegment());
+            UploadTask  uploadTask= idEvents.putFile(file);
+            // Register observers to listen for when the download is done or if it fails
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    // Handle unsuccessful uploads
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                }
+            });
+
+        }
+
 
 
         Log.d("Photos name", String.valueOf(namePhotos));
