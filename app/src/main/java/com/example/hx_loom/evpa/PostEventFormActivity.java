@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -25,15 +26,18 @@ import android.widget.Toast;
 
 import com.example.hx_loom.evpa.Adapater.ImagePostAdapter;
 import com.example.hx_loom.evpa.Adapater.MapAdpater;
+import com.example.hx_loom.evpa.Model.AddEventModel;
 import com.example.hx_loom.evpa.Model.MapModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.type.Date;
 
 import java.io.File;
 import java.net.IDN;
@@ -52,7 +56,7 @@ import pl.tajchert.nammu.PermissionCallback;
 
 public class PostEventFormActivity extends AppCompatActivity {
     //firebase
-    FirebaseFirestore dbMap = FirebaseFirestore.getInstance();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     //deklrasi custom
     private Calendar myCalendar;
@@ -68,6 +72,15 @@ public class PostEventFormActivity extends AppCompatActivity {
     private ImagePostAdapter imagePostAdapter;
     private ArrayList<File> photos = new ArrayList<>();
     private ArrayList<MapModel> mapModels;
+    private  ArrayList<String> namePhotos = new ArrayList<>();
+
+    /* variable id*/
+    protected String uuid;
+    protected String displayName;
+    protected String namaLokasi;
+    protected String date_;
+    protected String time_;
+    protected GeoPoint gps_ ;
 
 
     @Override
@@ -78,7 +91,7 @@ public class PostEventFormActivity extends AppCompatActivity {
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .setTimestampsInSnapshotsEnabled(true)
                 .build();
-        dbMap.setFirestoreSettings(settings);
+        db.setFirestoreSettings(settings);
         /*     */
         setContentView(R.layout.activity_post_event_form);
         myCalendar = Calendar.getInstance();
@@ -114,7 +127,12 @@ public class PostEventFormActivity extends AppCompatActivity {
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EasyImage.openChooserWithGallery(PostEventFormActivity.this, "Camera/Gallery Senpai", 0);
+                if(photos.size() >5){
+                    toastMessage("Photo Maxsimal 5");
+                }else{
+                    EasyImage.openChooserWithGallery(PostEventFormActivity.this, "Camera/Gallery Senpai", 0);
+                }
+
             }
         });
 
@@ -139,7 +157,7 @@ public class PostEventFormActivity extends AppCompatActivity {
 
     private void addMap() {
         mapModels = new ArrayList<>();
-        dbMap.collection("Map").orderBy("namaLokasi",Query.Direction.ASCENDING)
+        db.collection("Map").orderBy("namaLokasi",Query.Direction.ASCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -152,13 +170,15 @@ public class PostEventFormActivity extends AppCompatActivity {
                                         document.getGeoPoint("Gps")));
 
                             }
-                                MapAdpater mapAdpater = new MapAdpater(getApplicationContext(), mapModels);
+                                final MapAdpater mapAdpater = new MapAdpater(getApplicationContext(), mapModels);
                                 spinnerMap.setAdapter(mapAdpater);
 
                                 spinnerMap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                         Log.d("MAP DATABASE", mapModels.get(position).getNameLokasi());
+                                        gps_  = mapModels.get(position).getGps();
+                                        namaLokasi = mapModels.get(position).getNameLokasi();
                                         Toast.makeText(getApplicationContext(), mapModels.get(position).getGps().toString(), Toast.LENGTH_LONG).show();
                                     }
 
@@ -219,7 +239,11 @@ public class PostEventFormActivity extends AppCompatActivity {
         /* add photos Array */
         recyclerView.setVisibility(View.VISIBLE);
         photos.addAll(__photos);
-        Log.d("Array", "Array Photos : " + photos);
+        String path = String.valueOf(__photos);
+        String filename=path.substring(path.lastIndexOf("/")+1);
+        namePhotos.add(filename);
+
+//        Log.d("Array", "Array Photos : " + photos);
         imagePostAdapter.notifyDataSetChanged();
         recyclerView.scrollToPosition(photos.size() - 1);
     }
@@ -308,15 +332,51 @@ public class PostEventFormActivity extends AppCompatActivity {
     private void updateLabelDate() {
         String myFormat = "dd/MM/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ENGLISH);
+        date_ = sdf.format(myCalendar.getTime());
         txt_cal.setText(sdf.format(myCalendar.getTime()));
     }
 
     private void updateLabelTime(String s) {
         TextView v_time = findViewById(R.id.txt_time);
+        time_ = s;
         v_time.setText(s + " " + TimeZone.getDefault().getDisplayName(false, TimeZone.SHORT));
     }
 
+    private void postEventFunction(){
 
+        getUserId();
+        EditText judul = (EditText) findViewById(R.id.post_judul);
+        EditText des = (EditText) findViewById(R.id.post_detail);
+        String txt_judul = judul.getText().toString();
+        String txt_des = des.getText().toString();
+        int tahun = myCalendar.get(Calendar.YEAR);
+        int bulan = myCalendar.get(Calendar.MONTH);
+        int day = myCalendar.get(Calendar.DAY_OF_MONTH);
+        int second = myCalendar.get(Calendar.SECOND);
+        String  idDoc = "BE"+tahun+bulan+day+second;
+
+//        ArrayList<String> nameImage = new ArrayList<String>();
+//        for (int i= 0 ; i<photos.size();i++){
+//            nameImage.add( photos.getName());
+//        }
+
+        Log.d("Photos name", String.valueOf(namePhotos));
+        AddEventModel addEventModel = new AddEventModel(uuid,txt_judul,txt_des,namaLokasi,gps_,date_,time_,namePhotos);
+        db.collection("Events").document(idDoc).set(addEventModel);
+
+    }
+
+    private  void getUserId(){
+        Intent intent = getIntent();
+        uuid = intent.getStringExtra("getID");
+        displayName = intent.getStringExtra("getNameid");
+
+    }
+
+
+    public void post_submit(View view) {
+        postEventFunction();
+    }
 }
 
 

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private Authentication_login login = new Authentication_login();
     FragmentManager fragmentManagerLogin = getSupportFragmentManager();
+    FirebaseUser user ;
 
     static final String STATE_BERANDA = "Home";
     @Override
@@ -138,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
 
         }else{
             Intent showFormPost = new Intent(view.getContext(),PostEventFormActivity.class);
+            showFormPost.putExtra("getID",user.getUid());
+            showFormPost.putExtra("getNameid",user.getDisplayName());
             startActivity(showFormPost);
 
         }
@@ -159,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
+                 user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
                     Log.d("Succes", "onAuthStateChanged:signed_in:" + user.getUid());
