@@ -35,7 +35,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="0095ff" />
+                                                <entry key="color" value="c13aad" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -46,7 +46,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_circle_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_music_note_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -67,11 +67,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="cropped" value="true" />
                                       <entry key="iconShape" value="NONE" />
                                       <entry key="imageAsset" value="D:\0DayDigital\Icon Dan Corel\Assets\Icons\Ic_camera\ic_camera.png" />
-                                      <entry key="outputName" value="ic_camera" />
+                                      <entry key="outputName" value="ic_music" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -118,7 +117,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/alert/ic_error_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_music_note_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -128,8 +127,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="c11b10" />
-                            <entry key="outputName" value="ic_error" />
+                            <entry key="color" value="c13aad" />
+                            <entry key="outputName" value="ic_music" />
                             <entry key="sourceFile" value="C:\Users\Hx-loom" />
                           </map>
                         </option>

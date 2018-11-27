@@ -49,6 +49,13 @@ public class FragmentProfile extends Fragment {
     public void onViewCreated(@NonNull View view, @android.support.annotation.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadData();
+
+        view.findViewById(R.id.toHiburan).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), MusicHiburanActivity.class) );
+            }
+        });
     }
 
     @Override
