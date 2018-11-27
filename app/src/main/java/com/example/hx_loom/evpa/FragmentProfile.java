@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -34,7 +35,6 @@ import javax.annotation.Nullable;
 
 public class FragmentProfile extends Fragment {
     private FirebaseAuth mAuth;
-    private Activity activity;
     private String uid;
     ImageView image_p;
     TextView nama_p;
@@ -76,10 +76,13 @@ public class FragmentProfile extends Fragment {
 
         final Button v_logout = (Button) profileF.findViewById(R.id.btn_logout);
         v_logout.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-
+                Intent intent = getActivity().getIntent();
+                getActivity().finish();
+                startActivity(intent);
             }
         });
 

@@ -22,8 +22,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
     private Button siButton;
     private Button doTinggiButton;
 
-    private SoundPool soundPool1,soundPool2,soundPool3,soundPool4,soundPool5,
-            soundPool6,soundPool7,soundPool8;
+    private SoundPool soundPool1;
     int soundID1,soundID2,soundID3,soundID4,soundID5,soundID6,soundID7,soundID8;
     boolean plays = false, loaded = false;
     float actVolume, maxVolume, volume;
@@ -49,20 +48,18 @@ public class MusicHiburanActivity extends AppCompatActivity {
         //load music first
         soundPool1 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
         soundID1 = soundPool1.load(this, R.raw.nada_do_rendah, 1);
-        soundPool2 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        soundID2 = soundPool2.load(this, R.raw.re, 2);
-        soundPool3 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        soundID3 = soundPool3.load(this, R.raw.mi, 3);
-        soundPool4 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        soundID4 = soundPool4.load(this, R.raw.fa, 4);
-        soundPool5 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        soundID5 = soundPool5.load(this, R.raw.so, 2);
-        soundPool6 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        soundID6 = soundPool6.load(this, R.raw.la, 2);
-        soundPool7 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        soundID7 = soundPool7.load(this, R.raw.si, 2);
-        soundPool8 = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        soundID8 = soundPool8.load(this, R.raw.do_tinggi, 2);
+        soundID2 = soundPool1.load(this, R.raw.re, 2);
+
+        soundID3 = soundPool1.load(this, R.raw.mi, 3);
+
+        soundID4 = soundPool1.load(this, R.raw.fa, 4);
+
+        soundID5 = soundPool1.load(this, R.raw.so, 2);
+
+        soundID6 = soundPool1.load(this, R.raw.la, 2);
+
+        soundID7 = soundPool1.load(this, R.raw.si, 2);
+        soundID8 = soundPool1.load(this, R.raw.do_tinggi, 2);
 
 
 
@@ -177,34 +174,34 @@ public class MusicHiburanActivity extends AppCompatActivity {
         }
          if(arg == 2){
 
-             soundPool2.play(soundID2, volume, volume, 1, 0, 1f);
+             soundPool1.play(soundID2, volume, volume, 1, 0, 1f);
 
         }
          if(arg == 3) {
 
-             soundPool3.play(soundID3, volume, volume, 1, 0, 1f);
+             soundPool1.play(soundID3, volume, volume, 1, 0, 1f);
 
          }
          if(arg == 4) {
-             soundPool4.play(soundID4, volume, volume, 1, 0, 1f);
+             soundPool1.play(soundID4, volume, volume, 1, 0, 1f);
 
          }
          if(arg == 5) {
-             soundPool5.play(soundID5, volume, volume, 1, 0, 1f);
+             soundPool1.play(soundID5, volume, volume, 1, 0, 1f);
 
          }
          if(arg == 6) {
 
-             soundPool6.play(soundID6, volume, volume, 1, 0, 1f);
+             soundPool1.play(soundID6, volume, volume, 1, 0, 1f);
 
          }
          if(arg == 7) {
 
-             soundPool7.play(soundID7, volume, volume, 1, 0, 1f);
+             soundPool1.play(soundID7, volume, volume, 1, 0, 1f);
 
          }
          if(arg == 8) {
-             soundPool8.play(soundID8, volume, volume, 1, 0, 1f);
+             soundPool1.play(soundID8, volume, volume, 1, 0, 1f);
          }
 
     }
