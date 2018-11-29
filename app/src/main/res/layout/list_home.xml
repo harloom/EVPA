@@ -16,9 +16,11 @@
             android:orientation="vertical"
             android:padding="2dp"
             android:id="@+id/parent_home">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
                 android:background="@drawable/linearshapebottom">
                 <!-- TextView Judul -->
                 <TextView
@@ -27,7 +29,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:textColor="@color/blackflat"
-
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/txtJamEvent"
@@ -42,13 +43,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:background="@drawable/linearshapebottom">
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    >
                     <!-- ImageView Foto -->
                     <ImageView
                         android:id="@+id/image_event"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_home"
+                        android:layout_height="100dp"
+                        android:background="@color/colorSilver"
                         android:layout_weight="3"/>
                     <!--Penjelasan Singkat-->
                     <TextView
@@ -56,7 +59,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Pada Tanggal 13 App Event Lampung telah launcing pada protoype 1"
                         android:paddingLeft="10dp"
                         android:paddingTop="15dp"/>
 
@@ -71,6 +73,7 @@
                             android:background="@drawable/linearshapebottom">
                             <LinearLayout
                                 android:layout_width="match_parent"
+                                android:padding="5dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_weight="1">
@@ -85,7 +88,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="19/10/2018"
+
                                     android:gravity="center"/>
                             </LinearLayout>
 
@@ -93,6 +96,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:padding="5dp"
                                 android:orientation="horizontal">
                                 <ImageView
                                     android:layout_width="match_parent"
@@ -103,10 +107,9 @@
                                 <TextView
                                     android:id="@+id/txtNamaLokasiEvent"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Kedaton"
-                                    android:gravity="center"/>
+                                    android:gravity="center_vertical"/>
                             </LinearLayout>
 
 

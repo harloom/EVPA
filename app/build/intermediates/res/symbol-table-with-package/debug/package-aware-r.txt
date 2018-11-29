@@ -997,6 +997,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageDetail
 id imageLogo
 id image_event
 id image_viewPost
@@ -1016,6 +1017,10 @@ id line_spinner
 id linerformPost
 id listMode
 id list_item
+id loading_events
+id loading_eventsList
+id loading_imageDetai
+id loading_login
 id logo_loginApp
 id masked
 id media_actions

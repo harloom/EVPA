@@ -1,34 +1,47 @@
 package com.example.hx_loom.evpa.Model;
 
+import com.google.firebase.firestore.GeoPoint;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class EventLampung {
-    private String idEvent;
+    private String idEvents;
+    private String idUsers;
     private String namaEvent;
-    private String tanggalEvent;
-    private String jamEvent;
+    private String desEvent;
     private String namaLokasi;
-    private String lokasiGPS;
-    private String detailEvent;
-    private Integer likeEvent;
+    private GeoPoint lokasiGps;
+    private String date;
+    private String time;
+    private ArrayList imgUrl;
 
-    public EventLampung(String idEvent, String namaEvent, String tanggalEvent, String jamEvent, String namaLokasi, String lokasiGPS, String detailEvent, Integer likeEvent) {
-        this.idEvent = idEvent;
+    public EventLampung(String idEvents, String idUsers, String namaEvent, String desEvent, String namaLokasi, GeoPoint lokasiGps, String date, String time, ArrayList imgUrl) {
+        this.idEvents = idEvents;
+        this.idUsers = idUsers;
         this.namaEvent = namaEvent;
-        this.tanggalEvent = tanggalEvent;
-        this.jamEvent = jamEvent;
+        this.desEvent = desEvent;
         this.namaLokasi = namaLokasi;
-        this.lokasiGPS = lokasiGPS;
-        this.detailEvent = detailEvent;
-        this.likeEvent = likeEvent;
+        this.lokasiGps = lokasiGps;
+        this.date = date;
+        this.time = time;
+        this.imgUrl = imgUrl;
     }
 
-    public String getIdEvent() {
-        return idEvent;
+    public String getIdEvents() {
+        return idEvents;
     }
 
-    public void setIdEvent(String idEvent) {
-        this.idEvent = idEvent;
+    public void setIdEvents(String idEvents) {
+        this.idEvents = idEvents;
+    }
+
+    public String getIdUsers() {
+        return idUsers;
+    }
+
+    public void setIdUsers(String idUsers) {
+        this.idUsers = idUsers;
     }
 
     public String getNamaEvent() {
@@ -39,20 +52,12 @@ public class EventLampung {
         this.namaEvent = namaEvent;
     }
 
-    public String getTanggalEvent() {
-        return tanggalEvent;
+    public String getDesEvent() {
+        return desEvent;
     }
 
-    public void setTanggalEvent(String tanggalEvent) {
-        this.tanggalEvent = tanggalEvent;
-    }
-
-    public String getJamEvent() {
-        return jamEvent;
-    }
-
-    public void setJamEvent(String jamEvent) {
-        this.jamEvent = jamEvent;
+    public void setDesEvent(String desEvent) {
+        this.desEvent = desEvent;
     }
 
     public String getNamaLokasi() {
@@ -63,27 +68,35 @@ public class EventLampung {
         this.namaLokasi = namaLokasi;
     }
 
-    public String getLokasiGPS() {
-        return lokasiGPS;
+    public GeoPoint getLokasiGps() {
+        return lokasiGps;
     }
 
-    public void setLokasiGPS(String lokasiGPS) {
-        this.lokasiGPS = lokasiGPS;
+    public void setLokasiGps(GeoPoint lokasiGps) {
+        this.lokasiGps = lokasiGps;
     }
 
-    public String getDetailEvent() {
-        return detailEvent;
+    public String getDate() {
+        return date;
     }
 
-    public void setDetailEvent(String detailEvent) {
-        this.detailEvent = detailEvent;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public Integer getLikeEvent() {
-        return likeEvent;
+    public String getTime() {
+        return time;
     }
 
-    public void setLikeEvent(Integer likeEvent) {
-        this.likeEvent = likeEvent;
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public ArrayList getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(ArrayList imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

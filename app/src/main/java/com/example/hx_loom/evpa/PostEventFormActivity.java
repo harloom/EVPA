@@ -417,10 +417,10 @@ public class PostEventFormActivity extends AppCompatActivity {
         int second = myCalendar.get(Calendar.SECOND);
         String idDoc = "E" + tahun + bulan + day +hours+ minute + second;
 
-        StorageReference Events = storageRef.child("Events");
+        StorageReference events = storageRef.child("Events");
         for(int i = 0 ; i < photos.size();i++){
             Uri file = Uri.fromFile(photos.get(i));
-            StorageReference idEvents = Events.child(idDoc+"/"+file.getLastPathSegment());
+            StorageReference idEvents = events.child(idDoc+"/"+file.getLastPathSegment());
             UploadTask  uploadTask= idEvents.putFile(file);
             // Register observers to listen for when the download is done or if it fails
             uploadTask.addOnFailureListener(new OnFailureListener() {
