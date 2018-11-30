@@ -83,24 +83,25 @@ public class DetailActivity extends AppCompatActivity {
 
         /* download gambar*/
         StorageReference imageEvents = storageReference.child("Events");
-        StorageReference idEvents = imageEvents.child(_detailData.v_idEvents + "/" + _detailData.getImgUrl().get(0));
-        idEvents.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get()
-                        .load(uri)
-                        .fit()
-                        .centerCrop()
-                        .into((ImageView) findViewById(R.id.imageDetail));
-                progress_image.setVisibility(View.INVISIBLE);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                //erroro
-            }
-        });
-
+        if(_detailData.getImgUrl().size() != 0) {
+            StorageReference idEvents = imageEvents.child(_detailData.v_idEvents + "/" + _detailData.getImgUrl().get(0));
+            idEvents.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Picasso.get()
+                            .load(uri)
+                            .fit()
+                            .centerCrop()
+                            .into((ImageView) findViewById(R.id.imageDetail));
+                    progress_image.setVisibility(View.INVISIBLE);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    //erroro
+                }
+            });
+        }
     }
 
 

@@ -1020,6 +1020,7 @@ id list_item
 id loading_events
 id loading_eventsList
 id loading_imageDetai
+id loading_imageList
 id loading_login
 id logo_loginApp
 id masked

@@ -46,13 +46,27 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="5dp"
                     >
-                    <!-- ImageView Foto -->
-                    <ImageView
-                        android:id="@+id/image_event"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:background="@color/colorSilver"
-                        android:layout_weight="3"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3">
+                        <ImageView
+                            android:id="@+id/image_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@color/colorSilver"
+                            />
+                        <ProgressBar
+                            android:id="@+id/loading_imageList"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:visibility="invisible"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                           />
+                    </RelativeLayout>
+                    <!-- ImageView Foto -->
+
                     <!--Penjelasan Singkat-->
                     <TextView
                         android:id="@+id/txtDetailEvent"

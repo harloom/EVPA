@@ -3,6 +3,7 @@ package com.example.hx_loom.evpa.Adapater;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -58,22 +60,28 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
 
         /* download gambar*/
         StorageReference imageEvents = storageReference.child("Events");
-        StorageReference idEvents = imageEvents.child(dataList.get(position).getIdEvents()+"/"+dataList.get(position).getImgUrl().get(0));
-        idEvents.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get()
-                        .load(uri)
-                        .fit()
-                        .centerCrop()
-                        .into(holder.imgE);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                //erroro
-            }
-        });
+        if(dataList.get(position).getImgUrl().size() != 0){
+            StorageReference idEvents = imageEvents.child(dataList.get(position).getIdEvents()+"/"+dataList.get(position).getImgUrl().get(0));
+            holder.imgE.setImageResource(0);
+            holder.loading_imageList.setVisibility(View.VISIBLE);
+            idEvents.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Picasso.get()
+                            .load(uri)
+                            .fit()
+                            .centerCrop()
+                            .into(holder.imgE);
+                    holder.loading_imageList.setVisibility(View.INVISIBLE);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    //erroro
+                }
+            });
+        }
+
 
 
 
@@ -113,6 +121,7 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                 txt_JamEvent;
         private ImageView imgE;
         private LinearLayout parent_home;
+        private ProgressBar loading_imageList;
 
         public EventLampungViewHolder(View itemView) {
             super(itemView);
@@ -123,6 +132,8 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
             txt_JamEvent = (TextView) itemView.findViewById(R.id.txtJamEvent);
             parent_home = (LinearLayout) itemView.findViewById(R.id.parent_home);
             imgE = (ImageView) itemView.findViewById(R.id.image_event);
+            loading_imageList = (ProgressBar) itemView.findViewById(R.id.loading_imageList);
+            loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white),PorterDuff.Mode.SRC_IN);
 
         }
     }

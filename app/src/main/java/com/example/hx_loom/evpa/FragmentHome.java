@@ -46,6 +46,7 @@ public class FragmentHome extends Fragment {
     protected int mPostsPerPage = 5;
     protected boolean isScrolling;
     protected boolean isLastItem;
+    protected  boolean nextQueryComplate ;
     ProgressBar loading_events,loading_list;
 
     @Override
@@ -64,18 +65,18 @@ public class FragmentHome extends Fragment {
     }
 
     private void addData() {
-
+        eventLampungArrayList.clear();
         final Query first;
         first = db.collection("Events").limit(mPostsPerPage);
         first.get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-
+                        nextQueryComplate = true;
                         for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                             if (doc.getId() != null) {
                                 ArrayList<String> groupImg = (ArrayList<String>) doc.get("imgUrl");
-                                Log.d("Data FireStore", doc.getId() + " => " + doc.getData());
+//                                Log.d("Data FireStore", doc.getId() + " => " + doc.getData());
                                 eventLampungArrayList.add(new EventLampung(doc.getId(), doc.getString("idUsers"), doc.getString("namaEvent"),
                                         doc.getString("desEvent"), doc.getString("namaLokasi"),
                                         doc.getGeoPoint("lokasiGps"), doc.getString("date"), doc.getString("time"),
@@ -83,7 +84,7 @@ public class FragmentHome extends Fragment {
 
                             }
                         }
-                        listHomeAdapter.notifyDataSetChanged();
+                        recyclerView.setAdapter(listHomeAdapter);
                         loading_events.setVisibility(View.GONE);
                         lastVisible = queryDocumentSnapshots.getDocuments()
                                 .get(queryDocumentSnapshots.size() - 1);
@@ -94,8 +95,9 @@ public class FragmentHome extends Fragment {
                             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                                 super.onScrollStateChanged(recyclerView, newState);
 
-                                if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
+                                if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL && nextQueryComplate) {
                                     isScrolling = true;
+                                    nextQueryComplate = false;
                                 }
                             }
 
@@ -107,12 +109,11 @@ public class FragmentHome extends Fragment {
                                 int visibleItemCount = layoutManager.getChildCount();
                                 int totalItemCount = layoutManager.getItemCount();
 
-                                if (isScrolling && (firstVisibleItem + visibleItemCount == totalItemCount) && !isLastItem) {
+                                if (isScrolling && (firstVisibleItem + visibleItemCount == totalItemCount) && !isLastItem ) {
                                     isScrolling = false;
                                     Query nextQuery = db.collection("Events")
                                             .startAfter(lastVisible)
                                             .limit(mPostsPerPage);
-
                                     loading_list.
                                             setVisibility(View.VISIBLE);
                                     nextQuery.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -121,7 +122,7 @@ public class FragmentHome extends Fragment {
                                             for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                                                 if (doc.getId() != null) {
                                                     ArrayList<String> groupImg = (ArrayList<String>) doc.get("imgUrl");
-                                                    Log.d("Data FireStore", doc.getId() + " => " + doc.getData());
+//                                                    Log.d("Data FireStore", doc.getId() + " => " + doc.getData());
                                                     eventLampungArrayList.add(new EventLampung(doc.getId(), doc.getString("idUsers"), doc.getString("namaEvent"),
                                                             doc.getString("desEvent"), doc.getString("namaLokasi"),
                                                             doc.getGeoPoint("lokasiGps"), doc.getString("date"), doc.getString("time"),
@@ -129,14 +130,16 @@ public class FragmentHome extends Fragment {
 
                                                 }
                                             }
+                                            nextQueryComplate = true;
+                                            lastVisible = queryDocumentSnapshots.getDocuments()
+                                                    .get(queryDocumentSnapshots.size() - 1);
                                             loading_list.setVisibility(View.GONE);
                                             listHomeAdapter.notifyDataSetChanged();
-                                            try{
-                                                lastVisible = queryDocumentSnapshots.getDocuments()
-                                                        .get(queryDocumentSnapshots.size() - 1);
-                                            }catch (Exception e){
+//                                            try{
 
-                                            }
+//                                            }catch (Exception e){
+//
+//                                            }
 
                                             if (queryDocumentSnapshots.size() < mPostsPerPage) {
                                                isLastItem  = true;
@@ -163,7 +166,7 @@ public class FragmentHome extends Fragment {
         listHomeAdapter = new ListHomeAdapter(this, eventLampungArrayList);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(listHomeAdapter);
+
 
 
     }
