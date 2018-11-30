@@ -131,8 +131,11 @@ public class FragmentHome extends Fragment {
                                                 }
                                             }
                                             nextQueryComplate = true;
-                                            lastVisible = queryDocumentSnapshots.getDocuments()
-                                                    .get(queryDocumentSnapshots.size() - 1);
+                                            if(queryDocumentSnapshots.size() != 0){
+                                                lastVisible = queryDocumentSnapshots.getDocuments()
+                                                        .get(queryDocumentSnapshots.size() - 1);
+                                            }
+
                                             loading_list.setVisibility(View.GONE);
                                             listHomeAdapter.notifyDataSetChanged();
 //                                            try{
@@ -141,7 +144,7 @@ public class FragmentHome extends Fragment {
 //
 //                                            }
 
-                                            if (queryDocumentSnapshots.size() < mPostsPerPage) {
+                                            if (queryDocumentSnapshots.size() < mPostsPerPage +1) {
                                                isLastItem  = true;
                                             }
                                         }
