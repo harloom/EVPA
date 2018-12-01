@@ -406,7 +406,6 @@ public class PostEventFormActivity extends AppCompatActivity {
     private void postEventFunction() {
 
         getUserId();
-
         String txt_judul = judul.getText().toString();
         String txt_des = des.getText().toString();
         int tahun = myCalendar.get(Calendar.YEAR);

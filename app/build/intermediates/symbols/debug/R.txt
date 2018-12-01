@@ -1254,10 +1254,11 @@ int mipmap ic_launcher_round 0x7f0b000e
 int mipmap ic_logotim 0x7f0b000f
 int mipmap ic_music 0x7f0b0010
 int mipmap ic_naruto 0x7f0b0011
-int mipmap ic_plan 0x7f0b0012
-int mipmap ic_profile 0x7f0b0013
-int mipmap ic_rank 0x7f0b0014
-int mipmap ic_tempat 0x7f0b0015
+int mipmap ic_noimage 0x7f0b0012
+int mipmap ic_plan 0x7f0b0013
+int mipmap ic_profile 0x7f0b0014
+int mipmap ic_rank 0x7f0b0015
+int mipmap ic_tempat 0x7f0b0016
 int raw do_tinggi 0x7f0c0000
 int raw fa 0x7f0c0001
 int raw la 0x7f0c0002

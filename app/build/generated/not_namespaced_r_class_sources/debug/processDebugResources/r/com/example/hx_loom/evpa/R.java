@@ -4263,10 +4263,11 @@ public final class R {
     public static final int ic_logotim=0x7f0b000f;
     public static final int ic_music=0x7f0b0010;
     public static final int ic_naruto=0x7f0b0011;
-    public static final int ic_plan=0x7f0b0012;
-    public static final int ic_profile=0x7f0b0013;
-    public static final int ic_rank=0x7f0b0014;
-    public static final int ic_tempat=0x7f0b0015;
+    public static final int ic_noimage=0x7f0b0012;
+    public static final int ic_plan=0x7f0b0013;
+    public static final int ic_profile=0x7f0b0014;
+    public static final int ic_rank=0x7f0b0015;
+    public static final int ic_tempat=0x7f0b0016;
   }
   public static final class raw {
     public static final int do_tinggi=0x7f0c0000;

@@ -144,7 +144,7 @@ public class FragmentHome extends Fragment {
 //
 //                                            }
 
-                                            if (queryDocumentSnapshots.size() < mPostsPerPage +1) {
+                                            if (queryDocumentSnapshots.size() < mPostsPerPage ) {
                                                isLastItem  = true;
                                             }
                                         }

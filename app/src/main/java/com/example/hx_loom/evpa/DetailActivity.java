@@ -80,7 +80,8 @@ public class DetailActivity extends AppCompatActivity {
         tx_tanggal.setText((String) _detailData.v_tanggal);
         TextView tx_namaTempat = findViewById(R.id.namaTempat_detail);
         tx_namaTempat.setText((String) _detailData.v_namaLokasi);
-
+        final int sizeWidth = findViewById(R.id.imageDetail).getWidth();
+        final int sizeHigth = findViewById(R.id.imageDetail).getMinimumHeight() ;
         /* download gambar*/
         StorageReference imageEvents = storageReference.child("Events");
         if(_detailData.getImgUrl().size() != 0) {
@@ -90,8 +91,9 @@ public class DetailActivity extends AppCompatActivity {
                 public void onSuccess(Uri uri) {
                     Picasso.get()
                             .load(uri)
-                            .fit()
-                            .centerCrop()
+                            .resize(sizeWidth ,sizeHigth )
+                            .centerInside()
+                            .placeholder(R.color.colorSilver)
                             .into((ImageView) findViewById(R.id.imageDetail));
                     progress_image.setVisibility(View.INVISIBLE);
                 }
@@ -101,6 +103,10 @@ public class DetailActivity extends AppCompatActivity {
                     //erroro
                 }
             });
+        }else{
+            ImageView imageView = (ImageView) findViewById(R.id.imageDetail);
+            imageView.setImageResource(R.mipmap.ic_noimage);
+            progress_image.setVisibility(View.INVISIBLE);
         }
     }
 

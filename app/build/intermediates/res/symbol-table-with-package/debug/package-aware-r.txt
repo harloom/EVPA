@@ -1255,6 +1255,7 @@ mipmap ic_launcher_round
 mipmap ic_logotim
 mipmap ic_music
 mipmap ic_naruto
+mipmap ic_noimage
 mipmap ic_plan
 mipmap ic_profile
 mipmap ic_rank

@@ -70,6 +70,7 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                     Picasso.get()
                             .load(uri)
                             .fit()
+                            .noFade()
                             .centerCrop()
                             .into(holder.imgE);
                     holder.loading_imageList.setVisibility(View.INVISIBLE);
@@ -80,6 +81,10 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                     //erroro
                 }
             });
+        }else{
+
+            holder.imgE.setImageResource(R.mipmap.ic_noimage);
+            holder.loading_imageList.setVisibility(View.INVISIBLE);
         }
 
 
