@@ -16,8 +16,9 @@ public class AddEventModel {
     private String date;
     private String time;
     private ArrayList imgUrl;
+    private Timestamp timestamp;
 
-    public AddEventModel(String idUsers, String namaEvent, String desEvent, String namaLokasi, GeoPoint lokasiGps, String date, String time, ArrayList imgUrl) {
+    public AddEventModel(String idUsers, String namaEvent, String desEvent, String namaLokasi, GeoPoint lokasiGps, String date, String time, ArrayList imgUrl, Timestamp timestamp) {
         this.idUsers = idUsers;
         this.namaEvent = namaEvent;
         this.desEvent = desEvent;
@@ -26,6 +27,7 @@ public class AddEventModel {
         this.date = date;
         this.time = time;
         this.imgUrl = imgUrl;
+        this.timestamp = timestamp;
     }
 
     public String getIdUsers() {
@@ -91,5 +93,13 @@ public class AddEventModel {
 
     public void setImgUrl(ArrayList imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }

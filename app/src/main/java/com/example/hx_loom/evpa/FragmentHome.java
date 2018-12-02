@@ -67,7 +67,8 @@ public class FragmentHome extends Fragment {
     private void addData() {
         eventLampungArrayList.clear();
         final Query first;
-        first = db.collection("Events").limit(mPostsPerPage);
+        first = db.collection("Events")
+                .orderBy("timestamp",Query.Direction.DESCENDING).limit(mPostsPerPage);
         first.get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -112,6 +113,7 @@ public class FragmentHome extends Fragment {
                                 if (isScrolling && (firstVisibleItem + visibleItemCount == totalItemCount) && !isLastItem ) {
                                     isScrolling = false;
                                     Query nextQuery = db.collection("Events")
+                                            .orderBy("timestamp",Query.Direction.DESCENDING)
                                             .startAfter(lastVisible)
                                             .limit(mPostsPerPage);
                                     loading_list.
@@ -171,6 +173,13 @@ public class FragmentHome extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
 
+
+    }
+
+    public void getNearby(GeoPoint geoPoint , Double _distance){
+        double lat = 0.0144927536231884;
+        double lon = 0.0181818181818182;
+        
 
     }
 }

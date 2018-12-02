@@ -37,6 +37,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
@@ -44,6 +45,7 @@ import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.ServerTimestamp;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -91,7 +93,8 @@ public class PostEventFormActivity extends AppCompatActivity {
     protected String namaLokasi;
     protected String date_;
     protected String time_;
-    protected GeoPoint gps_;
+    protected GeoPoint gps_ ;
+    protected Timestamp timeStampDate;
 
 
     @Override
@@ -437,9 +440,10 @@ public class PostEventFormActivity extends AppCompatActivity {
         }
 
 
+        timeStampDate = new Timestamp(Calendar.getInstance().getTime());
 
         Log.d("Photos name", String.valueOf(namePhotos));
-        AddEventModel addEventModel = new AddEventModel(uuid, txt_judul, txt_des, namaLokasi, gps_, date_, time_, namePhotos);
+        AddEventModel addEventModel = new AddEventModel(uuid, txt_judul, txt_des, namaLokasi, gps_, date_, time_, namePhotos,timeStampDate);
         db.collection("Events").document(idDoc).set(addEventModel).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
