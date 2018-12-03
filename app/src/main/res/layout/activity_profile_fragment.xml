@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="0dp"
             android:layout_gravity="center"
-            android:background="@color/white"
+            android:background="@color/colorSilver"
            >
             <ImageView
                 android:id="@+id/profile_image"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/profile_image"
                 android:layout_gravity="center"
-                android:textColor="@color/white"
+                android:textColor="@color/purpleHeader"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:paddingBottom="10dp"/>

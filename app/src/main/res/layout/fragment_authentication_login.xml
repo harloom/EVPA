@@ -82,6 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/group_password"
             android:backgroundTint="@color/colorSilver"
+            android:maxLength="14"
             android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
@@ -119,6 +120,7 @@
             android:text="Anda Belum Punya Akun? " />
 
         <TextView
+            android:id="@+id/action_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"

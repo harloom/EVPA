@@ -25,7 +25,9 @@
         <activity android:name=".DetailActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".PostEventFormActivity" />
-        <activity android:name=".MusicHiburanActivity"></activity>
+        <activity android:name=".MusicHiburanActivity" />
+        <activity android:name=".Auth.RegisterActivity" />
+        <activity android:name=".Auth.RegSetInfo"></activity>
     </application>
 
 </manifest>

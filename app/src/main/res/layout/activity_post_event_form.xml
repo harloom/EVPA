@@ -82,6 +82,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Judul Event ?"
                         android:inputType="text"
+                        android:maxLength="25"
                         android:paddingLeft="15dp"
                         android:textSize="15sp" />
                 </android.support.design.widget.TextInputLayout>

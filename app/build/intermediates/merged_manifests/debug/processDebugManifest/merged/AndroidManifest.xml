@@ -39,6 +39,8 @@
         <activity android:name="com.example.hx_loom.evpa.AboutActivity" />
         <activity android:name="com.example.hx_loom.evpa.PostEventFormActivity" />
         <activity android:name="com.example.hx_loom.evpa.MusicHiburanActivity" />
+        <activity android:name="com.example.hx_loom.evpa.Auth.RegisterActivity" />
+        <activity android:name="com.example.hx_loom.evpa.Auth.RegSetInfo" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"

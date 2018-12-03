@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -17,9 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.hx_loom.evpa.Adapater.PagerAdapter;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.example.hx_loom.evpa.Auth.Authentication_login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
