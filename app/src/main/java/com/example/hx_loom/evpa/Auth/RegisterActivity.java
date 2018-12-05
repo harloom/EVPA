@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (txt_email.getText().toString().isEmpty() || txt_pass.getText().toString().isEmpty() || txt_vPassword.getText().toString().isEmpty()
                         || !txt_email.getText().toString().contains("@")) {
                     toasMassage("Register Failed");
-                }else if (txt_pass.getText().toString().length() <6) {
+                } else if (txt_pass.getText().length()<6 ||txt_vPassword.getText().length() <6 ) {
                     toasMassage("Passowrd Minimal 6 Karakter");
                 } else if (!(txt_pass.getText().toString().equals(txt_vPassword.getText().toString()))) {
                     toasMassage("verikasi Password not Match");
