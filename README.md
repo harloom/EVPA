@@ -8,5 +8,5 @@ Ini adalah Aplikasi Dari TIM Zero-Day Digital Dari Universitas Teknokrat Indones
 
 MIT License
 
-Copyright (c) 2018 Zero-Day Digital
+Copyright (c) 2018 Zero Digital
 
