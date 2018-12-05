@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,6 +27,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.util.Calendar;
@@ -44,7 +47,10 @@ public class RegSetInfo extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ImageView buttonImage;
     protected File imageFile ;
-
+    protected String imageName;
+    protected Boolean isLoadImagae;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference ref = storage.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +112,8 @@ public class RegSetInfo extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                setDatabaseInformation(user.getUid());
+                                toastMessage("succes register");
+//                                setDatabaseInformation(user.getUid());
                             }
                         }
                     });
@@ -117,13 +124,16 @@ public class RegSetInfo extends AppCompatActivity {
     private void setDatabaseInformation(String s){
         String uuid = s;
         Timestamp timestamp = new Timestamp(Calendar.getInstance().getTime());
-        Users users = new Users(i_email,"",txt_name.getText().toString(),timestamp);
-        db.collection("Users").document(uuid).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
 
-            }
-        });
+        Users users = new Users(i_email,imageName,txt_name.getText().toString(),timestamp);
+        Log.d("ViewDataUsers",users+"");
+//        db.collection("Users").document(uuid).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//
+//
+//            }
+//        });
 
     }
 
@@ -163,10 +173,18 @@ public class RegSetInfo extends AppCompatActivity {
 
             @Override
             public void onImagesPicked(@NonNull List<File> list, EasyImage.ImageSource imageSource, int i) {
+
                 imageFile = list.get(0);
+                String path = String.valueOf(list);
+                String filename = path.substring(path.lastIndexOf("/") + 1);
+                String fix = filename.substring(0, filename.lastIndexOf(']'));
+                imageName = fix;
+
                 Glide.with(RegSetInfo.this)
                         .load(imageFile)
                         .into(buttonImage);
+
+                isLoadImagae = true;
             }
             @Override
             public void onCanceled(EasyImage.ImageSource source, int type) {

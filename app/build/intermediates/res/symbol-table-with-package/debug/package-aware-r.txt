@@ -946,6 +946,7 @@ id btn_time
 id buttonPanel
 id button_login
 id button_reg
+id button_setInfo
 id cancel_action
 id center
 id center_horizontal
@@ -1005,9 +1006,11 @@ id image
 id imageDetail
 id imageLogo
 id image_event
+id image_setInfo
 id image_viewPost
 id img_cal
 id info
+id info_setname
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1027,6 +1030,7 @@ id loading_eventsList
 id loading_imageDetai
 id loading_imageList
 id loading_login
+id loading_register
 id logo_loginApp
 id masked
 id media_actions

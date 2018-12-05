@@ -5,30 +5,35 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.hx_loom.evpa.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class RegisterActivity extends AppCompatActivity {
 
-//    private String email;
+    //    private String email;
 //    private String password;
 //    private String password2nd;
-    private Boolean isEmailuse;
 
+    ProgressBar loading_register;
     protected EditText txt_email, txt_pass, txt_vPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        loading_register = (ProgressBar) findViewById(R.id.loading_register) ;
         txt_email = (EditText) findViewById(R.id.reg_email);
         txt_pass = (EditText) findViewById(R.id.reg_password);
         txt_vPassword = (EditText) findViewById(R.id.reg_password_v);
@@ -36,32 +41,39 @@ public class RegisterActivity extends AppCompatActivity {
 
         findViewById(R.id.button_reg).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-                if (txt_email.getText().toString().isEmpty() || txt_email.getText().toString().isEmpty() || txt_email.getText().toString().isEmpty()) {
+            public void onClick(final View v) {
+                loading_register.setVisibility(View.VISIBLE);
+                if (txt_email.getText().toString().isEmpty() || txt_pass.getText().toString().isEmpty() || txt_vPassword.getText().toString().isEmpty()
+                        || !txt_email.getText().toString().contains("@")) {
                     toasMassage("Register Failed");
+                }else if (txt_pass.getText().toString().length() <6) {
+                    toasMassage("Passowrd Minimal 6 Karakter");
+                } else if (!(txt_pass.getText().toString().equals(txt_vPassword.getText().toString()))) {
+                    toasMassage("verikasi Password not Match");
                 } else {
-                    if (txt_pass.getText().toString().equals(txt_vPassword.getText().toString())) {
-                        toasMassage("verikasi Password not Match");
-                    } else {
-                        FirebaseFirestore db = FirebaseFirestore.getInstance();
-                        db.collection("Users").whereEqualTo("email",txt_email.getText().toString())
-                                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                isEmailuse = true;
-                                toasMassage("Email sudah digunakan");
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    db.collection("Users").whereEqualTo("email", txt_email.getText().toString())
+                            .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                        @Override
+                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                            Log.d("Cek Doucment",queryDocumentSnapshots.getDocuments()+"");
+                            if(queryDocumentSnapshots.getDocuments().isEmpty()){
+                                Intent intent = new Intent(v.getContext(), RegSetInfo.class);
+                                intent.putExtra("email", txt_email.getText().toString());
+                                intent.putExtra("password", txt_pass.getText().toString());
+                                intent.putExtra("v_password", txt_vPassword.getText().toString());
+                                startActivity(intent);
+                            }else{
+                                toasMassage("Email Sudah Di gunakan");
                             }
-                        });
-
-                        if(!isEmailuse){
-                            Intent intent = new Intent(v.getContext(),RegSetInfo.class);
-                            intent.putExtra("email",txt_email.getText().toString());
-                            intent.putExtra("password",txt_pass.getText().toString());
-                            intent.putExtra("v_password",txt_vPassword.getText().toString());
-                            startActivity(intent);
+                            loading_register.setVisibility(View.GONE);
                         }
-                    }
+                    });
+
+
+
+
+
                 }
 
 
