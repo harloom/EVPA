@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[0]));
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[1]));
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[2]));
-        tabLayout.setSelectedTabIndicatorHeight(0);
+//        tabLayout.setSelectedTabIndicatorHeight(0);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabTextColors(ColorStateList.valueOf(Color.parseColor("#620E84")));
 

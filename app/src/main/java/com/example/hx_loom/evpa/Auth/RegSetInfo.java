@@ -77,9 +77,9 @@ public class RegSetInfo extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().isEmpty()) {
-                    findViewById(R.id.button_setInfo).setVisibility(View.INVISIBLE);
-                } else {
                     findViewById(R.id.button_setInfo).setVisibility(View.GONE);
+                } else {
+                    findViewById(R.id.button_setInfo).setVisibility(View.VISIBLE);
                 }
             }
 
@@ -119,7 +119,6 @@ public class RegSetInfo extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                toastMessage("succes register");
                                 setDatabaseInformation(user.getUid());
                             }
                         }
@@ -131,7 +130,6 @@ public class RegSetInfo extends AppCompatActivity {
     private void setDatabaseInformation(final String s) {
         String uuid = s;
         final Timestamp timestamp = new Timestamp(Calendar.getInstance().getTime());
-
         Users users = new Users(i_email, imageName, txt_name.getText().toString(), timestamp);
         Log.d("ViewDataUsers", users + "");
         db.collection("Users").document(uuid).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -145,6 +143,7 @@ public class RegSetInfo extends AppCompatActivity {
                     uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            toastMessage("succes register");
                             findViewById(R.id.loading_setinfo).setVisibility(View.GONE
                             );
                             startActivity(homeAcitivity);

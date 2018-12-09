@@ -1029,8 +1029,10 @@ id loading_events
 id loading_eventsList
 id loading_imageDetai
 id loading_imageList
+id loading_imageprofile
 id loading_login
 id loading_register
+id loading_setinfo
 id logo_loginApp
 id masked
 id media_actions

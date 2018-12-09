@@ -45,10 +45,13 @@ public class RegisterActivity extends AppCompatActivity {
                 loading_register.setVisibility(View.VISIBLE);
                 if (txt_email.getText().toString().isEmpty() || txt_pass.getText().toString().isEmpty() || txt_vPassword.getText().toString().isEmpty()
                         || !txt_email.getText().toString().contains("@")) {
+                    loading_register.setVisibility(View.GONE);
                     toasMassage("Register Failed");
                 } else if (txt_pass.getText().length()<6 ||txt_vPassword.getText().length() <6 ) {
+                    loading_register.setVisibility(View.GONE);
                     toasMassage("Passowrd Minimal 6 Karakter");
                 } else if (!(txt_pass.getText().toString().equals(txt_vPassword.getText().toString()))) {
+                    loading_register.setVisibility(View.GONE);
                     toasMassage("verikasi Password not Match");
                 } else {
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
