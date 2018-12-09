@@ -3,6 +3,7 @@ package com.example.hx_loom.evpa.Auth;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -17,10 +18,12 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.hx_loom.evpa.MainActivity;
 import com.example.hx_loom.evpa.Model.Users;
 import com.example.hx_loom.evpa.PostEventFormActivity;
 import com.example.hx_loom.evpa.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.AuthResult;
@@ -29,6 +32,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.util.Calendar;
@@ -41,14 +45,15 @@ import pl.tajchert.nammu.PermissionCallback;
 
 
 public class RegSetInfo extends AppCompatActivity {
-    protected String i_email,i_password,i_vPassword;
+    protected String i_email, i_password, i_vPassword;
     private EditText txt_name;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth;
     private ImageView buttonImage;
-    protected File imageFile ;
+    protected File imageFile;
     protected String imageName;
     protected Boolean isLoadImagae;
+    Intent homeAcitivity;
     FirebaseStorage storage = FirebaseStorage.getInstance();
     StorageReference ref = storage.getReference();
 
@@ -61,6 +66,7 @@ public class RegSetInfo extends AppCompatActivity {
         buttonImage = (ImageView) findViewById(R.id.image_setInfo);
         easyImageSetting();
         getPremmisionFolder();
+        homeAcitivity = new Intent(this, MainActivity.class);
 
         txt_name.addTextChangedListener(new TextWatcher() {
             @Override
@@ -70,10 +76,10 @@ public class RegSetInfo extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.toString().isEmpty()){
+                if (s.toString().isEmpty()) {
                     findViewById(R.id.button_setInfo).setVisibility(View.INVISIBLE);
-                }else{
-                    findViewById(R.id.button_setInfo).setVisibility(View.VISIBLE);
+                } else {
+                    findViewById(R.id.button_setInfo).setVisibility(View.GONE);
                 }
             }
 
@@ -85,6 +91,7 @@ public class RegSetInfo extends AppCompatActivity {
         findViewById(R.id.button_setInfo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                findViewById(R.id.loading_setinfo).setVisibility(View.VISIBLE);
                 getIcommingIntent();
 
             }
@@ -99,21 +106,21 @@ public class RegSetInfo extends AppCompatActivity {
 
     }
 
-    private  void getIcommingIntent(){
+    private void getIcommingIntent() {
         Intent intent = getIntent();
         i_email = intent.getStringExtra("email");
         i_password = intent.getStringExtra("password");
         i_vPassword = intent.getStringExtra("v_password");
 
-        if(i_password.equals(i_vPassword)){
-            mAuth.createUserWithEmailAndPassword(i_email,i_password)
+        if (i_password.equals(i_vPassword)) {
+            mAuth.createUserWithEmailAndPassword(i_email, i_password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 toastMessage("succes register");
-//                                setDatabaseInformation(user.getUid());
+                                setDatabaseInformation(user.getUid());
                             }
                         }
                     });
@@ -121,22 +128,35 @@ public class RegSetInfo extends AppCompatActivity {
 
     }
 
-    private void setDatabaseInformation(String s){
+    private void setDatabaseInformation(final String s) {
         String uuid = s;
-        Timestamp timestamp = new Timestamp(Calendar.getInstance().getTime());
+        final Timestamp timestamp = new Timestamp(Calendar.getInstance().getTime());
 
-        Users users = new Users(i_email,imageName,txt_name.getText().toString(),timestamp);
-        Log.d("ViewDataUsers",users+"");
-//        db.collection("Users").document(uuid).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Void> task) {
-//
-//
-//            }
-//        });
+        Users users = new Users(i_email, imageName, txt_name.getText().toString(), timestamp);
+        Log.d("ViewDataUsers", users + "");
+        db.collection("Users").document(uuid).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Uri uri = Uri.fromFile(imageFile);
+                    StorageReference folderUser = ref.child("Users");
+                    StorageReference imageUser = folderUser.child(s + "/" + uri.getLastPathSegment());
+                    UploadTask uploadTask = imageUser.putFile(uri);
+                    uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            findViewById(R.id.loading_setinfo).setVisibility(View.GONE
+                            );
+                            startActivity(homeAcitivity);
+                            finish();
+                        }
+                    });
+                }
+
+            }
+        });
 
     }
-
 
 
     private void easyImageSetting() {
@@ -169,7 +189,7 @@ public class RegSetInfo extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        EasyImage.handleActivityResult(requestCode, resultCode, data, this, new DefaultCallback(){
+        EasyImage.handleActivityResult(requestCode, resultCode, data, this, new DefaultCallback() {
 
             @Override
             public void onImagesPicked(@NonNull List<File> list, EasyImage.ImageSource imageSource, int i) {
@@ -186,6 +206,7 @@ public class RegSetInfo extends AppCompatActivity {
 
                 isLoadImagae = true;
             }
+
             @Override
             public void onCanceled(EasyImage.ImageSource source, int type) {
                 // Cancel handling, you might wanna remove taken photo if it was canceled
@@ -194,6 +215,7 @@ public class RegSetInfo extends AppCompatActivity {
                     if (photoFile != null) photoFile.delete();
                 }
             }
+
             @Override
             public void onImagePickerError(Exception e, EasyImage.ImageSource source, int type) {
                 super.onImagePickerError(e, source, type);

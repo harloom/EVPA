@@ -28,6 +28,7 @@
                 android:textSize="20sp" />
 
         </android.support.v7.widget.Toolbar>
+
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
@@ -88,8 +89,21 @@
                     android:text="OK"
                     android:visibility="gone"
                     android:textColor="@color/white" />
-            </android.support.v7.widget.CardView>
-        </RelativeLayout>
 
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+        <ProgressBar
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:id="@+id/loading_setinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="5dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+
+            />
     </LinearLayout>
 </RelativeLayout>
