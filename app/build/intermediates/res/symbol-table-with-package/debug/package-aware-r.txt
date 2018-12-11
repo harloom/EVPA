@@ -972,6 +972,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dimensions
+id direcMap
 id direct
 id disableHome
 id edit_query
@@ -1031,6 +1032,7 @@ id loading_imageDetai
 id loading_imageList
 id loading_imageprofile
 id loading_login
+id loading_posting
 id loading_register
 id loading_setinfo
 id logo_loginApp
@@ -1073,6 +1075,7 @@ id profile_image
 id profile_nama
 id progress_circular
 id progress_horizontal
+id progress_text
 id radio
 id recycler_view
 id recycler_viewImage

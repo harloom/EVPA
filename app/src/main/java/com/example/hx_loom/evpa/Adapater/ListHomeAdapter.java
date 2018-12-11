@@ -7,6 +7,7 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,6 +107,21 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
 
         });
 
+        holder.directMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Creates an Intent that will load a map of San Francisco
+                Double lt = dataList.get(position).getLokasiGps().getLatitude();
+                Double ltdude = dataList.get(position).getLokasiGps().getLongitude();
+                String urilMap = "google.navigation:q="+lt+","+ltdude+"&mode=d";
+                Log.d("Map longtitide" ,urilMap);
+                Uri gmmIntentUri = Uri.parse(urilMap);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                mcontext.startActivity(mapIntent);
+            }
+        });
+
     }
 
     @Override
@@ -125,7 +141,8 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                 txt_DetailEvent,
                 txt_JamEvent;
         private ImageView imgE;
-        private LinearLayout parent_home;
+        private LinearLayout parent_home,
+                        directMap;
         private ProgressBar loading_imageList;
 
         public EventLampungViewHolder(View itemView) {
@@ -136,6 +153,7 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
             txt_NamaLokasiEvent = (TextView) itemView.findViewById(R.id.txtNamaLokasiEvent);
             txt_JamEvent = (TextView) itemView.findViewById(R.id.txtJamEvent);
             parent_home = (LinearLayout) itemView.findViewById(R.id.parent_home);
+            directMap = (LinearLayout) itemView.findViewById(R.id.direcMap);
             imgE = (ImageView) itemView.findViewById(R.id.image_event);
             loading_imageList = (ProgressBar) itemView.findViewById(R.id.loading_imageList);
             loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white),PorterDuff.Mode.SRC_IN);

@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
@@ -24,6 +26,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -47,10 +51,12 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.ServerTimestamp;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.type.Date;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.net.IDN;
 import java.text.DateFormat;
@@ -93,7 +99,7 @@ public class PostEventFormActivity extends AppCompatActivity {
     protected String namaLokasi;
     protected String date_;
     protected String time_;
-    protected GeoPoint gps_ ;
+    protected GeoPoint gps_;
     protected Timestamp timeStampDate;
 
 
@@ -407,55 +413,68 @@ public class PostEventFormActivity extends AppCompatActivity {
     }
 
     private void postEventFunction() {
+        final RelativeLayout progressBar = (RelativeLayout) findViewById(R.id.loading_posting);
 
         getUserId();
-        String txt_judul = judul.getText().toString();
-        String txt_des = des.getText().toString();
+        final String txt_judul = judul.getText().toString();
+        final String txt_des = des.getText().toString();
         int tahun = myCalendar.get(Calendar.YEAR);
         int bulan = myCalendar.get(Calendar.MONTH);
         int day = myCalendar.get(Calendar.DAY_OF_MONTH);
         int hours = myCalendar.get(Calendar.HOUR_OF_DAY);
         int minute = myCalendar.get(Calendar.MINUTE);
         int second = myCalendar.get(Calendar.SECOND);
-        String idDoc = "E" + tahun + bulan + day +hours+ minute + second;
+        final String idDoc = "E" + tahun + bulan + day + hours + minute + second;
 
         StorageReference events = storageRef.child("Events");
-        for(int i = 0 ; i < photos.size();i++){
+        for (int i = 0; i < photos.size(); i++) {
             Uri file = Uri.fromFile(photos.get(i));
-            StorageReference idEvents = events.child(idDoc+"/"+file.getLastPathSegment());
-            UploadTask  uploadTask= idEvents.putFile(file);
-            // Register observers to listen for when the download is done or if it fails
+            StorageReference idEvents = events.child(idDoc + "/" + file.getLastPathSegment());
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            Bitmap  bitmap = BitmapFactory.decodeFile(file.getPath());
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+            byte[] data = baos.toByteArray();
+
+
+            UploadTask uploadTask = idEvents.putBytes(data);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
                     // Handle unsuccessful uploads
+                    findViewById(R.id.post_submit).setVisibility(View.VISIBLE);
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    Double progress =  (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                    progressBar.setVisibility(View.VISIBLE);
+                    TextView _i_progreesText = (TextView) findViewById(R.id.progress_text);
+                    _i_progreesText.setText(""+progress.shortValue());
+                    findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    timeStampDate = new Timestamp(Calendar.getInstance().getTime());
 
+                    Log.d("Photos name", String.valueOf(namePhotos));
+                    AddEventModel addEventModel = new AddEventModel(uuid, txt_judul, txt_des, namaLokasi, gps_, date_, time_, namePhotos, timeStampDate);
+                    db.collection("Events").document(idDoc).set(addEventModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            toastMessage("Data Berhasil Di Inputkan");
+                            finish();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            toastMessage("Data Gagal Dinputkan");
+                        }
+                    });
                 }
             });
 
         }
-
-
-        timeStampDate = new Timestamp(Calendar.getInstance().getTime());
-
-        Log.d("Photos name", String.valueOf(namePhotos));
-        AddEventModel addEventModel = new AddEventModel(uuid, txt_judul, txt_des, namaLokasi, gps_, date_, time_, namePhotos,timeStampDate);
-        db.collection("Events").document(idDoc).set(addEventModel).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                toastMessage("Data Berhasil Di Inputkan");
-                finish();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                toastMessage("Data Gagal Dinputkan");
-            }
-        });
 
 
     }

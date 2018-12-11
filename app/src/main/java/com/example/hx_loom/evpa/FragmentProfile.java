@@ -52,7 +52,6 @@ public class FragmentProfile extends Fragment {
     StorageReference storageReference = storage.getReference();
 
 
-
     @Override
     public void onViewCreated(@NonNull View view, @android.support.annotation.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -61,7 +60,7 @@ public class FragmentProfile extends Fragment {
         view.findViewById(R.id.toHiburan).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), MusicHiburanActivity.class) );
+                startActivity(new Intent(getContext(), MusicHiburanActivity.class));
             }
         });
     }
@@ -72,7 +71,7 @@ public class FragmentProfile extends Fragment {
         image_p = profileF.findViewById(R.id.profile_image);
         nama_p = (TextView) profileF.findViewById(R.id.profile_nama);
         loading_imageprofile = (ProgressBar) profileF.findViewById(R.id.loading_imageprofile);
-        loading_imageprofile.getIndeterminateDrawable().setColorFilter(profileF.getResources().getColor(R.color.colorSilver),PorterDuff.Mode.SRC_IN);
+        loading_imageprofile.getIndeterminateDrawable().setColorFilter(profileF.getResources().getColor(R.color.colorSilver), PorterDuff.Mode.SRC_IN);
 
 
         final LinearLayout v_goBack = (LinearLayout) profileF.findViewById(R.id.backfromAbout);
@@ -108,75 +107,85 @@ public class FragmentProfile extends Fragment {
         RequestOptions options = new RequestOptions();
         options.circleCrop();
         options.diskCacheStrategy(DiskCacheStrategy.ALL);
-        if (!tmpurlImage.equals(_urlImage.toString())) {
-            Log.d("Data tmp _urlImage ", _urlImage.toString());
-            if (_urlImage.toString().endsWith("gif")) {
-                if(getActivity() != null) {
+
+        if (_urlImage.toString().endsWith("gif")) {
+            if (getActivity() != null) {
+
+                try {
                     loading_imageprofile.setVisibility(View.INVISIBLE);
                     Glide.with(FragmentProfile.this).asGif()
                             .load(_urlImage).apply(options).into(image_p);
-                }
-            } else {
-                if(getActivity()!=null)
-                    loading_imageprofile.setVisibility(View.INVISIBLE);
-                Glide.with(FragmentProfile.this)
-                        .load(_urlImage).apply(options).into(image_p);
-            }
+                } catch (Exception e) {
 
-            tmpurlImage = _urlImage.toString();
+                }
+
+            }
+        } else {
+            if (getActivity() != null)
+
+                try {
+                    loading_imageprofile.setVisibility(View.INVISIBLE);
+                    Glide.with(FragmentProfile.this)
+                            .load(_urlImage).apply(options).into(image_p);
+                } catch (Exception e) {
+
+                }
+
         }
+
+
         nama_p.setText(_nama);
 
 
     }
 
     private void loadData() {
-            loading_imageprofile.setVisibility(View.VISIBLE);
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                    .setTimestampsInSnapshotsEnabled(true)
-                    .build();
-            db.setFirestoreSettings(settings);
-            mAuth = FirebaseAuth.getInstance();
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-            if (currentUser == null) {
-                return;
-            }
-            uid = currentUser.getUid();
+        loading_imageprofile.setVisibility(View.VISIBLE);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setTimestampsInSnapshotsEnabled(true)
+                .build();
+        db.setFirestoreSettings(settings);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            return;
+        }
+        uid = currentUser.getUid();
 
-            final DocumentReference docUsers = db.collection("Users").document(uid);
-            docUsers.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        final DocumentReference docUsers = db.collection("Users").document(uid);
+        docUsers.addSnapshotListener(new EventListener<DocumentSnapshot>() {
 
-                @Override
-                public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                    if (e != null) {
-                        Log.w("DataBase", "Listen failed.", e);
-                        return;
-                    }
-                    if (documentSnapshot != null && documentSnapshot.exists()) {
-                        Log.d(TAG, "Current data: " + documentSnapshot.getData());
-                        final String dataNama = (String) documentSnapshot.getString("nama");
-                          data_image = (String) documentSnapshot.getString("image_url");
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w("DataBase", "Listen failed.", e);
+                    return;
+                }
+                if (documentSnapshot != null && documentSnapshot.exists()) {
+                    Log.d(TAG, "Current data: " + documentSnapshot.getData());
+                    final String dataNama = (String) documentSnapshot.getString("nama");
+                    data_image = (String) documentSnapshot.getString("image_url");
 //                        Log.d(TAG, "user data: " + dataNama);
 //                        Log.d(TAG, "url_image: " + data_image);
-                        StorageReference users = storageReference.child("Users");
-                        StorageReference imageUsrs = users.child(uid+ "/" + data_image);
-                        imageUsrs.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                setProfile(dataNama, uri);
-                            }
-                        });
+                    StorageReference users = storageReference.child("Users");
+                    StorageReference imageUsrs = users.child(uid + "/" + data_image);
+                    imageUsrs.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            setProfile(dataNama, uri);
+                        }
+                    });
 
 //
 
 
-                    } else {
-                        Log.d(TAG, "Current data: null");
+                } else {
+                    Log.d(TAG, "Current data: null");
 //                        stateLoad=false;
-                    }
                 }
-            });
+            }
+        });
 //        }
 
     }
