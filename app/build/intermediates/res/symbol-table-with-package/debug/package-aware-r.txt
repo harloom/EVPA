@@ -917,6 +917,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_profileData
 id action_reg
 id action_text
 id actions
@@ -960,6 +961,7 @@ id collapseActionView
 id container
 id contentPanel
 id coordinator
+id count_myEvent
 id custom
 id customPanel
 id dark
@@ -1058,6 +1060,12 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id p_image_event
+id p_profieList
+id p_txtDetailEvent
+id p_txtJudulEvent
+id p_txtNamaLokasiEvent
+id p_txtTanggalEvent
 id packed
 id pager
 id parallax
@@ -1076,7 +1084,9 @@ id profile_nama
 id progress_circular
 id progress_horizontal
 id progress_text
+id progress_text_info
 id radio
+id recycler_dataProfileList
 id recycler_view
 id recycler_viewImage
 id reg_email
@@ -1147,6 +1157,7 @@ id toHiburan
 id tool_post
 id toolbar
 id toolbar_detail
+id toolbar_listP
 id top
 id topPanel
 id touch_outside
@@ -1215,6 +1226,7 @@ layout activity_home_fragment
 layout activity_main
 layout activity_music_hiburan
 layout activity_post_event_form
+layout activity_profile_data
 layout activity_profile_fragment
 layout activity_rank_fragment
 layout activity_reg_set_info
@@ -1235,6 +1247,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_authentication_login
 layout image_view_list_post
+layout list_arrayprofile
 layout list_home
 layout list_map
 layout notification_action

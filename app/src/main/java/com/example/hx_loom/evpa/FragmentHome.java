@@ -75,7 +75,7 @@ public class FragmentHome extends Fragment {
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         nextQueryComplate = true;
                         for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                            if (doc.getId() != null) {
+                            if (!(doc.getId().isEmpty())) {
                                 ArrayList<String> groupImg = (ArrayList<String>) doc.get("imgUrl");
 //                                Log.d("Data FireStore", doc.getId() + " => " + doc.getData());
                                 eventLampungArrayList.add(new EventLampung(doc.getId(), doc.getString("idUsers"), doc.getString("namaEvent"),

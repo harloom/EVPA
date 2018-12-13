@@ -41,6 +41,7 @@
         <activity android:name="com.example.hx_loom.evpa.MusicHiburanActivity" />
         <activity android:name="com.example.hx_loom.evpa.Auth.RegisterActivity" />
         <activity android:name="com.example.hx_loom.evpa.Auth.RegSetInfo" />
+        <activity android:name="com.example.hx_loom.evpa.Profile.ProfileDataList" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"

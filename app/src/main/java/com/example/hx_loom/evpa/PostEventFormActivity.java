@@ -432,7 +432,7 @@ public class PostEventFormActivity extends AppCompatActivity {
             StorageReference idEvents = events.child(idDoc + "/" + file.getLastPathSegment());
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             Bitmap  bitmap = BitmapFactory.decodeFile(file.getPath());
-            bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG,50,baos);
             byte[] data = baos.toByteArray();
 
 
@@ -449,7 +449,7 @@ public class PostEventFormActivity extends AppCompatActivity {
                     Double progress =  (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
                     progressBar.setVisibility(View.VISIBLE);
                     TextView _i_progreesText = (TextView) findViewById(R.id.progress_text);
-                    _i_progreesText.setText(""+progress.shortValue());
+                    _i_progreesText.setText(""+progress.shortValue()+"%");
                     findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

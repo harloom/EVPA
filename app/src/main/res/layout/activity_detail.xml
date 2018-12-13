@@ -6,29 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".DetailActivity">
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_detail"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:padding="0dp"
-        >
+        android:padding="0dp">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_detail"
-        android:layout_below="@id/appbar_detail"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@null"
-        >
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:srcCompat="@drawable/ic_arrow_back"
-            android:onClick="onback"
-            />
-    </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_detail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/appbar_detail"
+            android:background="@null">
 
-</android.support.design.widget.AppBarLayout>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="onback"
+                app:srcCompat="@drawable/ic_arrow_back" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -42,36 +41,40 @@
 
             android:layout_marginTop="10dp"
             android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="1dp"
-                    app:cardUseCompatPadding="true">
-                <ImageView
 
-                    android:id="@+id/imageDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="350dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="10dp"
-                    android:scaleType="center"
-                    />
+                    app:cardUseCompatPadding="true">
+
+                    <ProgressBar
+                        android:id="@+id/loading_imageDetai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:minWidth="50dp"
+                        android:minHeight="50dp"
+                        android:visibility="visible" />
+
+                    <ImageView
+
+                        android:id="@+id/imageDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="10dp"
+                        android:minHeight="350dp"
+                        android:scaleType="center" />
                 </android.support.v7.widget.CardView>
-                <ProgressBar
-                    android:id="@+id/loading_imageDetai"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="50dp"
-                    android:minWidth="50dp"
-                    android:visibility="visible"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true" />
+
 
             </RelativeLayout>
 
@@ -195,8 +198,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:orientation="vertical">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -208,8 +211,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="30dp"
-                                android:text="Map"
                                 android:gravity="center"
+                                android:text="Map"
                                 android:textSize="13sp" />
                         </LinearLayout>
 

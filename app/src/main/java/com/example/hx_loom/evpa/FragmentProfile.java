@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.hx_loom.evpa.Profile.ProfileDataList;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,6 +33,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -42,8 +45,9 @@ import javax.annotation.Nullable;
 public class FragmentProfile extends Fragment {
     private FirebaseAuth mAuth;
     private String uid;
-    ImageView image_p;
-    TextView nama_p;
+    private  ImageView image_p;
+    private TextView nama_p,
+            count;
     ProgressBar loading_imageprofile;
     protected String data_image;
     private final String TAG = "Database";
@@ -56,6 +60,8 @@ public class FragmentProfile extends Fragment {
     public void onViewCreated(@NonNull View view, @android.support.annotation.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadData();
+
+
 
         view.findViewById(R.id.toHiburan).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,13 +76,21 @@ public class FragmentProfile extends Fragment {
         View profileF = inflater.inflate(R.layout.activity_profile_fragment, container, false);
         image_p = profileF.findViewById(R.id.profile_image);
         nama_p = (TextView) profileF.findViewById(R.id.profile_nama);
+        count = (TextView) profileF.findViewById(R.id.count_myEvent);
         loading_imageprofile = (ProgressBar) profileF.findViewById(R.id.loading_imageprofile);
         loading_imageprofile.getIndeterminateDrawable().setColorFilter(profileF.getResources().getColor(R.color.colorSilver), PorterDuff.Mode.SRC_IN);
 
 
         final LinearLayout v_goBack = (LinearLayout) profileF.findViewById(R.id.backfromAbout);
 
-
+        profileF.findViewById(R.id.action_profileData).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),ProfileDataList.class);
+                intent.putExtra("key",uid);
+                startActivity(intent);
+            }
+        });
         v_goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,6 +155,8 @@ public class FragmentProfile extends Fragment {
 
     private void loadData() {
         loading_imageprofile.setVisibility(View.VISIBLE);
+
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .setTimestampsInSnapshotsEnabled(true)
@@ -187,6 +203,17 @@ public class FragmentProfile extends Fragment {
             }
         });
 //        }
+
+
+        /*load jumlah my Event*/
+        db.collection("Events").whereEqualTo("idUsers",uid)
+                .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                int i = queryDocumentSnapshots.size();
+                count.setText(i+"");
+            }
+        });
 
     }
 
