@@ -42,8 +42,8 @@ public class MapAdpater extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = inflter.inflate(R.layout.list_map,null);
-        TextView _txtMap = (TextView) convertView.findViewById(R.id.textMapView);
-        _txtMap.setText((String) dataList.get(position).getNameLokasi());
+        TextView _txtMap = convertView.findViewById(R.id.textMapView);
+        _txtMap.setText(dataList.get(position).getNameLokasi());
 
         return convertView;
     }

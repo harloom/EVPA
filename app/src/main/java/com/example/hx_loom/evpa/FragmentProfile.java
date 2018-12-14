@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.hx_loom.evpa.Profile.ProfileDataList;
+import com.example.hx_loom.evpa.Profile.Profile_Account;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,10 +46,11 @@ import javax.annotation.Nullable;
 public class FragmentProfile extends Fragment {
     private FirebaseAuth mAuth;
     private String uid;
-    private  ImageView image_p;
+    private ImageView image_p;
     private TextView nama_p,
             count;
     ProgressBar loading_imageprofile;
+    ProgressBar _loading_count;
     protected String data_image;
     private final String TAG = "Database";
     Boolean stateLoad = false;
@@ -60,7 +62,6 @@ public class FragmentProfile extends Fragment {
     public void onViewCreated(@NonNull View view, @android.support.annotation.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadData();
-
 
 
         view.findViewById(R.id.toHiburan).setOnClickListener(new View.OnClickListener() {
@@ -75,19 +76,28 @@ public class FragmentProfile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View profileF = inflater.inflate(R.layout.activity_profile_fragment, container, false);
         image_p = profileF.findViewById(R.id.profile_image);
-        nama_p = (TextView) profileF.findViewById(R.id.profile_nama);
-        count = (TextView) profileF.findViewById(R.id.count_myEvent);
-        loading_imageprofile = (ProgressBar) profileF.findViewById(R.id.loading_imageprofile);
+        nama_p = profileF.findViewById(R.id.profile_nama);
+        count = profileF.findViewById(R.id.count_myEvent);
+        loading_imageprofile = profileF.findViewById(R.id.loading_imageprofile);
         loading_imageprofile.getIndeterminateDrawable().setColorFilter(profileF.getResources().getColor(R.color.colorSilver), PorterDuff.Mode.SRC_IN);
+        _loading_count = profileF.findViewById(R.id.loading_count);
+        _loading_count.getIndeterminateDrawable().setColorFilter(profileF.getResources().getColor(R.color.colorSilver), PorterDuff.Mode.SRC_IN);
 
-
-        final LinearLayout v_goBack = (LinearLayout) profileF.findViewById(R.id.backfromAbout);
+        final LinearLayout v_goBack = profileF.findViewById(R.id.backfromAbout);
 
         profileF.findViewById(R.id.action_profileData).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),ProfileDataList.class);
-                intent.putExtra("key",uid);
+                Intent intent = new Intent(v.getContext(), ProfileDataList.class);
+                intent.putExtra("key", uid);
+                startActivity(intent);
+            }
+        });
+
+        profileF.findViewById(R.id.fitur_account).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Profile_Account.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +110,7 @@ public class FragmentProfile extends Fragment {
             }
         });
 
-        final Button v_logout = (Button) profileF.findViewById(R.id.btn_logout);
+        final Button v_logout = profileF.findViewById(R.id.btn_logout);
         v_logout.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -180,8 +190,8 @@ public class FragmentProfile extends Fragment {
                 }
                 if (documentSnapshot != null && documentSnapshot.exists()) {
                     Log.d(TAG, "Current data: " + documentSnapshot.getData());
-                    final String dataNama = (String) documentSnapshot.getString("nama");
-                    data_image = (String) documentSnapshot.getString("image_url");
+                    final String dataNama = documentSnapshot.getString("nama");
+                    data_image = documentSnapshot.getString("image_url");
 //                        Log.d(TAG, "user data: " + dataNama);
 //                        Log.d(TAG, "url_image: " + data_image);
                     StorageReference users = storageReference.child("Users");
@@ -206,12 +216,13 @@ public class FragmentProfile extends Fragment {
 
 
         /*load jumlah my Event*/
-        db.collection("Events").whereEqualTo("idUsers",uid)
+        db.collection("Events").whereEqualTo("idUsers", uid)
                 .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                _loading_count.setVisibility(View.INVISIBLE);
                 int i = queryDocumentSnapshots.size();
-                count.setText(i+"");
+                count.setText(i + "");
             }
         });
 

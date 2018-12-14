@@ -1,16 +1,20 @@
 package com.example.hx_loom.evpa.Profile;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.hx_loom.evpa.Adapater.ListProfileAdapter;
 import com.example.hx_loom.evpa.Model.EventLampung;
 import com.example.hx_loom.evpa.R;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
@@ -31,7 +35,8 @@ public class ProfileDataList extends AppCompatActivity {
     LinearLayoutManager layoutManager;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
+    private ProgressBar progressBar_myEvent;
+    private TextView notFound;
     String keyUser;
 
     //pagintation
@@ -48,11 +53,14 @@ public class ProfileDataList extends AppCompatActivity {
                 .setTimestampsInSnapshotsEnabled(true)
                 .build();
         db.setFirestoreSettings(settings);
-
+        /* findbyId*/
+        progressBar_myEvent = findViewById(R.id.loading_myevents);
+        notFound = findViewById(R.id.not_foundMyevent);
+        /*____________________*/
 
         arrayList = new ArrayList<>();
         _i_loadData();
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_dataProfileList);
+        recyclerView = findViewById(R.id.recycler_dataProfileList);
         listProfileAdapter = new ListProfileAdapter(this, arrayList);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -61,6 +69,7 @@ public class ProfileDataList extends AppCompatActivity {
     }
 
     private void _i_loadData() {
+        progressBar_myEvent.setVisibility(View.VISIBLE);
         Intent intent = getIntent();
         keyUser = intent.getStringExtra("key");
         final Query _first = db.collection("Events").whereEqualTo("idUsers", keyUser)
@@ -68,6 +77,7 @@ public class ProfileDataList extends AppCompatActivity {
         _first.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                progressBar_myEvent.setVisibility(View.GONE);
                 nextQueryComplate = true;
                 for (QueryDocumentSnapshot data : queryDocumentSnapshots){
                         if (!(data.getId().isEmpty())){
@@ -76,6 +86,8 @@ public class ProfileDataList extends AppCompatActivity {
                                     data.getString("desEvent"), data.getString("namaLokasi"),
                                     data.getGeoPoint("lokasiGps"), data.getString("date"), data.getString("time"),
                                     groupImg));
+                        }else{
+                            notFound.setVisibility(View.VISIBLE);
                         }
                 }
                 recyclerView.setAdapter(listProfileAdapter);
@@ -139,9 +151,17 @@ public class ProfileDataList extends AppCompatActivity {
                     }
                 });
             }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                notFound.setVisibility(View.VISIBLE);
+            }
         });
 
     }
 
 
+    public void backMenu(View view) {
+        finish();
+    }
 }

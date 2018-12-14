@@ -53,24 +53,14 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
-                                      <entry key="image">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="paddingPercent" value="-5" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
                                     <map>
+                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="D:\0DayDigital\Icon Dan Corel\Assets\Icons\Ic_camera\ic_camera.png" />
-                                      <entry key="outputName" value="ic_noimage" />
+                                      <entry key="imageAsset" value="D:\Pitcure\ilham.jpg" />
+                                      <entry key="outputName" value="hifumi" />
                                     </map>
                                   </option>
                                 </PersistentState>

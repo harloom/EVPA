@@ -64,8 +64,8 @@ public class RegSetInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reg_set_info);
         mAuth = FirebaseAuth.getInstance();
-        txt_name = (EditText) findViewById(R.id.info_setname);
-        buttonImage = (ImageView) findViewById(R.id.image_setInfo);
+        txt_name = findViewById(R.id.info_setname);
+        buttonImage = findViewById(R.id.image_setInfo);
         easyImageSetting();
         getPremmisionFolder();
         homeAcitivity = new Intent(this, MainActivity.class);
@@ -155,7 +155,7 @@ public class RegSetInfo extends AppCompatActivity {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                             Double progress =  (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                            TextView _i_progreesText = (TextView) findViewById(R.id.progress_text_info);
+                            TextView _i_progreesText = findViewById(R.id.progress_text_info);
                             findViewById(R.id.button_setInfo).setVisibility(View.INVISIBLE);
                             _i_progreesText.setText(""+progress.shortValue()+"%");
                         }

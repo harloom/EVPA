@@ -147,15 +147,15 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
 
         public EventLampungViewHolder(View itemView) {
             super(itemView);
-            txt_NamaEvent = (TextView) itemView.findViewById(R.id.txtJudulEvent);
-            txt_DetailEvent = (TextView) itemView.findViewById(R.id.txtDetailEvent);
-            txt_TanggalEvent = (TextView) itemView.findViewById(R.id.txtTanggalEvent);
-            txt_NamaLokasiEvent = (TextView) itemView.findViewById(R.id.txtNamaLokasiEvent);
-            txt_JamEvent = (TextView) itemView.findViewById(R.id.txtJamEvent);
-            parent_home = (LinearLayout) itemView.findViewById(R.id.parent_home);
-            directMap = (LinearLayout) itemView.findViewById(R.id.direcMap);
-            imgE = (ImageView) itemView.findViewById(R.id.image_event);
-            loading_imageList = (ProgressBar) itemView.findViewById(R.id.loading_imageList);
+            txt_NamaEvent = itemView.findViewById(R.id.txtJudulEvent);
+            txt_DetailEvent = itemView.findViewById(R.id.txtDetailEvent);
+            txt_TanggalEvent = itemView.findViewById(R.id.txtTanggalEvent);
+            txt_NamaLokasiEvent = itemView.findViewById(R.id.txtNamaLokasiEvent);
+            txt_JamEvent = itemView.findViewById(R.id.txtJamEvent);
+            parent_home = itemView.findViewById(R.id.parent_home);
+            directMap = itemView.findViewById(R.id.direcMap);
+            imgE = itemView.findViewById(R.id.image_event);
+            loading_imageList = itemView.findViewById(R.id.loading_imageList);
             loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white),PorterDuff.Mode.SRC_IN);
 
         }

@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
 //    };
     /* fungsi buatan */
     public void tabMenu() {
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        final ViewPager viewPager = findViewById(R.id.pager);
+        final TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[0]));
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[1]));
         tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[2]));
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 //                        tabLayout.getTabAt(i).setIcon(tabsUnselectedSelected[i]);
 //                }
 
-                ImageView imageAction = (ImageView) findViewById(R.id.action_add);
+                ImageView imageAction = findViewById(R.id.action_add);
                 if (tab.getPosition() == 1 || tab.getPosition() == 2) {
                     imageAction.setVisibility(View.INVISIBLE);
                 } else {

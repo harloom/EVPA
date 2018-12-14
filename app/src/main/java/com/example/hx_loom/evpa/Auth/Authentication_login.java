@@ -39,7 +39,7 @@ public class Authentication_login extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loading_login = (ProgressBar) view.findViewById(R.id.loading_login);
+        loading_login = view.findViewById(R.id.loading_login);
         loading_login.getIndeterminateDrawable().setColorFilter(getResources().getColor(R.color.oneesan), PorterDuff.Mode.SRC_IN);
         final EditText form_username = view.findViewById(R.id.form_username);
         final EditText form_password = view.findViewById(R.id.form_password);
@@ -100,7 +100,6 @@ public class Authentication_login extends BottomSheetDialogFragment {
                              Bundle savedInstanceState) {
 
         View authentiactionLogin = inflater.inflate(R.layout.fragment_authentication_login, container, false);
-        ;
 
 
         return authentiactionLogin;

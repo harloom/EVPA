@@ -42,9 +42,9 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        AppBarLayout detailBar = (AppBarLayout) findViewById(R.id.appbar_detail);
+        AppBarLayout detailBar = findViewById(R.id.appbar_detail);
 
-        progress_image = (ProgressBar) findViewById(R.id.loading_imageDetai);
+        progress_image = findViewById(R.id.loading_imageDetai);
         int dice = new Random().nextInt(4);
         detailBar.setBackgroundColor(getResources().getColor(colorRandom[dice]));
 
@@ -71,15 +71,15 @@ public class DetailActivity extends AppCompatActivity {
 
     private void setToDetail(DetailData _detailData) {
         TextView tx_judul = findViewById(R.id.judul_detail);
-        tx_judul.setText((String) _detailData.v_judul);
+        tx_judul.setText(_detailData.v_judul);
         TextView tx_detail = findViewById(R.id.desc_detail);
-        tx_detail.setText((String) _detailData.v_detail);
+        tx_detail.setText(_detailData.v_detail);
         TextView tx_waktu = findViewById(R.id.waktu_detail);
-        tx_waktu.setText((String) _detailData.v_waktu);
+        tx_waktu.setText(_detailData.v_waktu);
         TextView tx_tanggal = findViewById(R.id.tanggal_detail);
-        tx_tanggal.setText((String) _detailData.v_tanggal);
+        tx_tanggal.setText(_detailData.v_tanggal);
         TextView tx_namaTempat = findViewById(R.id.namaTempat_detail);
-        tx_namaTempat.setText((String) _detailData.v_namaLokasi);
+        tx_namaTempat.setText(_detailData.v_namaLokasi);
         final int sizeWidth = findViewById(R.id.imageDetail).getWidth();
         final int sizeHigth = findViewById(R.id.imageDetail).getMinimumHeight() ;
         /* download gambar*/
@@ -104,7 +104,7 @@ public class DetailActivity extends AppCompatActivity {
                 }
             });
         }else{
-            ImageView imageView = (ImageView) findViewById(R.id.imageDetail);
+            ImageView imageView = findViewById(R.id.imageDetail);
             imageView.setImageResource(R.mipmap.ic_noimage);
             progress_image.setVisibility(View.INVISIBLE);
         }

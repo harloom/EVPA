@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\4adff415608fbe247b0d22525a7effaf\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\6b7feed71f7b639f7c1ffda9b9fbaed5\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\68776ac62f6292480796014370eeec07\AndroidManifest.xml:17:1-22:12
@@ -53,20 +53,20 @@ MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Hx-loom\.gradle\caches\tr
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\5809df5857638cc59402618429c426f9\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-16.0.0.aar\43d9797010c9ad92e70d284df3027066\AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\0382dc14973cb1a7dfca75525b08a749\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml
 		INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml
-		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml
-		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:1-35:12
 		INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:2:11-69
@@ -93,7 +93,7 @@ MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hx-loom\.gradle\c
 	android:name
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:8:5-32:19
+ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:8:5-33:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\e3d685ecf4f7c966eb2ea816b8d61225\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\e3d685ecf4f7c966eb2ea816b8d61225\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\Hx-loom\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\1b6e80a91500d6dbb4f07d4323be2461\AndroidManifest.xml:10:5-20
@@ -205,9 +205,13 @@ ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:30:9-53
 	android:name
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:30:19-50
 activity#com.example.hx_loom.evpa.Profile.ProfileDataList
-ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:31:9-70
+ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:31:9-61
 	android:name
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:31:19-58
+activity#com.example.hx_loom.evpa.Profile.Profile_Account
+ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:32:9-70
+	android:name
+		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:32:19-58
 uses-sdk
 INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml

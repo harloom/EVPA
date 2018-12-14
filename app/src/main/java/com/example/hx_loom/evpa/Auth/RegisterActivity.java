@@ -33,10 +33,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        loading_register = (ProgressBar) findViewById(R.id.loading_register) ;
-        txt_email = (EditText) findViewById(R.id.reg_email);
-        txt_pass = (EditText) findViewById(R.id.reg_password);
-        txt_vPassword = (EditText) findViewById(R.id.reg_password_v);
+        loading_register = findViewById(R.id.loading_register);
+        txt_email = findViewById(R.id.reg_email);
+        txt_pass = findViewById(R.id.reg_password);
+        txt_vPassword = findViewById(R.id.reg_password_v);
 
 
         findViewById(R.id.button_reg).setOnClickListener(new View.OnClickListener() {

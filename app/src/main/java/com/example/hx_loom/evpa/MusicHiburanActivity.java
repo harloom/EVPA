@@ -64,8 +64,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
 
 
         //Pemanggilan ID button do
-        doRendahButton = (Button)
-                this.findViewById(R.id.nada_do_awal);
+        doRendahButton = this.findViewById(R.id.nada_do_awal);
         doRendahButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,8 +73,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
         });
 
         //Pemanggilan ID button re
-        reButton = (Button)
-                this.findViewById(R.id.nada_re);
+        reButton = this.findViewById(R.id.nada_re);
         reButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,8 +82,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
         });
 
         //Pemanggilan ID button mi
-        miButton = (Button)
-                this.findViewById(R.id.nada_mi);
+        miButton = this.findViewById(R.id.nada_mi);
         miButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,8 +91,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
         });
 
         //Pemanggilan ID button fa
-        faButton = (Button)
-                this.findViewById(R.id.nada_fa);
+        faButton = this.findViewById(R.id.nada_fa);
         faButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,8 +100,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
         });
 
         //Pemanggilan ID button so
-        soButton = (Button)
-                this.findViewById(R.id.nada_so);
+        soButton = this.findViewById(R.id.nada_so);
         soButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,8 +109,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
         });
 
         //Pemanggilan ID button la
-        laButton = (Button)
-                this.findViewById(R.id.nada_la);
+        laButton = this.findViewById(R.id.nada_la);
         laButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,8 +118,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
         });
 
         //Pemanggilan ID button si
-        siButton = (Button)
-                this.findViewById(R.id.nada_si);
+        siButton = this.findViewById(R.id.nada_si);
         siButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,8 +127,7 @@ public class MusicHiburanActivity extends AppCompatActivity {
         });
 
         //Pemanggilan ID button do
-        doTinggiButton = (Button)
-                this.findViewById(R.id.nada_do_tinggi);
+        doTinggiButton = this.findViewById(R.id.nada_do_tinggi);
         doTinggiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

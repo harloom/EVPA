@@ -148,7 +148,7 @@
                                 android:layout_height="180dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:src="@drawable/hifumi" />
+                                android:src="@mipmap/hifumi" />
 
                             <TextView
                                 android:layout_width="match_parent"

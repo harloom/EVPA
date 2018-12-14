@@ -16,20 +16,26 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_below="@id/appbar_detail"
             android:background="@null">
+            <LinearLayout
+                android:onClick="backMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_arrow_back" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/ic_arrow_back" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:text="My Events"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:paddingLeft="10dp"
-                android:text="My Events"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
@@ -43,10 +49,32 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".Profile.ProfileDataList">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_dataProfileList"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_dataProfileList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ProgressBar
+                    android:id="@+id/loading_myevents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/not_foundMyevent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:text="Data Tidak di Temukan"/>
+            </RelativeLayout>
+
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>
 

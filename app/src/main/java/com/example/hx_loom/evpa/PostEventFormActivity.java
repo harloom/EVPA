@@ -122,13 +122,13 @@ public class PostEventFormActivity extends AppCompatActivity {
         buttonCalender = findViewById(R.id.btn_cal);
         buttonTime = findViewById(R.id.btn_time);
         txt_cal = findViewById(R.id.text_cal);
-        spinnerMap = (Spinner) findViewById(R.id.post_spinner);
+        spinnerMap = findViewById(R.id.post_spinner);
         addMap();
 
 
         /*function watch*/
-        judul = (TextInputEditText) findViewById(R.id.post_judul);
-        des = (TextInputEditText) findViewById(R.id.post_detail);
+        judul = findViewById(R.id.post_judul);
+        des = findViewById(R.id.post_detail);
         judul.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -413,7 +413,7 @@ public class PostEventFormActivity extends AppCompatActivity {
     }
 
     private void postEventFunction() {
-        final RelativeLayout progressBar = (RelativeLayout) findViewById(R.id.loading_posting);
+        final RelativeLayout progressBar = findViewById(R.id.loading_posting);
 
         getUserId();
         final String txt_judul = judul.getText().toString();
@@ -448,7 +448,7 @@ public class PostEventFormActivity extends AppCompatActivity {
                 public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                     Double progress =  (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
                     progressBar.setVisibility(View.VISIBLE);
-                    TextView _i_progreesText = (TextView) findViewById(R.id.progress_text);
+                    TextView _i_progreesText = findViewById(R.id.progress_text);
                     _i_progreesText.setText(""+progress.shortValue()+"%");
                     findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
                 }

@@ -1,6 +1,7 @@
 package com.example.hx_loom.evpa.Adapater;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.hx_loom.evpa.Model.EventLampung;
@@ -55,7 +57,7 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
         if(list.get(position).getImgUrl().size() != 0){
             StorageReference idEvents = imageEvents.child(list.get(position).getIdEvents()+"/"+list.get(position).getImgUrl().get(0));
             holder._image.setImageResource(0);
-//            holder.loading_imageList.setVisibility(View.VISIBLE);
+            holder._loading_imageList.setVisibility(View.VISIBLE);
             idEvents.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
@@ -65,7 +67,7 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
                             .noFade()
                             .centerCrop()
                             .into(holder._image);
-//                    holder.loading_imageList.setVisibility(View.INVISIBLE);
+                    holder._loading_imageList.setVisibility(View.INVISIBLE);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -76,7 +78,7 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
         }else{
 
             holder._image.setImageResource(R.mipmap.ic_noimage);
-//            holder.loading_imageList.setVisibility(View.INVISIBLE);
+            holder._loading_imageList.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -89,13 +91,16 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
 
         private ImageView _image;
         private TextView _judul ,_desc,_tanggal,_alamat;
+        private ProgressBar _loading_imageList;
         public ListViewHolder(View itemView) {
             super(itemView);
-            _image = (ImageView) itemView.findViewById(R.id.p_image_event);
-            _judul = (TextView) itemView.findViewById(R.id.p_txtJudulEvent);
-            _desc = (TextView) itemView.findViewById(R.id.p_txtDetailEvent);
-            _tanggal =(TextView) itemView.findViewById(R.id.p_txtTanggalEvent) ;
-            _alamat = (TextView) itemView.findViewById(R.id.p_txtNamaLokasiEvent);
+            _image = itemView.findViewById(R.id.p_image_event);
+            _judul = itemView.findViewById(R.id.p_txtJudulEvent);
+            _desc = itemView.findViewById(R.id.p_txtDetailEvent);
+            _tanggal = itemView.findViewById(R.id.p_txtTanggalEvent);
+            _alamat = itemView.findViewById(R.id.p_txtNamaLokasiEvent);
+            _loading_imageList = itemView.findViewById(R.id.loading_imageListMyevents);
+            _loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white),PorterDuff.Mode.SRC_IN);
         }
     }
 }

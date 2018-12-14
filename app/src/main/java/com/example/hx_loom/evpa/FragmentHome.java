@@ -163,11 +163,11 @@ public class FragmentHome extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @android.support.annotation.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loading_events = (ProgressBar) roView.findViewById(R.id.loading_events);
-        loading_list = (ProgressBar) roView.findViewById(R.id.loading_eventsList);
+        loading_events = roView.findViewById(R.id.loading_events);
+        loading_list = roView.findViewById(R.id.loading_eventsList);
         eventLampungArrayList = new ArrayList<>();
         addData();
-        recyclerView = (RecyclerView) roView.findViewById(R.id.recycler_view);
+        recyclerView = roView.findViewById(R.id.recycler_view);
         listHomeAdapter = new ListHomeAdapter(this, eventLampungArrayList);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
