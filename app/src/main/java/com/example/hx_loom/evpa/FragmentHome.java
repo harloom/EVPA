@@ -1,8 +1,10 @@
 package com.example.hx_loom.evpa;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -41,6 +43,7 @@ public class FragmentHome extends Fragment {
     LinearLayoutManager layoutManager;
 
     private View roView;
+    private SwipeRefreshLayout refreshLayout;
     /*  Pagnitaion */
     DocumentSnapshot lastVisible;
     protected int mPostsPerPage = 5;
@@ -57,7 +60,20 @@ public class FragmentHome extends Fragment {
                 .setTimestampsInSnapshotsEnabled(true)
                 .build();
         db.setFirestoreSettings(settings);
-
+        refreshLayout = (SwipeRefreshLayout) roView.findViewById(R.id.swipe_home);
+        refreshLayout.setColorSchemeColors(getResources().getColor(R.color.oneesan));
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.setRefreshing(true);
+                        addData();
+                    }
+                },500);
+            }
+        });
 
         return roView;
 
@@ -66,6 +82,7 @@ public class FragmentHome extends Fragment {
 
     private void addData() {
         eventLampungArrayList.clear();
+
         final Query first;
         first = db.collection("Events")
                 .orderBy("timestamp",Query.Direction.DESCENDING).limit(mPostsPerPage);
@@ -85,6 +102,7 @@ public class FragmentHome extends Fragment {
 
                             }
                         }
+                        refreshLayout.setRefreshing(false);
                         recyclerView.setAdapter(listHomeAdapter);
                         loading_events.setVisibility(View.GONE);
                         lastVisible = queryDocumentSnapshots.getDocuments()

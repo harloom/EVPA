@@ -48,14 +48,22 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull final ListProfileAdapter.ListViewHolder holder, int position) {
+
+        //* Mengambil beberapa karakter desc + ...* //
+
+        if (list.get(position).getDesEvent().length() > 30) {
+            String subDesc = list.get(position).getDesEvent().substring(0, 30) + "..";
+            holder._desc.setText(subDesc);
+        } else {
+            holder._desc.setText(list.get(position).getDesEvent());
+        }
         holder._judul.setText(list.get(position).getNamaEvent());
-        holder._desc.setText(list.get(position).getDesEvent());
         holder._alamat.setText(list.get(position).getNamaLokasi());
         holder._tanggal.setText(list.get(position).getDate());
 
         StorageReference imageEvents = storageReference.child("Events");
-        if(list.get(position).getImgUrl().size() != 0){
-            StorageReference idEvents = imageEvents.child(list.get(position).getIdEvents()+"/"+list.get(position).getImgUrl().get(0));
+        if (list.get(position).getImgUrl().size() != 0) {
+            StorageReference idEvents = imageEvents.child(list.get(position).getIdEvents() + "/" + list.get(position).getImgUrl().get(0));
             holder._image.setImageResource(0);
             holder._loading_imageList.setVisibility(View.VISIBLE);
             idEvents.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -75,7 +83,7 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
                     //erroro
                 }
             });
-        }else{
+        } else {
 
             holder._image.setImageResource(R.mipmap.ic_noimage);
             holder._loading_imageList.setVisibility(View.INVISIBLE);
@@ -90,8 +98,9 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
     public class ListViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView _image;
-        private TextView _judul ,_desc,_tanggal,_alamat;
+        private TextView _judul, _desc, _tanggal, _alamat;
         private ProgressBar _loading_imageList;
+
         public ListViewHolder(View itemView) {
             super(itemView);
             _image = itemView.findViewById(R.id.p_image_event);
@@ -100,7 +109,7 @@ public class ListProfileAdapter extends RecyclerView.Adapter<ListProfileAdapter.
             _tanggal = itemView.findViewById(R.id.p_txtTanggalEvent);
             _alamat = itemView.findViewById(R.id.p_txtNamaLokasiEvent);
             _loading_imageList = itemView.findViewById(R.id.loading_imageListMyevents);
-            _loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white),PorterDuff.Mode.SRC_IN);
+            _loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white), PorterDuff.Mode.SRC_IN);
         }
     }
 }

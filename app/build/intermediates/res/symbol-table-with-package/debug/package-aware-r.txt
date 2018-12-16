@@ -15,6 +15,8 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim fade_in
+anim fade_out
 animator design_appbar_state_list_animator
 attr actionBarDivider
 attr actionBarItemBackground
@@ -899,6 +901,13 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id account_btnChange_lyt
+id account_cPassword_lyt
+id account_image_lyt
+id account_name_lyt
+id account_new_password_lyt
+id accout_loading_image_lyt
+id accoutn_confirm_password_lyt
 id action0
 id action_add
 id action_bar
@@ -954,13 +963,11 @@ id center
 id center_horizontal
 id center_vertical
 id chains
-id change_password
 id checkbox
 id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
-id confirm_password
 id container
 id contentPanel
 id coordinator
@@ -1132,6 +1139,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id spacer
+id splash
 id split_action_bar
 id spread
 id spread_inside
@@ -1143,6 +1151,7 @@ id start
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
+id swipe_home
 id tabMode
 id tab_layout
 id tag_transition_group
@@ -1240,6 +1249,7 @@ layout activity_profile_fragment
 layout activity_rank_fragment
 layout activity_reg_set_info
 layout activity_register
+layout activity_splash_screen
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1294,6 +1304,7 @@ mipmap ic_ichigo
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap ic_logo_teknokrat
 mipmap ic_logotim
 mipmap ic_music
 mipmap ic_naruto

@@ -91,8 +91,13 @@ public class ProfileDataList extends AppCompatActivity {
                         }
                 }
                 recyclerView.setAdapter(listProfileAdapter);
-                lastVisible = queryDocumentSnapshots.getDocuments()
-                        .get(queryDocumentSnapshots.size() - 1);
+                if(queryDocumentSnapshots.size() > 0){
+                    lastVisible = queryDocumentSnapshots.getDocuments()
+                            .get(queryDocumentSnapshots.size() - 1);
+                }else{
+                    notFound.setVisibility(View.VISIBLE);
+                }
+
 
                 recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                     @Override

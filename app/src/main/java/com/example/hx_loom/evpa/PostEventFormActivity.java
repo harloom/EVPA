@@ -418,12 +418,12 @@ public class PostEventFormActivity extends AppCompatActivity {
         getUserId();
         final String txt_judul = judul.getText().toString();
         final String txt_des = des.getText().toString();
-        int tahun = myCalendar.get(Calendar.YEAR);
-        int bulan = myCalendar.get(Calendar.MONTH);
-        int day = myCalendar.get(Calendar.DAY_OF_MONTH);
-        int hours = myCalendar.get(Calendar.HOUR_OF_DAY);
-        int minute = myCalendar.get(Calendar.MINUTE);
-        int second = myCalendar.get(Calendar.SECOND);
+        int tahun = Calendar.YEAR;
+        int bulan = Calendar.MONTH;
+        int day = Calendar.DAY_OF_MONTH;
+        int hours = Calendar.HOUR_OF_DAY;
+        int minute = Calendar.MINUTE;
+        int second = Calendar.SECOND;
         final String idDoc = "E" + tahun + bulan + day + hours + minute + second;
 
         StorageReference events = storageRef.child("Events");
@@ -431,8 +431,8 @@ public class PostEventFormActivity extends AppCompatActivity {
             Uri file = Uri.fromFile(photos.get(i));
             StorageReference idEvents = events.child(idDoc + "/" + file.getLastPathSegment());
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            Bitmap  bitmap = BitmapFactory.decodeFile(file.getPath());
-            bitmap.compress(Bitmap.CompressFormat.JPEG,50,baos);
+            Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
             byte[] data = baos.toByteArray();
 
 
@@ -446,10 +446,10 @@ public class PostEventFormActivity extends AppCompatActivity {
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                    Double progress =  (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                    Double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
                     progressBar.setVisibility(View.VISIBLE);
                     TextView _i_progreesText = findViewById(R.id.progress_text);
-                    _i_progreesText.setText(""+progress.shortValue()+"%");
+                    _i_progreesText.setText("" + progress.shortValue() + "%");
                     findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

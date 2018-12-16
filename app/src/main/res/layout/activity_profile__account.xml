@@ -69,8 +69,16 @@
                 android:background="@color/white"
 
                 >
+                <ProgressBar
+                    android:id="@+id/accout_loading_image_lyt"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:visibility="visible"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    />
             <ImageView
-                android:background="@color/colorSilver"
+                android:id="@+id/account_image_lyt"
                 android:layout_width="200dp"
                 android:layout_height="160dp"
                 android:layout_centerInParent="true"
@@ -85,8 +93,8 @@
                     android:background="@drawable/custom_button"
                     android:drawableTop="@mipmap/ic_camera"
                     android:layout_centerVertical="true"
-                    android:translationY="30dp"
-                    android:translationX="30dp"
+                    android:translationY="50dp"
+                    android:translationX="50dp"
                     android:layout_centerHorizontal="true"
                     android:gravity="center" />
             </RelativeLayout>
@@ -121,7 +129,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="usename"
+                            android:text="Nama"
                             android:textColor="@color/oneesan"
                             android:textSize="7pt" />
                     </LinearLayout>
@@ -133,10 +141,13 @@
                         android:gravity="center">
 
                         <EditText
+                            android:id="@+id/account_name_lyt"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:textSize="8pt" />
+                            android:paddingLeft="20dp"
+                            android:textSize="8pt"
+                            android:maxLength="20"/>
 
                     </LinearLayout>
 
@@ -154,13 +165,6 @@
                         android:layout_marginStart="30dp"
                         android:gravity="center">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="email"
-                            android:textColor="@color/oneesan"
-                            android:textSize="7pt" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -169,11 +173,6 @@
                         android:layout_marginStart="10dp"
                         android:gravity="center">
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
-                            android:textSize="8pt" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -192,7 +191,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="current password"
+                            android:text="Current password"
                             android:textColor="@color/oneesan"
                             android:textSize="7pt" />
 
@@ -205,10 +204,13 @@
                         android:gravity="center">
 
                         <EditText
+                            android:id="@+id/account_cPassword_lyt"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPassword"
-                            android:textSize="8pt" />
+                            android:textSize="8pt"
+                            android:paddingLeft="20dp"
+                            android:maxLength="14"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -229,19 +231,22 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="change password"
+                            android:text="New Password"
                             android:textColor="@color/oneesan"
                             android:textSize="7pt" />
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/change_password"
+
+                        android:id="@+id/account_new_password_lyt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:inputType="textPassword"
+                        android:maxLength="14"
                         android:enabled="false"
+                        android:paddingLeft="20dp"
                         android:textSize="7pt" />
 
                     <LinearLayout
@@ -254,19 +259,20 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
-                            android:text="confirm password"
+                            android:text="Confirm New Password"
                             android:textColor="@color/oneesan"
                             android:textSize="7pt" />
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/confirm_password"
+                        android:id="@+id/accoutn_confirm_password_lyt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:enabled="false"
                         android:inputType="textPassword"
+                        android:paddingLeft="20dp"
                         android:textSize="7pt" />
 
                     <LinearLayout
@@ -278,9 +284,11 @@
                         android:gravity="right">
 
                         <Button
+                            android:id="@+id/account_btnChange_lyt"
                             android:layout_width="wrap_content"
                             android:layout_height="50dp"
                             android:gravity="center"
+                            android:visibility="gone"
                             android:elevation="10dp"
                             android:text="change" />
 

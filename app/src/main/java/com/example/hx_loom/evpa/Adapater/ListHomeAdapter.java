@@ -53,16 +53,22 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
 
     @Override
     public void onBindViewHolder(@NonNull final EventLampungViewHolder holder, final int position) {
+        //* Mengambil beberapa karakter desc + ...* //
+        if (dataList.get(position).getDesEvent().length() > 30) {
+            String subDesc = dataList.get(position).getDesEvent().substring(0, 30) + "..";
+            holder.txt_DetailEvent.setText(subDesc);
+        } else {
+            holder.txt_DetailEvent.setText(dataList.get(position).getDesEvent());
+        }
         holder.txt_NamaEvent.setText(dataList.get(position).getNamaEvent());
-        holder.txt_DetailEvent.setText(dataList.get(position).getDesEvent());
         holder.txt_TanggalEvent.setText(dataList.get(position).getDate());
         holder.txt_NamaLokasiEvent.setText(dataList.get(position).getNamaLokasi());
         holder.txt_JamEvent.setText(dataList.get(position).getTime());
 
         /* download gambar*/
         StorageReference imageEvents = storageReference.child("Events");
-        if(dataList.get(position).getImgUrl().size() != 0){
-            StorageReference idEvents = imageEvents.child(dataList.get(position).getIdEvents()+"/"+dataList.get(position).getImgUrl().get(0));
+        if (dataList.get(position).getImgUrl().size() != 0) {
+            StorageReference idEvents = imageEvents.child(dataList.get(position).getIdEvents() + "/" + dataList.get(position).getImgUrl().get(0));
             holder.imgE.setImageResource(0);
             holder.loading_imageList.setVisibility(View.VISIBLE);
             idEvents.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -82,13 +88,11 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                     //erroro
                 }
             });
-        }else{
+        } else {
 
             holder.imgE.setImageResource(R.mipmap.ic_noimage);
             holder.loading_imageList.setVisibility(View.INVISIBLE);
         }
-
-
 
 
         holder.parent_home.setOnClickListener(new View.OnClickListener() {
@@ -100,8 +104,8 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                 intent.putExtra("detail_waktu", dataList.get(position).getTime());
                 intent.putExtra("detail_tanggal", dataList.get(position).getDate());
                 intent.putExtra("detail_namaLokasi", dataList.get(position).getNamaLokasi());
-                intent.putExtra("idEvent",dataList.get(position).getIdEvents());
-                intent.putStringArrayListExtra("arrayImage",dataList.get(position).getImgUrl());
+                intent.putExtra("idEvent", dataList.get(position).getIdEvents());
+                intent.putStringArrayListExtra("arrayImage", dataList.get(position).getImgUrl());
                 mcontext.startActivity(intent);
             }
 
@@ -113,8 +117,8 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                 // Creates an Intent that will load a map of San Francisco
                 Double lt = dataList.get(position).getLokasiGps().getLatitude();
                 Double ltdude = dataList.get(position).getLokasiGps().getLongitude();
-                String urilMap = "google.navigation:q="+lt+","+ltdude+"&mode=d";
-                Log.d("Map longtitide" ,urilMap);
+                String urilMap = "google.navigation:q=" + lt + "," + ltdude + "&mode=d";
+                Log.d("Map longtitide", urilMap);
                 Uri gmmIntentUri = Uri.parse(urilMap);
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
@@ -142,7 +146,7 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                 txt_JamEvent;
         private ImageView imgE;
         private LinearLayout parent_home,
-                        directMap;
+                directMap;
         private ProgressBar loading_imageList;
 
         public EventLampungViewHolder(View itemView) {
@@ -156,7 +160,7 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
             directMap = itemView.findViewById(R.id.direcMap);
             imgE = itemView.findViewById(R.id.image_event);
             loading_imageList = itemView.findViewById(R.id.loading_imageList);
-            loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white),PorterDuff.Mode.SRC_IN);
+            loading_imageList.getIndeterminateDrawable().setColorFilter(itemView.getResources().getColor(R.color.white), PorterDuff.Mode.SRC_IN);
 
         }
     }

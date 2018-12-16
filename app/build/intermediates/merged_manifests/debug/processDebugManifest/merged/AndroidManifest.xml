@@ -23,15 +23,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.hx_loom.evpa.MainActivity" >
+        <activity android:name="com.example.hx_loom.evpa.SplashScreen.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.hx_loom.evpa.MainActivity" />
         <activity android:name="com.example.hx_loom.evpa.FragmentHome" />
         <activity android:name="com.example.hx_loom.evpa.FragmentRank" />
         <activity android:name="com.example.hx_loom.evpa.FragmentProfile" />

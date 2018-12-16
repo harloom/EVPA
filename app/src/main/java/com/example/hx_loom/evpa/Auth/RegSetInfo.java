@@ -24,6 +24,7 @@ import com.example.hx_loom.evpa.Model.Users;
 import com.example.hx_loom.evpa.PostEventFormActivity;
 import com.example.hx_loom.evpa.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
@@ -93,7 +94,7 @@ public class RegSetInfo extends AppCompatActivity {
         findViewById(R.id.button_setInfo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findViewById(R.id.loading_setinfo).setVisibility(View.VISIBLE);
+                findViewById(R.id.loading_setinfo).setVisibility(View.GONE);
                 getIcommingIntent();
 
             }
@@ -156,8 +157,14 @@ public class RegSetInfo extends AppCompatActivity {
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                             Double progress =  (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
                             TextView _i_progreesText = findViewById(R.id.progress_text_info);
-                            findViewById(R.id.button_setInfo).setVisibility(View.INVISIBLE);
+                            findViewById(R.id.button_setInfo).setVisibility(View.GONE);
                             _i_progreesText.setText(""+progress.shortValue()+"%");
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            findViewById(R.id.button_setInfo).setVisibility(View.VISIBLE);
+                            toastMessage("Terjadi Kesalahan di Server Silahkan Coba Lagi");
                         }
                     });
                 }

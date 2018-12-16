@@ -12,13 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".FragmentHome" />
         <activity android:name=".FragmentRank" />
         <activity android:name=".FragmentProfile" />
@@ -29,7 +30,8 @@
         <activity android:name=".Auth.RegisterActivity" />
         <activity android:name=".Auth.RegSetInfo" />
         <activity android:name=".Profile.ProfileDataList" />
-        <activity android:name=".Profile.Profile_Account"></activity>
+        <activity android:name=".Profile.Profile_Account" />
+
     </application>
 
 </manifest>

@@ -98,6 +98,7 @@ public class FragmentProfile extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Profile_Account.class);
+                intent.putExtra("key", uid);
                 startActivity(intent);
             }
         });
