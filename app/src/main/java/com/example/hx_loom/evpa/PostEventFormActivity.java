@@ -10,6 +10,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -79,6 +80,7 @@ public class PostEventFormActivity extends AppCompatActivity {
     StorageReference storageRef = storage.getReference();
     //deklrasi custom
     private Calendar myCalendar;
+    private  Calendar idCalender;
     private static final String PHOTO_KEYS = "P_Evpa";
     private RecyclerView recyclerView;
     private View buttonPicture,
@@ -116,6 +118,7 @@ public class PostEventFormActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_post_event_form);
         myCalendar = Calendar.getInstance();
+        idCalender = Calendar.getInstance();
         getCalender();
         recyclerView = findViewById(R.id.recycler_viewImage);
         buttonPicture = findViewById(R.id.btn_pitcurePost);
@@ -418,12 +421,12 @@ public class PostEventFormActivity extends AppCompatActivity {
         getUserId();
         final String txt_judul = judul.getText().toString();
         final String txt_des = des.getText().toString();
-        int tahun = Calendar.YEAR;
-        int bulan = Calendar.MONTH;
-        int day = Calendar.DAY_OF_MONTH;
-        int hours = Calendar.HOUR_OF_DAY;
-        int minute = Calendar.MINUTE;
-        int second = Calendar.SECOND;
+        int tahun = idCalender.get(Calendar.YEAR);
+        int bulan = idCalender.get(Calendar.MONTH);
+        int day = idCalender.get(Calendar.DAY_OF_MONTH);
+        int hours = idCalender.get(Calendar.HOUR_OF_DAY);
+        int minute = idCalender.get(Calendar.MINUTE);
+        int second = idCalender.get(Calendar.SECOND);
         final String idDoc = "E" + tahun + bulan + day + hours + minute + second;
 
         StorageReference events = storageRef.child("Events");
