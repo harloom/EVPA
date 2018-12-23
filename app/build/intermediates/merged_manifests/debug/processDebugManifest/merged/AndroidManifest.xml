@@ -44,6 +44,7 @@
         <activity android:name="com.example.hx_loom.evpa.Auth.RegSetInfo" />
         <activity android:name="com.example.hx_loom.evpa.Profile.ProfileDataList" />
         <activity android:name="com.example.hx_loom.evpa.Profile.Profile_Account" />
+        <activity android:name="com.example.hx_loom.evpa.Report.Report" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"

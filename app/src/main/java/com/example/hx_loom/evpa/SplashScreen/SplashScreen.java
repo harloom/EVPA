@@ -12,7 +12,7 @@ import com.example.hx_loom.evpa.R;
 
 public class SplashScreen extends AppCompatActivity {
 //    private ImageView logo;
-    private static int splashTime = 2000;
+    private static int splashTime = 1000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

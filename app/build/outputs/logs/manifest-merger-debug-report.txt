@@ -169,7 +169,7 @@ ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:19:17-77
 	android:name
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:19:27-74
 activity#com.example.hx_loom.evpa.MainActivity
-ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:22:9-59
+ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:22:9-50
 	android:name
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:22:19-47
 activity#com.example.hx_loom.evpa.FragmentHome
@@ -216,6 +216,10 @@ activity#com.example.hx_loom.evpa.Profile.Profile_Account
 ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:33:9-61
 	android:name
 		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:33:19-58
+activity#com.example.hx_loom.evpa.Report.Report
+ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:34:9-60
+	android:name
+		ADDED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml:34:19-48
 uses-sdk
 INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\0DayDigital\Evpa\Evpa\app\src\main\AndroidManifest.xml

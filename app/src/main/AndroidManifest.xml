@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".FragmentHome" />
         <activity android:name=".FragmentRank" />
         <activity android:name=".FragmentProfile" />
@@ -31,7 +31,7 @@
         <activity android:name=".Auth.RegSetInfo" />
         <activity android:name=".Profile.ProfileDataList" />
         <activity android:name=".Profile.Profile_Account" />
-
+        <activity android:name=".Report.Report"></activity>
     </application>
 
 </manifest>

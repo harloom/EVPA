@@ -435,7 +435,7 @@ public class PostEventFormActivity extends AppCompatActivity {
             StorageReference idEvents = events.child(idDoc + "/" + file.getLastPathSegment());
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 60, baos);
             byte[] data = baos.toByteArray();
 
 

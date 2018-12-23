@@ -7,9 +7,11 @@ import android.os.Bundle;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Authentication_login login = new Authentication_login();
     FragmentManager fragmentManagerLogin = getSupportFragmentManager();
     FirebaseUser user ;
+
 
     static final String STATE_BERANDA = "Home";
     @Override
@@ -86,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabTextColors(ColorStateList.valueOf(Color.parseColor("#620E84")));
 
+
+
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -99,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 //                    else
 //                        tabLayout.getTabAt(i).setIcon(tabsUnselectedSelected[i]);
 //                }
+
 
                 ImageView imageAction = findViewById(R.id.action_add);
                 if (tab.getPosition() == 1 || tab.getPosition() == 2) {
@@ -127,7 +133,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
+                if (tab.getPosition() == 0){
+//                    FragmentManager a = getSupportFragmentManager();
+//                    FragmentHome fragmentHome = (FragmentHome) a.findFragmentByTag("tab1");
+//                    fragmentHome.recyclerView.getLayoutManager().scrollToPosition(0);
+                }
             }
         });
     }

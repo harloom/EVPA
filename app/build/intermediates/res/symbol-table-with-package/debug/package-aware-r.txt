@@ -876,6 +876,7 @@ drawable ic_profile
 drawable ic_profile_s
 drawable ic_rank
 drawable ic_rank_s
+drawable ic_report
 drawable ic_share_black_24dp
 drawable ic_star_black_24dp
 drawable linearshape_bottom_trans
@@ -903,6 +904,7 @@ id SHIFT
 id SYM
 id account_btnChange_lyt
 id account_cPassword_lyt
+id account_getPhoto_lyt
 id account_image_lyt
 id account_name_lyt
 id account_new_password_lyt
@@ -942,6 +944,7 @@ id appbar_account
 id appbar_detail
 id appbar_post
 id appbar_reg
+id appbar_report
 id appbar_setInfo
 id async
 id auto
@@ -955,6 +958,7 @@ id btn_logout
 id btn_pitcurePost
 id btn_time
 id buttonPanel
+id button_lapor
 id button_login
 id button_reg
 id button_setInfo
@@ -1019,6 +1023,7 @@ id ifRoom
 id image
 id imageDetail
 id imageLogo
+id imageView
 id image_event
 id image_setInfo
 id image_viewPost
@@ -1030,6 +1035,7 @@ id italic
 id item_touch_helper_previous_elevation
 id judul_detail
 id l_password
+id lapor_text
 id largeLabel
 id left
 id light
@@ -1107,6 +1113,7 @@ id recycler_viewImage
 id reg_email
 id reg_password
 id reg_password_v
+id report_event
 id right
 id right_icon
 id right_side
@@ -1158,10 +1165,14 @@ id tag_transition_group
 id tanggal_detail
 id text
 id text2
+id textAcaraPalsu
+id textKekarasan
 id textMapView
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textSpam
 id textView
+id textView2
 id text_cal
 id text_input_password_toggle
 id textinput_counter
@@ -1249,6 +1260,7 @@ layout activity_profile_fragment
 layout activity_rank_fragment
 layout activity_reg_set_info
 layout activity_register
+layout activity_report
 layout activity_splash_screen
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

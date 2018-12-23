@@ -53,25 +53,14 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
-                                      <entry key="image">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="trimmed" value="true" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="D:\0DayDigital\Icon Dan Corel\Assets\splash_screen\splash_screen\ic_logo_apk-web.png" />
-                                      <entry key="outputName" value="ic_apk" />
+                                      <entry key="imageAsset" value="D:\0DayDigital\Icon Dan Corel\Assets\Icons\Beranda\ic_beranda.png" />
+                                      <entry key="outputName" value="ic_home" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -118,7 +107,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_music_note_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_report_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -128,8 +117,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="c13aad" />
-                            <entry key="outputName" value="ic_music" />
+                            <entry key="color" value="4b4b4b" />
+                            <entry key="outputName" value="ic_report" />
                             <entry key="sourceFile" value="C:\Users\Hx-loom" />
                           </map>
                         </option>

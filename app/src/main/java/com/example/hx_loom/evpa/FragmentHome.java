@@ -35,8 +35,8 @@ import javax.annotation.Nullable;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class FragmentHome extends Fragment {
-    private RecyclerView recyclerView;
+public class FragmentHome extends Fragment  {
+     RecyclerView recyclerView;
     private ListHomeAdapter listHomeAdapter;
     private ArrayList<EventLampung> eventLampungArrayList;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -52,6 +52,7 @@ public class FragmentHome extends Fragment {
     protected  boolean nextQueryComplate ;
     ProgressBar loading_events,loading_list;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -60,6 +61,18 @@ public class FragmentHome extends Fragment {
                 .setTimestampsInSnapshotsEnabled(true)
                 .build();
         db.setFirestoreSettings(settings);
+
+
+        loading_events = roView.findViewById(R.id.loading_events);
+        loading_list = roView.findViewById(R.id.loading_eventsList);
+        addData();
+        recyclerView = roView.findViewById(R.id.recycler_view);
+        listHomeAdapter = new ListHomeAdapter(this, eventLampungArrayList);
+        recyclerView.setAdapter(listHomeAdapter);
+        layoutManager = new LinearLayoutManager(roView.getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+
         refreshLayout = (SwipeRefreshLayout) roView.findViewById(R.id.swipe_home);
         refreshLayout.setColorSchemeColors(getResources().getColor(R.color.oneesan));
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -68,12 +81,15 @@ public class FragmentHome extends Fragment {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+//                        layoutManager.scrollToPosition(1);
                         refreshLayout.setRefreshing(true);
                         addData();
                     }
                 },500);
             }
+
         });
+
 
         return roView;
 
@@ -81,114 +97,113 @@ public class FragmentHome extends Fragment {
     }
 
     private void addData() {
-        eventLampungArrayList.clear();
+        eventLampungArrayList = new ArrayList<>();
 
         final Query first;
         first = db.collection("Events")
                 .orderBy("timestamp",Query.Direction.DESCENDING).limit(mPostsPerPage);
-        first.get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        nextQueryComplate = true;
-                        for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                            if (!(doc.getId().isEmpty())) {
-                                ArrayList<String> groupImg = (ArrayList<String>) doc.get("imgUrl");
+
+        try {
+            first.get()
+                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                        @Override
+                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                            nextQueryComplate = true;
+                            for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                                if (!(doc.getId().isEmpty())) {
+                                    ArrayList<String> groupImg = (ArrayList<String>) doc.get("imgUrl");
 //                                Log.d("Data FireStore", doc.getId() + " => " + doc.getData());
-                                eventLampungArrayList.add(new EventLampung(doc.getId(), doc.getString("idUsers"), doc.getString("namaEvent"),
-                                        doc.getString("desEvent"), doc.getString("namaLokasi"),
-                                        doc.getGeoPoint("lokasiGps"), doc.getString("date"), doc.getString("time"),
-                                        groupImg));
+                                    eventLampungArrayList.add(new EventLampung(doc.getId(), doc.getString("idUsers"), doc.getString("namaEvent"),
+                                            doc.getString("desEvent"), doc.getString("namaLokasi"),
+                                            doc.getGeoPoint("lokasiGps"), doc.getString("date"), doc.getString("time"),
+                                            groupImg));
 
-                            }
-                        }
-                        refreshLayout.setRefreshing(false);
-                        recyclerView.setAdapter(listHomeAdapter);
-                        loading_events.setVisibility(View.GONE);
-                        lastVisible = queryDocumentSnapshots.getDocuments()
-                                .get(queryDocumentSnapshots.size() - 1);
-
-
-                        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                            @Override
-                            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                                super.onScrollStateChanged(recyclerView, newState);
-
-                                if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL && nextQueryComplate) {
-                                    isScrolling = true;
-                                    nextQueryComplate = false;
                                 }
                             }
+                            refreshLayout.setRefreshing(false);
+                            listHomeAdapter.notifyDataSetChanged();
+                            loading_events.setVisibility(View.GONE);
+                            lastVisible = queryDocumentSnapshots.getDocuments()
+                                    .get(queryDocumentSnapshots.size() - 1);
 
-                            @Override
-                            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                                super.onScrolled(recyclerView, dx, dy);
 
-                                int firstVisibleItem = layoutManager.findFirstVisibleItemPosition();
-                                int visibleItemCount = layoutManager.getChildCount();
-                                int totalItemCount = layoutManager.getItemCount();
+                            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                                @Override
+                                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                                    super.onScrollStateChanged(recyclerView, newState);
 
-                                if (isScrolling && (firstVisibleItem + visibleItemCount == totalItemCount) && !isLastItem ) {
-                                    isScrolling = false;
-                                    Query nextQuery = db.collection("Events")
-                                            .orderBy("timestamp",Query.Direction.DESCENDING)
-                                            .startAfter(lastVisible)
-                                            .limit(mPostsPerPage);
-                                    loading_list.
-                                            setVisibility(View.VISIBLE);
-                                    nextQuery.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                        @Override
-                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                            for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                                                if (doc.getId() != null) {
-                                                    ArrayList<String> groupImg = (ArrayList<String>) doc.get("imgUrl");
+                                    if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL && nextQueryComplate) {
+                                        isScrolling = true;
+                                        nextQueryComplate = false;
+                                    }
+                                }
+
+                                @Override
+                                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                                    super.onScrolled(recyclerView, dx, dy);
+
+                                    int firstVisibleItem = layoutManager.findFirstVisibleItemPosition();
+                                    int visibleItemCount = layoutManager.getChildCount();
+                                    int totalItemCount = layoutManager.getItemCount();
+
+                                    if (isScrolling && (firstVisibleItem + visibleItemCount == totalItemCount) && !isLastItem ) {
+                                        isScrolling = false;
+                                        Query nextQuery = db.collection("Events")
+                                                .orderBy("timestamp",Query.Direction.DESCENDING)
+                                                .startAfter(lastVisible)
+                                                .limit(mPostsPerPage);
+                                        loading_list.
+                                                setVisibility(View.VISIBLE);
+                                        nextQuery.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                                for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                                                    if (doc.getId() != null) {
+                                                        ArrayList<String> groupImg = (ArrayList<String>) doc.get("imgUrl");
 //                                                    Log.d("Data FireStore", doc.getId() + " => " + doc.getData());
-                                                    eventLampungArrayList.add(new EventLampung(doc.getId(), doc.getString("idUsers"), doc.getString("namaEvent"),
-                                                            doc.getString("desEvent"), doc.getString("namaLokasi"),
-                                                            doc.getGeoPoint("lokasiGps"), doc.getString("date"), doc.getString("time"),
-                                                            groupImg));
+                                                        eventLampungArrayList.add(new EventLampung(doc.getId(), doc.getString("idUsers"), doc.getString("namaEvent"),
+                                                                doc.getString("desEvent"), doc.getString("namaLokasi"),
+                                                                doc.getGeoPoint("lokasiGps"), doc.getString("date"), doc.getString("time"),
+                                                                groupImg));
 
+                                                    }
                                                 }
-                                            }
-                                            nextQueryComplate = true;
-                                            if(queryDocumentSnapshots.size() != 0){
-                                                lastVisible = queryDocumentSnapshots.getDocuments()
-                                                        .get(queryDocumentSnapshots.size() - 1);
-                                            }
+                                                nextQueryComplate = true;
+                                                if(queryDocumentSnapshots.size() != 0){
+                                                    lastVisible = queryDocumentSnapshots.getDocuments()
+                                                            .get(queryDocumentSnapshots.size() - 1);
+                                                }
 
-                                            loading_list.setVisibility(View.GONE);
-                                            listHomeAdapter.notifyDataSetChanged();
+                                                loading_list.setVisibility(View.GONE);
+                                                listHomeAdapter.notifyDataSetChanged();
 //                                            try{
 
 //                                            }catch (Exception e){
 //
 //                                            }
 
-                                            if (queryDocumentSnapshots.size() < mPostsPerPage ) {
-                                               isLastItem  = true;
+                                                if (queryDocumentSnapshots.size() < mPostsPerPage ) {
+                                                    isLastItem  = true;
+                                                }
                                             }
-                                        }
-                                    });
+                                        });
+                                    }
                                 }
-                            }
-                        });
+                            });
 
-                    }
-                });
+                        }
+                    });
+        }catch (Exception e){
+
+        }
+
 
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @android.support.annotation.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loading_events = roView.findViewById(R.id.loading_events);
-        loading_list = roView.findViewById(R.id.loading_eventsList);
-        eventLampungArrayList = new ArrayList<>();
-        addData();
-        recyclerView = roView.findViewById(R.id.recycler_view);
-        listHomeAdapter = new ListHomeAdapter(this, eventLampungArrayList);
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+
 
 
 
@@ -200,6 +215,8 @@ public class FragmentHome extends Fragment {
         
 
     }
+
+
 }
 
 

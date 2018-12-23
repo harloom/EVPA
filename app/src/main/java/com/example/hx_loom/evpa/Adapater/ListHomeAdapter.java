@@ -21,6 +21,7 @@ import com.example.hx_loom.evpa.DetailActivity;
 import com.example.hx_loom.evpa.FragmentHome;
 import com.example.hx_loom.evpa.Model.EventLampung;
 import com.example.hx_loom.evpa.R;
+import com.example.hx_loom.evpa.Report.Report;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -126,6 +127,15 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
             }
         });
 
+        holder.report_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mcontext,Report.class);
+                intent.putExtra("idEvent",dataList.get(position).getIdEvents());
+                mcontext.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -146,11 +156,12 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
                 txt_JamEvent;
         private ImageView imgE;
         private LinearLayout parent_home,
-                directMap;
+                directMap , report_event;
         private ProgressBar loading_imageList;
 
         public EventLampungViewHolder(View itemView) {
             super(itemView);
+            report_event = itemView.findViewById(R.id.report_event);
             txt_NamaEvent = itemView.findViewById(R.id.txtJudulEvent);
             txt_DetailEvent = itemView.findViewById(R.id.txtDetailEvent);
             txt_TanggalEvent = itemView.findViewById(R.id.txtTanggalEvent);

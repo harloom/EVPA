@@ -86,6 +86,7 @@
                />
                 <!--adding image button-->
                 <Button
+                    android:id="@+id/account_getPhoto_lyt"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentBottom="true"
