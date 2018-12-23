@@ -1019,6 +1019,7 @@ id icon
 id icon_group
 id icon_only
 id icon_reg
+id iconstab
 id ifRoom
 id image
 id imageDetail
@@ -1262,6 +1263,7 @@ layout activity_reg_set_info
 layout activity_register
 layout activity_report
 layout activity_splash_screen
+layout custom_tab
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

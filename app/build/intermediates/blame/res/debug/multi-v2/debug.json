@@ -1360,79 +1360,6 @@
             ]
         },
         {
-            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-th_values-th.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\57c4643b31eb8588fe8bb2fc72b381c0\\res\\values-th\\values-th.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4519",
-                        "endColumns": "100",
-                        "endOffsets": "4615"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.1.0.aar\\31089ce2b38bfcddf0956373f2fa60cc\\res\\values-th\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "187",
-                        "endOffsets": "434"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "2953",
-                        "endColumns": "187",
-                        "endOffsets": "3136"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\4f264f0f34c395f851e9d87d8814fcbb\\res\\values-th\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,349,528,649,754,949,1071,1216,1349,1552,1655,1833,1953,2152,2329,2419,2513",
-                        "endColumns": "103,178,120,104,194,121,144,132,202,102,177,119,198,176,89,93,108",
-                        "endOffsets": "348,527,648,753,948,1070,1215,1348,1551,1654,1832,1952,2151,2328,2418,2512,2621"
-                    },
-                    "to": {
-                        "startLines": "19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1825,1933,2112,2237,2346,2541,2667,2816,3141,3344,3451,3629,3753,3952,4133,4227,4325",
-                        "endColumns": "107,178,124,108,194,125,148,136,202,106,177,123,198,180,93,97,112",
-                        "endOffsets": "1928,2107,2232,2341,2536,2662,2811,2948,3339,3446,3624,3748,3947,4128,4222,4320,4433"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\68776ac62f6292480796014370eeec07\\res\\values-th\\values-th.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,1825",
-                        "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
-                        "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,1901"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,4438",
-                        "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
-                        "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,4514"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-be_values-be.arsc.flat",
             "map": [
                 {
@@ -1501,6 +1428,79 @@
                         "startOffsets": "4695",
                         "endColumns": "108",
                         "endOffsets": "4799"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-th_values-th.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\57c4643b31eb8588fe8bb2fc72b381c0\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4519",
+                        "endColumns": "100",
+                        "endOffsets": "4615"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.1.0.aar\\31089ce2b38bfcddf0956373f2fa60cc\\res\\values-th\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "187",
+                        "endOffsets": "434"
+                    },
+                    "to": {
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "2953",
+                        "endColumns": "187",
+                        "endOffsets": "3136"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\4f264f0f34c395f851e9d87d8814fcbb\\res\\values-th\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,349,528,649,754,949,1071,1216,1349,1552,1655,1833,1953,2152,2329,2419,2513",
+                        "endColumns": "103,178,120,104,194,121,144,132,202,102,177,119,198,176,89,93,108",
+                        "endOffsets": "348,527,648,753,948,1070,1215,1348,1551,1654,1832,1952,2151,2328,2418,2512,2621"
+                    },
+                    "to": {
+                        "startLines": "19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1825,1933,2112,2237,2346,2541,2667,2816,3141,3344,3451,3629,3753,3952,4133,4227,4325",
+                        "endColumns": "107,178,124,108,194,125,148,136,202,106,177,123,198,180,93,97,112",
+                        "endOffsets": "1928,2107,2232,2341,2536,2662,2811,2948,3339,3446,3624,3748,3947,4128,4222,4320,4433"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\68776ac62f6292480796014370eeec07\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,1825",
+                        "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
+                        "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,1901"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,4438",
+                        "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
+                        "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,4514"
                     }
                 }
             ]
@@ -1910,79 +1910,6 @@
             ]
         },
         {
-            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-hi_values-hi.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\57c4643b31eb8588fe8bb2fc72b381c0\\res\\values-hi\\values-hi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4676",
-                        "endColumns": "100",
-                        "endOffsets": "4772"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.1.0.aar\\31089ce2b38bfcddf0956373f2fa60cc\\res\\values-hi\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "204",
-                        "endOffsets": "451"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "3045",
-                        "endColumns": "204",
-                        "endOffsets": "3245"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\4f264f0f34c395f851e9d87d8814fcbb\\res\\values-hi\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,351,543,667,777,987,1115,1253,1390,1606,1713,1910,2038,2238,2417,2506,2599",
-                        "endColumns": "105,191,123,109,209,127,137,136,215,106,196,127,199,178,88,92,112",
-                        "endOffsets": "350,542,666,776,986,1114,1252,1389,1605,1712,1909,2037,2237,2416,2505,2598,2711"
-                    },
-                    "to": {
-                        "startLines": "19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1876,1986,2178,2306,2420,2630,2762,2904,3250,3466,3577,3774,3906,4106,4289,4382,4479",
-                        "endColumns": "109,191,127,113,209,131,141,140,215,110,196,131,199,182,92,96,116",
-                        "endOffsets": "1981,2173,2301,2415,2625,2757,2899,3040,3461,3572,3769,3901,4101,4284,4377,4474,4591"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\68776ac62f6292480796014370eeec07\\res\\values-hi\\values-hi.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1613,1775,1876",
-                        "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,114,161,100,79",
-                        "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1608,1770,1871,1951"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1613,1775,4596",
-                        "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,114,161,100,79",
-                        "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1608,1770,1871,4671"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-bn_values-bn.arsc.flat",
             "map": [
                 {
@@ -2051,6 +1978,79 @@
                         "startOffsets": "4661",
                         "endColumns": "100",
                         "endOffsets": "4757"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\0DayDigital\\Evpa\\Evpa\\app\\build\\intermediates\\res\\merged\\debug\\values-hi_values-hi.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\57c4643b31eb8588fe8bb2fc72b381c0\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4676",
+                        "endColumns": "100",
+                        "endOffsets": "4772"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.1.0.aar\\31089ce2b38bfcddf0956373f2fa60cc\\res\\values-hi\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "204",
+                        "endOffsets": "451"
+                    },
+                    "to": {
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "3045",
+                        "endColumns": "204",
+                        "endOffsets": "3245"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\4f264f0f34c395f851e9d87d8814fcbb\\res\\values-hi\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,351,543,667,777,987,1115,1253,1390,1606,1713,1910,2038,2238,2417,2506,2599",
+                        "endColumns": "105,191,123,109,209,127,137,136,215,106,196,127,199,178,88,92,112",
+                        "endOffsets": "350,542,666,776,986,1114,1252,1389,1605,1712,1909,2037,2237,2416,2505,2598,2711"
+                    },
+                    "to": {
+                        "startLines": "19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1876,1986,2178,2306,2420,2630,2762,2904,3250,3466,3577,3774,3906,4106,4289,4382,4479",
+                        "endColumns": "109,191,127,113,209,131,141,140,215,110,196,131,199,182,92,96,116",
+                        "endOffsets": "1981,2173,2301,2415,2625,2757,2899,3040,3461,3572,3769,3901,4101,4284,4377,4474,4591"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hx-loom\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\68776ac62f6292480796014370eeec07\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1613,1775,1876",
+                        "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,114,161,100,79",
+                        "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1608,1770,1871,1951"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1613,1775,4596",
+                        "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,114,161,100,79",
+                        "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1608,1770,1871,4671"
                     }
                 }
             ]

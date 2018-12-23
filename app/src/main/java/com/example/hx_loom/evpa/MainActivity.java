@@ -80,14 +80,22 @@ public class MainActivity extends AppCompatActivity {
 //    };
     /* fungsi buatan */
     public void tabMenu() {
+        View tab1  = getLayoutInflater().inflate(R.layout.custom_tab , null);
+        tab1.findViewById(R.id.iconstab).setBackgroundResource(tabSelected[0]);
+        View tab2  = getLayoutInflater().inflate(R.layout.custom_tab , null);
+        tab2.findViewById(R.id.iconstab).setBackgroundResource(tabSelected[1]);
+        View tab3  = getLayoutInflater().inflate(R.layout.custom_tab , null);
+        tab3.findViewById(R.id.iconstab).setBackgroundResource(tabSelected[2]);
+
+
         final ViewPager viewPager = findViewById(R.id.pager);
         final TabLayout tabLayout = findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[0]));
-        tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[1]));
-        tabLayout.addTab(tabLayout.newTab().setIcon(tabSelected[2]));
+        tabLayout.addTab(tabLayout.newTab().setCustomView(tab1));
+        tabLayout.addTab(tabLayout.newTab().setCustomView(tab2));
+        tabLayout.addTab(tabLayout.newTab().setCustomView(tab3));
 //        tabLayout.setSelectedTabIndicatorHeight(0);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        tabLayout.setTabTextColors(ColorStateList.valueOf(Color.parseColor("#620E84")));
+        tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.oneesan)));
 
 
 
