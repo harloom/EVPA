@@ -2,6 +2,7 @@ package com.example.hx_loom.evpa;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -416,8 +417,8 @@ public class PostEventFormActivity extends AppCompatActivity {
     }
 
     private void postEventFunction() {
-        final RelativeLayout progressBar = findViewById(R.id.loading_posting);
-
+         final ProgressDialog progressBar = new ProgressDialog(PostEventFormActivity.this);
+        progressBar.setCanceledOnTouchOutside(false);
         getUserId();
         final String txt_judul = judul.getText().toString();
         final String txt_des = des.getText().toString();
@@ -450,9 +451,8 @@ public class PostEventFormActivity extends AppCompatActivity {
                 @Override
                 public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                     Double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                    progressBar.setVisibility(View.VISIBLE);
-                    TextView _i_progreesText = findViewById(R.id.progress_text);
-                    _i_progreesText.setText("" + progress.shortValue() + "%");
+                    progressBar.setMessage(progress.shortValue()+"%"+" Mengirim Ke Server......");
+                    progressBar.show();
                     findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -466,12 +466,14 @@ public class PostEventFormActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void aVoid) {
                             toastMessage("Data Berhasil Di Inputkan");
+                            progressBar.dismiss();
                             finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             toastMessage("Data Gagal Dinputkan");
+                            progressBar.dismiss();
                         }
                     });
                 }

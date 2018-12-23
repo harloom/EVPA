@@ -65,13 +65,6 @@ public class FragmentHome extends Fragment  {
 
         loading_events = roView.findViewById(R.id.loading_events);
         loading_list = roView.findViewById(R.id.loading_eventsList);
-        addData();
-        recyclerView = roView.findViewById(R.id.recycler_view);
-        listHomeAdapter = new ListHomeAdapter(this, eventLampungArrayList);
-        recyclerView.setAdapter(listHomeAdapter);
-        layoutManager = new LinearLayoutManager(roView.getContext());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
 
         refreshLayout = (SwipeRefreshLayout) roView.findViewById(R.id.swipe_home);
         refreshLayout.setColorSchemeColors(getResources().getColor(R.color.oneesan));
@@ -96,13 +89,14 @@ public class FragmentHome extends Fragment  {
 
     }
 
+
+
     private void addData() {
         eventLampungArrayList = new ArrayList<>();
 
         final Query first;
         first = db.collection("Events")
                 .orderBy("timestamp",Query.Direction.DESCENDING).limit(mPostsPerPage);
-
         try {
             first.get()
                     .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -197,12 +191,19 @@ public class FragmentHome extends Fragment  {
 
         }
 
-
+        recyclerView = roView.findViewById(R.id.recycler_view);
+        listHomeAdapter = new ListHomeAdapter(this, eventLampungArrayList);
+        recyclerView.setAdapter(listHomeAdapter);
+        layoutManager = new LinearLayoutManager(roView.getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @android.support.annotation.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        addData();
+
 
 
 
