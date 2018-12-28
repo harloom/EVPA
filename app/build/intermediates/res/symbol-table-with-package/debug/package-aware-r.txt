@@ -1202,6 +1202,14 @@ id txt_time
 id uniform
 id up
 id useLogo
+id util_myEvents_buttonEdit
+id util_myEvents_buttonHapus
+id util_myEvents_desc
+id util_myEvents_image
+id util_myEvents_judul
+id util_myEvents_tanggal
+id util_myEvents_tempat
+id util_myEvents_waktu
 id view_offset_helper
 id visible
 id waktu_detail
@@ -1261,6 +1269,7 @@ layout activity_reg_set_info
 layout activity_register
 layout activity_report
 layout activity_splash_screen
+layout activity_utils_my_events
 layout custom_tab
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

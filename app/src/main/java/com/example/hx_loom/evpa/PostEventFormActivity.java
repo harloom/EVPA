@@ -104,7 +104,7 @@ public class PostEventFormActivity extends AppCompatActivity {
     protected String time_;
     protected GeoPoint gps_;
     protected Timestamp timeStampDate;
-
+    ProgressDialog progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +118,9 @@ public class PostEventFormActivity extends AppCompatActivity {
         /*     */
 
         setContentView(R.layout.activity_post_event_form);
+
+        progressBar = new ProgressDialog(PostEventFormActivity.this);
+        progressBar.setCanceledOnTouchOutside(false);
         myCalendar = Calendar.getInstance();
         idCalender = Calendar.getInstance();
         getCalender();
@@ -415,10 +418,10 @@ public class PostEventFormActivity extends AppCompatActivity {
         time_ = s;
         v_time.setText(s + " " + TimeZone.getDefault().getDisplayName(false, TimeZone.SHORT));
     }
-
+    Double progress ;
     private void postEventFunction() {
-         final ProgressDialog progressBar = new ProgressDialog(PostEventFormActivity.this);
-        progressBar.setCanceledOnTouchOutside(false);
+        progress = 0.0;
+
         getUserId();
         final String txt_judul = judul.getText().toString();
         final String txt_des = des.getText().toString();
@@ -450,23 +453,24 @@ public class PostEventFormActivity extends AppCompatActivity {
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                    Double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                     progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
                     progressBar.setMessage(progress.shortValue()+"%"+" Mengirim Ke Server......");
                     progressBar.show();
                     findViewById(R.id.post_submit).setVisibility(View.INVISIBLE);
+                    if(progress == 100.0){
+                        progressBar.dismiss();
+                    }
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     timeStampDate = new Timestamp(Calendar.getInstance().getTime());
-
                     Log.d("Photos name", String.valueOf(namePhotos));
                     AddEventModel addEventModel = new AddEventModel(uuid, txt_judul, txt_des, namaLokasi, gps_, date_, time_, namePhotos, timeStampDate);
                     db.collection("Events").document(idDoc).set(addEventModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             toastMessage("Data Berhasil Di Inputkan");
-                            progressBar.dismiss();
                             finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
