@@ -64,7 +64,13 @@ public class ListHomeAdapter extends RecyclerView.Adapter<ListHomeAdapter.EventL
         holder.txt_NamaEvent.setText(dataList.get(position).getNamaEvent());
         holder.txt_TanggalEvent.setText(dataList.get(position).getDate());
         holder.txt_NamaLokasiEvent.setText(dataList.get(position).getNamaLokasi());
-        holder.txt_JamEvent.setText(dataList.get(position).getTime());
+
+        if(dataList.get(position).getTime().length() ==3){
+            holder.txt_JamEvent.setText(dataList.get(position).getTime()+0);
+        }else{
+            holder.txt_JamEvent.setText(dataList.get(position).getTime());
+        }
+
 
         /* download gambar*/
         StorageReference imageEvents = storageReference.child("Events");

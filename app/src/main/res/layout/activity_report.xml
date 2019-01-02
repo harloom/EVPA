@@ -98,6 +98,7 @@
                     app:cardElevation="1dp"
                     app:cardUseCompatPadding="true">
                     <TextView
+                        android:padding="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -117,6 +118,7 @@
                     app:cardUseCompatPadding="true">
 
                     <TextView
+                        android:padding="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -136,7 +138,7 @@
                     app:cardUseCompatPadding="true">
 
                     <TextView
-
+                        android:padding="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setCustomView(tab3));
 //        tabLayout.setSelectedTabIndicatorHeight(0);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.oneesan)));
+        tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.purpleHeader)));
 
 
 

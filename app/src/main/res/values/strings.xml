@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Evpa Lampung</string>
     <string name="name_header">PA</string>
-
+    <string name="about">Evpa adalah aplikasi yang berisikan event (acara) yang ada di bandar lampung ,anda dapat memposting event anda ,mendapatkan pentujuk arah </string>
 </resources>

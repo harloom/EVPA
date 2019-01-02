@@ -100,18 +100,18 @@ public final class R {
         public static final int line1 = 0x7f080090;
         public static final int line3 = 0x7f080091;
         public static final int media_actions = 0x7f0800a3;
-        public static final int normal = 0x7f0800b4;
-        public static final int notification_background = 0x7f0800b6;
-        public static final int notification_main_column = 0x7f0800b7;
-        public static final int notification_main_column_container = 0x7f0800b8;
-        public static final int right_icon = 0x7f0800da;
-        public static final int right_side = 0x7f0800db;
-        public static final int status_bar_latest_event_content = 0x7f080102;
-        public static final int tag_transition_group = 0x7f080108;
-        public static final int text = 0x7f08010a;
-        public static final int text2 = 0x7f08010b;
-        public static final int time = 0x7f080118;
-        public static final int title = 0x7f080119;
+        public static final int normal = 0x7f0800b5;
+        public static final int notification_background = 0x7f0800b7;
+        public static final int notification_main_column = 0x7f0800b8;
+        public static final int notification_main_column_container = 0x7f0800b9;
+        public static final int right_icon = 0x7f0800db;
+        public static final int right_side = 0x7f0800dc;
+        public static final int status_bar_latest_event_content = 0x7f080103;
+        public static final int tag_transition_group = 0x7f080109;
+        public static final int text = 0x7f08010b;
+        public static final int text2 = 0x7f08010c;
+        public static final int time = 0x7f080119;
+        public static final int title = 0x7f08011a;
     }
     public static final class integer {
         private integer() {}
@@ -141,7 +141,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f0d0042;
+        public static final int status_bar_notification_info_overflow = 0x7f0d0043;
     }
     public static final class style {
         private style() {}

@@ -37,6 +37,7 @@ import android.widget.Toast;
 
 import com.example.hx_loom.evpa.Adapater.ImagePostAdapter;
 import com.example.hx_loom.evpa.Adapater.MapAdpater;
+import com.example.hx_loom.evpa.FunctionRank.Model.ModelCount;
 import com.example.hx_loom.evpa.Model.AddEventModel;
 import com.example.hx_loom.evpa.Model.MapModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -257,7 +258,7 @@ public class PostEventFormActivity extends AppCompatActivity {
                                     Log.d("MAP DATABASE", mapModels.get(position).getNameLokasi());
                                     gps_ = mapModels.get(position).getGps();
                                     namaLokasi = mapModels.get(position).getNameLokasi();
-                                    Toast.makeText(getApplicationContext(), mapModels.get(position).getGps().toString(), Toast.LENGTH_LONG).show();
+//                                    Toast.makeText(getApplicationContext(), mapModels.get(position).getGps().toString(), Toast.LENGTH_LONG).show();
                                 }
 
                                 @Override
@@ -431,7 +432,7 @@ public class PostEventFormActivity extends AppCompatActivity {
         int hours = idCalender.get(Calendar.HOUR_OF_DAY);
         int minute = idCalender.get(Calendar.MINUTE);
         int second = idCalender.get(Calendar.SECOND);
-        final String idDoc = "E" + tahun + bulan + day + hours + minute + second;
+        final String idDoc = "E" + tahun +"-" + bulan+"-" + day +"-" + hours+"-" +minute +"-" +second;
 
         StorageReference events = storageRef.child("Events");
         for (int i = 0; i < photos.size(); i++) {
@@ -470,8 +471,15 @@ public class PostEventFormActivity extends AppCompatActivity {
                     db.collection("Events").document(idDoc).set(addEventModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            toastMessage("Data Berhasil Di Inputkan");
-                            finish();
+                            ModelCount modelCount = new ModelCount(1);
+                            db.collection("RankEvents").document(idDoc).set(modelCount).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    toastMessage("Data Berhasil Di Inputkan");
+                                    finish();
+                                }
+                            });
+
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

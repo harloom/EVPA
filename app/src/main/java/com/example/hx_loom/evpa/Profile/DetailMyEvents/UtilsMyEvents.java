@@ -3,16 +3,21 @@ package com.example.hx_loom.evpa.Profile.DetailMyEvents;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,6 +75,8 @@ public class UtilsMyEvents extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
         builder = new AlertDialog.Builder(getActivity());
         bottomView = inflater.inflate(R.layout.activity_utils_my_events, container, false);
         final TextView nama = bottomView.findViewById(R.id.util_myEvents_judul);
@@ -77,6 +84,8 @@ public class UtilsMyEvents extends BottomSheetDialogFragment {
         final TextView jam = bottomView.findViewById(R.id.util_myEvents_waktu);
         final TextView tanggal = bottomView.findViewById(R.id.util_myEvents_tanggal);
         final TextView tempat = bottomView.findViewById(R.id.util_myEvents_tempat);
+        final int sizeWidth =  bottomView.findViewById(R.id.util_myEvents_image).getWidth();
+        final int sizeHigth =  bottomView.findViewById(R.id.util_myEvents_image).getMinimumHeight() ;
         try {
             StorageReference imageEvents = storageReference.child("Events");
             if (!urlImage.isEmpty()) {
@@ -86,15 +95,21 @@ public class UtilsMyEvents extends BottomSheetDialogFragment {
                     public void onSuccess(Uri uri) {
                         Picasso.get()
                                 .load(uri)
-                                .fit()
+                                .resize(sizeWidth ,sizeHigth )
+                                .centerInside()
                                 .placeholder(R.color.colorSilver)
                                 .into((ImageView) bottomView.findViewById(R.id.util_myEvents_image));
 //                    progress_image.setVisibility(View.INVISIBLE);
-                        nama.setBackgroundColor(getResources().getColor(R.color.white));
-                        desc.setBackgroundColor(getResources().getColor(R.color.white));
-                        jam.setBackgroundColor(getResources().getColor(R.color.white));
-                        tanggal.setBackgroundColor(getResources().getColor(R.color.white));
-                        tempat.setBackgroundColor(getResources().getColor(R.color.white));
+                        try{
+                            nama.setBackgroundColor(getResources().getColor(R.color.white));
+                            desc.setBackgroundColor(getResources().getColor(R.color.white));
+                            jam.setBackgroundColor(getResources().getColor(R.color.white));
+                            tanggal.setBackgroundColor(getResources().getColor(R.color.white));
+                            tempat.setBackgroundColor(getResources().getColor(R.color.white));
+                        }catch (Exception e){
+                            toastMessage(e.toString());
+                        }
+
 
 
                         nama.setText(namaEvent);
@@ -139,6 +154,17 @@ public class UtilsMyEvents extends BottomSheetDialogFragment {
 
         return bottomView;
     }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        DisplayMetrics metrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        getDialog().getWindow().setGravity(Gravity.BOTTOM);
+        getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, (int) (metrics.heightPixels * 0.30));// here i have fragment height 30% of window's height you can set it as per your requirement
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    }
+
     protected  int a;
     private static String TAG = "Utils Evetns";
     Boolean delFlag = false;

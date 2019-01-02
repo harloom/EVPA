@@ -48,7 +48,7 @@ public class FragmentHome extends Fragment  {
     DocumentSnapshot lastVisible;
     protected int mPostsPerPage = 5;
     protected boolean isScrolling;
-    protected boolean isLastItem;
+    protected boolean isLastItem ;
     protected  boolean nextQueryComplate ;
     ProgressBar loading_events,loading_list;
 
@@ -76,6 +76,7 @@ public class FragmentHome extends Fragment  {
                     public void run() {
 //                        layoutManager.scrollToPosition(1);
                         refreshLayout.setRefreshing(true);
+                        isLastItem =false;
                         addData();
                     }
                 },500);
@@ -96,7 +97,7 @@ public class FragmentHome extends Fragment  {
 
         final Query first;
         first = db.collection("Events")
-                .orderBy("timestamp",Query.Direction.DESCENDING).limit(mPostsPerPage);
+                .orderBy("date", Query.Direction.ASCENDING).limit(mPostsPerPage);
         try {
             first.get()
                     .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -143,7 +144,7 @@ public class FragmentHome extends Fragment  {
                                     if (isScrolling && (firstVisibleItem + visibleItemCount == totalItemCount) && !isLastItem ) {
                                         isScrolling = false;
                                         Query nextQuery = db.collection("Events")
-                                                .orderBy("timestamp",Query.Direction.DESCENDING)
+                                                .orderBy("date", Query.Direction.ASCENDING)
                                                 .startAfter(lastVisible)
                                                 .limit(mPostsPerPage);
                                         loading_list.
