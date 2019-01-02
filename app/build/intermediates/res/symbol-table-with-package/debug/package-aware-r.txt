@@ -1076,6 +1076,7 @@ id namaTempat_detail
 id navigation_header_container
 id never
 id no_hp
+id no_rank
 id none
 id normal
 id not_foundMyevent
@@ -1107,9 +1108,12 @@ id progress_circular
 id progress_horizontal
 id progress_text_info
 id radio
+id rankCount
+id rankJudul
 id recycler_dataProfileList
 id recycler_view
 id recycler_viewImage
+id recycler_view_rank
 id reg_email
 id reg_password
 id reg_password_v
@@ -1171,7 +1175,6 @@ id textMapView
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textSpam
-id textView
 id textView2
 id text_cal
 id text_input_password_toggle
@@ -1291,6 +1294,7 @@ layout image_view_list_post
 layout list_arrayprofile
 layout list_home
 layout list_map
+layout list_rank
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1335,6 +1339,7 @@ mipmap ic_plan
 mipmap ic_profile
 mipmap ic_rank
 mipmap ic_tempat
+mipmap see
 raw do_tinggi
 raw fa
 raw la

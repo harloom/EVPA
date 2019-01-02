@@ -178,6 +178,7 @@ public class UtilsMyEvents extends BottomSheetDialogFragment {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
+
                                 desertRef = storageRef.child("Events");
                                a = 1;
                                 for( int i = 0 ; i<listImage.size();i++){

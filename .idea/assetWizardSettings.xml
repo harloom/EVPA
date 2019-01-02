@@ -35,7 +35,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="4b4b4b" />
+                                                <entry key="color" value="0095ff" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -47,7 +47,18 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_broken_image_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Kuliah/UTI/Program%20software/Android%20Stuido/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_remove_red_eye_black_24dp.xml" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -57,10 +68,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="iconShape" value="NONE" />
                                       <entry key="imageAsset" value="D:\0DayDigital\Icon Dan Corel\Assets\Icons\Beranda\ic_beranda.png" />
-                                      <entry key="outputName" value="ic_home" />
+                                      <entry key="outputName" value="see" />
                                     </map>
                                   </option>
                                 </PersistentState>
